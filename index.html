@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
@@ -507,7 +508,7 @@
 
 <body class="bg-brand-dark text-gray-200 antialiased font-sans selection:bg-brand-magenta selection:text-white overflow-x-hidden" x-data x-init="$store.chatbot.init()">
 
-        <!-- HERO SECTION - PINTEREST OPTIMIZED 2026 -->
+    <!-- HERO SECTION - PINTEREST OPTIMIZED 2026 -->
     <header class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden bg-brand-purpleDark">
         <!-- Background Elements -->
         <div class="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden">
@@ -669,6 +670,99 @@
         </div>
     </header>
 
+    <!-- ============================================================== -->
+    <!-- SEÇÃO DE CUPOM VIP - IMPLEMENTAÇÃO ISOLADA (SEM DEPENDÊNCIAS) -->
+    <!-- ============================================================== -->
+    <section id="section-vip-coupon" class="py-16 bg-brand-dark relative overflow-hidden border-t border-white/5">
+        
+        <!-- Elementos Decorativos de Fundo (Não interferem no layout) -->
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-brand-magenta/30 to-transparent pointer-events-none"></div>
+        <div class="absolute right-0 bottom-0 w-64 h-64 bg-brand-purple/10 rounded-full blur-[80px] pointer-events-none"></div>
+    
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            
+            <!-- Cabeçalho da Seção -->
+            <div class="mb-8">
+                <span class="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-brand-cyan mb-4">
+                    <i class="fas fa-lock text-xs mr-1"></i> Área Exclusiva
+                </span>
+                <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-2">
+                    Possui um Cupom VIP?
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base max-w-lg mx-auto">
+                    Digite seu código abaixo para verificar a elegibilidade de ofertas especiais.
+                </p>
+            </div>
+    
+            <!-- Container do Input + Validação -->
+            <div class="max-w-md mx-auto bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+                
+                <!-- Formulário de Entrada -->
+                <div class="relative flex flex-col gap-4">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i class="fas fa-ticket-alt text-gray-500"></i>
+                        </div>
+                        <!-- Input Isolado -->
+                        <input type="text" 
+                               id="vip_coupon_input" 
+                               placeholder="Digite seu cupom aqui" 
+                               class="w-full bg-black/40 border border-white/10 text-white text-lg font-bold rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:border-brand-magenta focus:ring-1 focus:ring-brand-magenta transition-all placeholder-gray-600 uppercase tracking-wider"
+                               onkeypress="handleEnterKey(event)">
+                    </div>
+                    
+                    <button type="button" 
+                            onclick="validateVipCoupon()" 
+                            class="w-full bg-brand-purple hover:bg-brand-purpleDark text-white font-bold py-4 rounded-xl transition-all border border-white/10 hover:border-brand-magenta shadow-lg uppercase tracking-wide text-sm flex items-center justify-center gap-2 group">
+                        <span>Validar Cupom</span>
+                        <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+    
+                <!-- Área de Feedback (Inicialmente Oculta) -->
+                <div id="vip_coupon_feedback" class="mt-4 hidden transition-all duration-300">
+                    <!-- Conteúdo injetado via JS -->
+                </div>
+            </div>
+    
+            <!-- CARD DE OFERTA DESBLOQUEADA (Inicialmente Oculto) -->
+            <!-- Só aparece se o cupom for válido -->
+            <div id="vip_offer_unlocked" class="hidden mt-8 max-w-md mx-auto transform transition-all duration-500 scale-95 opacity-0">
+                <div class="bg-gradient-to-br from-brand-purpleDark to-brand-dark border-2 border-brand-success rounded-3xl p-8 relative overflow-hidden shadow-[0_0_40px_rgba(34,197,94,0.2)]">
+                    
+                    <!-- Faixa de Desbloqueio -->
+                    <div class="absolute top-0 right-0 bg-brand-success text-brand-dark text-[10px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-widest">
+                        <i class="fas fa-unlock-alt mr-1"></i> Oferta Liberada
+                    </div>
+    
+                    <div class="text-center space-y-4">
+                        <p class="text-gray-400 text-xs uppercase tracking-widest font-bold">Preço Promocional VIP</p>
+                        
+                        <div class="flex items-center justify-center gap-3">
+                            <span class="text-gray-500 line-through text-lg">R$ 97,00</span>
+                            <i class="fas fa-arrow-right text-gray-600 text-xs"></i>
+                            <span class="text-4xl md:text-5xl font-black text-brand-success drop-shadow-lg">R$ 25,00</span>
+                        </div>
+    
+                        <p class="text-xs text-brand-cyan/80 italic border-t border-white/5 pt-3 mt-2">
+                            Cupom <span class="font-bold text-white">PROFITNESS</span> aplicado com sucesso!
+                        </p>
+    
+                        <!-- Botão de Checkout (Link Atualizado) -->
+                        <a href="https://go.hotmart.com/W103639756N?ap=c48e" 
+                           target="_blank"
+                           class="block w-full bg-gradient-to-r from-brand-success to-green-600 hover:to-green-500 text-white font-black py-4 rounded-xl text-lg shadow-green-glow transition-all transform hover:-translate-y-1 mt-4 animate-pulse">
+                            QUERO APROVEITAR AGORA
+                            <i class="fas fa-check-circle ml-2"></i>
+                        </a>
+                        
+                        <p class="text-[9px] text-gray-500 mt-2">Oferta exclusiva por tempo limitado.</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </section>
 
         <!-- PÚBLICO-ALVO - PINTEREST COMPLIANT -->
     <section class="py-24 bg-brand-dark relative overflow-hidden">
@@ -2006,99 +2100,7 @@
     </section>
     
     
-        <!-- ============================================================== -->
-    <!-- SEÇÃO DE CUPOM VIP - IMPLEMENTAÇÃO ISOLADA (SEM DEPENDÊNCIAS) -->
-    <!-- ============================================================== -->
-    <section id="section-vip-coupon" class="py-16 bg-brand-dark relative overflow-hidden border-t border-white/5">
-        
-        <!-- Elementos Decorativos de Fundo (Não interferem no layout) -->
-        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-brand-magenta/30 to-transparent pointer-events-none"></div>
-        <div class="absolute right-0 bottom-0 w-64 h-64 bg-brand-purple/10 rounded-full blur-[80px] pointer-events-none"></div>
-    
-        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            
-            <!-- Cabeçalho da Seção -->
-            <div class="mb-8">
-                <span class="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-brand-cyan mb-4">
-                    <i class="fas fa-lock text-xs mr-1"></i> Área Exclusiva
-                </span>
-                <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-2">
-                    Possui um Cupom VIP?
-                </h3>
-                <p class="text-gray-400 text-sm md:text-base max-w-lg mx-auto">
-                    Digite seu código abaixo para verificar a elegibilidade de ofertas especiais.
-                </p>
-            </div>
-    
-            <!-- Container do Input + Validação -->
-            <div class="max-w-md mx-auto bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
-                
-                <!-- Formulário de Entrada -->
-                <div class="relative flex flex-col gap-4">
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <i class="fas fa-ticket-alt text-gray-500"></i>
-                        </div>
-                        <!-- Input Isolado -->
-                        <input type="text" 
-                               id="vip_coupon_input" 
-                               placeholder="Digite seu cupom aqui" 
-                               class="w-full bg-black/40 border border-white/10 text-white text-lg font-bold rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:border-brand-magenta focus:ring-1 focus:ring-brand-magenta transition-all placeholder-gray-600 uppercase tracking-wider"
-                               onkeypress="handleEnterKey(event)">
-                    </div>
-                    
-                    <button type="button" 
-                            onclick="validateVipCoupon()" 
-                            class="w-full bg-brand-purple hover:bg-brand-purpleDark text-white font-bold py-4 rounded-xl transition-all border border-white/10 hover:border-brand-magenta shadow-lg uppercase tracking-wide text-sm flex items-center justify-center gap-2 group">
-                        <span>Validar Cupom</span>
-                        <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                </div>
-    
-                <!-- Área de Feedback (Inicialmente Oculta) -->
-                <div id="vip_coupon_feedback" class="mt-4 hidden transition-all duration-300">
-                    <!-- Conteúdo injetado via JS -->
-                </div>
-            </div>
-    
-            <!-- CARD DE OFERTA DESBLOQUEADA (Inicialmente Oculto) -->
-            <!-- Só aparece se o cupom for válido -->
-            <div id="vip_offer_unlocked" class="hidden mt-8 max-w-md mx-auto transform transition-all duration-500 scale-95 opacity-0">
-                <div class="bg-gradient-to-br from-brand-purpleDark to-brand-dark border-2 border-brand-success rounded-3xl p-8 relative overflow-hidden shadow-[0_0_40px_rgba(34,197,94,0.2)]">
-                    
-                    <!-- Faixa de Desbloqueio -->
-                    <div class="absolute top-0 right-0 bg-brand-success text-brand-dark text-[10px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-widest">
-                        <i class="fas fa-unlock-alt mr-1"></i> Oferta Liberada
-                    </div>
-    
-                    <div class="text-center space-y-4">
-                        <p class="text-gray-400 text-xs uppercase tracking-widest font-bold">Preço Promocional VIP</p>
-                        
-                        <div class="flex items-center justify-center gap-3">
-                            <span class="text-gray-500 line-through text-lg">R$ 97,00</span>
-                            <i class="fas fa-arrow-right text-gray-600 text-xs"></i>
-                            <span class="text-4xl md:text-5xl font-black text-brand-success drop-shadow-lg">R$ 25,00</span>
-                        </div>
-    
-                        <p class="text-xs text-brand-cyan/80 italic border-t border-white/5 pt-3 mt-2">
-                            Cupom <span class="font-bold text-white">PROFITNESS</span> aplicado com sucesso!
-                        </p>
-    
-                        <!-- Botão de Checkout (Link Atualizado) -->
-                        <a href="https://go.hotmart.com/W103639756N?ap=c48e" 
-                           target="_blank"
-                           class="block w-full bg-gradient-to-r from-brand-success to-green-600 hover:to-green-500 text-white font-black py-4 rounded-xl text-lg shadow-green-glow transition-all transform hover:-translate-y-1 mt-4 animate-pulse">
-                            QUERO APROVEITAR AGORA
-                            <i class="fas fa-check-circle ml-2"></i>
-                        </a>
-                        
-                        <p class="text-[9px] text-gray-500 mt-2">Oferta exclusiva por tempo limitado.</p>
-                    </div>
-                </div>
-            </div>
-    
-        </div>
-    </section>
+  
 
     
 
@@ -3212,4 +3214,3 @@
 </script>
 </body>
 </html>
-
