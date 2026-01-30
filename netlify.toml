@@ -13,19 +13,19 @@
 
 [[redirects]]
   from = "/10receitas_profitness_gratis"
-  to = "https://isca10receitasgratis.netlify.app/"
+  to = "https://iscas-dominio-novo.netlify.app/"
   status = 200
   force = true
 
 [[redirects]]
   from = "/10receitas_profitness_gratis/"
-  to = "https://isca10receitasgratis.netlify.app/"
+  to = "https://iscas-dominio-novo.netlify.app/"
   status = 200
   force = true
 
 [[redirects]]
   from = "/10receitas_profitness_gratis/*"
-  to = "https://isca10receitasgratis.netlify.app/:splat"
+  to = "https://iscas-dominio-novo.netlify.app/:splat"
   status = 200
   force = true
 
