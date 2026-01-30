@@ -1,1 +1,41 @@
+# ARQUIVO: netlify.toml
+# Localização: Raiz do seu projeto principal
 
+# -----------------------------------------------------------
+# ARQUIVO DE CONFIGURAÇÃO NETLIFY - ROTEAMENTO AVANÇADO
+# Objetivo: Servir múltiplos sites externos dentro do domínio principal
+# Status 200 = Proxy (Mantém a URL original no navegador)
+# -----------------------------------------------------------
+
+# ===========================================================
+# 1. PROJETO: ISCA 10 RECEITAS (Funil de Entrada)
+# ===========================================================
+
+[[redirects]]
+  from = "/10receitas_profitness_gratis"
+  to = "https://alimentacao-saudavel-360.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/10receitas_profitness_gratis/"
+  to = "https://alimentacao-saudavel-360.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/10receitas_profitness_gratis/*"
+  to = "https://alimentacao-saudavel-360.netlify.app/:splat"
+  status = 200
+  force = true
+
+
+# ===========================================================
+# 2. ROTA PADRÃO (FALLBACK)
+# ===========================================================
+
+# Qualquer rota não listada acima cairá na index do site principal
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
