@@ -13,19 +13,19 @@
 
 [[redirects]]
   from = "/10receitas_profitness_gratis"
-  to = "https://alimentacao-saudavel-360.netlify.app/"
+  to = "https://isca10receitasgratis.netlify.app/"
   status = 200
   force = true
 
 [[redirects]]
   from = "/10receitas_profitness_gratis/"
-  to = "https://alimentacao-saudavel-360.netlify.app/"
+  to = "https://isca10receitasgratis.netlify.app/"
   status = 200
   force = true
 
 [[redirects]]
   from = "/10receitas_profitness_gratis/*"
-  to = "https://alimentacao-saudavel-360.netlify.app/:splat"
+  to = "https://isca10receitasgratis.netlify.app/:splat"
   status = 200
   force = true
 
