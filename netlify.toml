@@ -18,13 +18,13 @@
   force = true
 
 [[redirects]]
-  from = "/10receitas__energisa_gratis/"
+  from = "/10receitas_energisa_gratis/"
   to = "https://iscas-dominio-novo.netlify.app/"
   status = 200
   force = true
 
 [[redirects]]
-  from = "/10receitas__energisa_gratis/*"
+  from = "/10receitas_energisa_gratis/*"
   to = "https://iscas-dominio-novo.netlify.app/:splat"
   status = 200
   force = true
