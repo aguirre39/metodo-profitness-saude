@@ -442,26 +442,21 @@
                 Veja o vídeo abaixo e descubra a <strong class="text-white font-bold">tecnologia metabólica</strong> que vai transformar o seu corpo de forma definitiva.
             </p>
 
-           <!-- Video Player Premium com "Façade" para Performance/Mobile 1-Click -->
-            <div class="max-w-4xl mx-auto rounded-[2rem] p-2 glass-panel shadow-glow-accent mb-12 animate-float relative group">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-accent to-blue-600 rounded-[2rem] opacity-30 group-hover:opacity-60 transition duration-500 blur"></div>
-                <div class="rounded-[1.5rem] overflow-hidden bg-black relative z-10 border border-white/10">
-                    <div class="video-wrap" id="main-video-container">
-                        <!-- Thumbnail/Capa do vídeo visível antes do clique -->
-                        <div class="absolute inset-0 w-full h-full cursor-pointer group/video" onclick="playMainVideo()">
-                            <!-- A imagem fallback foi incluída com onerror para garantir que sempre carregue -->
-                            <img src="imagem/imagem_video_vsl.webp" alt="Clique para assistir ao vídeo do Emagrecer Pro" fetchpriority="high" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/91X-w1hu2Pw/hqdefault.jpg'">
-                            <!-- Overlay escura -->
-                            <div class="absolute inset-0 bg-brand-dark/40 group-hover/video:bg-brand-dark/20 transition-colors duration-300"></div>
-                            <!-- Botão de Play Customizado -->
-                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-brand-cta to-brand-cta2 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,87,34,0.8)] group-hover/video:scale-110 transition-transform duration-300 z-10 border border-white/20">
-                                <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1 md:ml-2 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+           <!-- Video Player Sênior (Bug Corrigido) -->
+            <div class="max-w-md md:max-w-2xl mx-auto rounded-[2rem] p-2 glass-panel shadow-glow-accent mb-12 animate-float relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-accent to-blue-600 rounded-[2rem] opacity-30 blur"></div>
+                <div class="rounded-[1.5rem] overflow-hidden bg-black relative z-10 border border-white/10 aspect-square w-full">
+                    <div id="main-video-container" class="w-full h-full relative">
+                        <button type="button" class="absolute inset-0 w-full h-full cursor-pointer focus:outline-none appearance-none block z-20" onclick="playMainVideo()" aria-label="Reproduzir Vídeo">
+                            <img src="imagem/imagem_video_vsl.webp" alt="Thumbnail Vídeo" class="w-full h-full object-cover" onerror="this.src='https://i.ytimg.com/vi/91X-w1hu2Pw/maxresdefault.jpg'">
+                            <div class="absolute inset-0 bg-brand-dark/30 group-hover:bg-transparent transition-colors duration-300"></div>
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-r from-brand-cta to-brand-cta2 rounded-full flex items-center justify-center shadow-glow-cta">
+                                <svg class="w-8 h-8 md:w-12 md:h-12 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </div>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
-
 
            <!-- CTA Area -->
             <div class="flex flex-col items-center w-full max-w-xl mx-auto mt-4">
@@ -1079,14 +1074,14 @@
         };
 
 
-        // --- 0. Play Main Video via Facade (Mobile 1-Click) ---
+        // Fix do Vídeo: Destroy Facade e Injeta Iframe com Auto-Play sênior
         function playMainVideo() {
             const container = document.getElementById('main-video-container');
             if(container) {
-                container.innerHTML = '<iframe src="https://www.youtube.com/embed/91X-w1hu2Pw?autoplay=1&rel=0" title="Emagrecer Pro — Como emagrecer rápido sem dietas restritivas | Método científico" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>';
+                // Injeção limpa sem elementos sobrepostos
+                container.innerHTML = `<iframe src="https://www.youtube.com/embed/91X-w1hu2Pw?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="Vídeo de Vendas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full z-30"></iframe>`;
             }
         }
-
 
         // --- 1. Cronômetro Duplo (Design Fiel à Imagem) ---
         function startCountdown(hoursToAdd) {
