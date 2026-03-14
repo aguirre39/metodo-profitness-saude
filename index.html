@@ -160,6 +160,11 @@
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary ~ * { animation: fadeDown .4s ease-out forwards; }
         @keyframes fadeDown { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+
+        /* Modal Style */
+        .modal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 20px; }
+        .modal.active { display: flex; }
+        .modal-content { background: #131A2A; border: 1px solid rgba(255,255,255,0.1); max-width: 800px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 2rem; padding: 2rem; }
     </style>
 
     <!-- ═══════════════════════════════════════════════
@@ -674,7 +679,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Video 2 -->
+                <!-- Video 2
                 <div class="glass-panel p-2 rounded-3xl hover:-translate-y-2 transition duration-300 group shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                     <div class="p-4 flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-accent to-blue-600 flex items-center justify-center font-bold text-white text-sm shadow-inner">A</div>
@@ -686,6 +691,8 @@
                         </div>
                     </div>
                 </div>
+                -->
+
                 <!-- Video 3 -->
                 <div class="glass-panel p-2 rounded-3xl hover:-translate-y-2 transition duration-300 group shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                     <div class="p-4 flex items-center gap-3">
@@ -1055,23 +1062,60 @@
         </div>
     </nav>
 
-    <!-- Footer -->
+    <!-- Footer Otimizado com Políticas para Afiliados -->
     <footer class="bg-brand-darker py-12 px-4 text-center border-t-2 border-white/5">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-8">
-                <!-- Logo Branco Opaco no Footer -->
-                <img src="imagem/logo_emagrecer.webp" alt="Logo Footer" width="150" height="40" loading="lazy" decoding="async" class="h-10 mx-auto object-contain brightness-0 invert opacity-40 hover:opacity-100 transition-opacity duration-300" onerror="this.style.display='none'">
+        <div class="max-w-4xl mx-auto">
+            <!-- Links Jurídicos (Essencial para Afiliados) -->
+            <div class="flex flex-wrap justify-center gap-6 mb-8">
+                <button onclick="toggleModal('privacy-modal')" class="text-slate-500 hover:text-brand-accent text-sm underline font-medium transition-colors">Política de Privacidade</button>
+                <button onclick="toggleModal('terms-modal')" class="text-slate-500 hover:text-brand-accent text-sm underline font-medium transition-colors">Termos de Uso</button>
+                <a href="mailto:Suporte.desafioemagrecerpro@gmail.com" class="text-slate-500 hover:text-brand-accent text-sm underline font-medium transition-colors">Suporte</a>
             </div>
+
             <div class="text-slate-500 font-medium text-sm md:text-base space-y-4 font-inter">
                 <p>&copy; 2022-2026 Emagrecer Pro - Todos os Direitos Reservados</p>
-                <p>E-mail de suporte: <a href="mailto:Suporte.desafioemagrecerpro@gmail.com" class="text-brand-accent hover:text-white transition">Suporte.desafioemagrecerpro@gmail.com</a></p>
-                <div class="pt-8 mt-8 border-t border-white/5 text-[11px] md:text-xs text-slate-600 leading-relaxed max-w-4xl mx-auto text-justify">
-                    <p class="font-bold mb-2 text-center uppercase tracking-wider text-slate-500">Política de Privacidade & Aviso Legal</p>
-                    <p>As informações que você fornece durante transações, como seu nome, endereço de e-mail ou quaisquer dados pessoais, estão seguras conosco utilizando protocolos modernos de criptografia. Este documento estabelece nosso compromisso com a política de privacidade. Resultados podem variar de pessoa para pessoa com base na genética, dedicação e adesão ao método. O conteúdo deste guia tem caráter informativo e não substitui o acompanhamento de um médico ou profissional de saúde qualificado. Recomendamos que visite nosso site regularmente para se manter atualizado. Para mais informações, contate o e-mail de suporte oficial.</p>
+                
+                <div class="pt-8 mt-8 border-t border-white/5 text-[10px] md:text-[11px] text-slate-600 leading-relaxed max-w-4xl mx-auto text-center">
+                    <p class="font-bold mb-3 text-slate-500 uppercase tracking-widest text-xs">Aviso Importante</p>
+                    <p>Este site não faz parte do site do Google ou do Facebook. Além disso, este site NÃO é endossado pelo Google ou Facebook de nenhuma maneira. Google e Facebook são marcas comerciais de suas respectivas empresas. Como afiliado, promovemos produtos de alta qualidade e os resultados apresentados podem variar de pessoa para pessoa. Este produto não substitui o parecer médico profissional.</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- MODAL: POLÍTICA DE PRIVACIDADE -->
+    <div id="privacy-modal" class="modal" onclick="if(event.target == this) toggleModal('privacy-modal')">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                <h3 class="text-white text-2xl font-black uppercase">Política de Privacidade</h3>
+                <button onclick="toggleModal('privacy-modal')" class="text-slate-400 hover:text-white text-2xl">&times;</button>
+            </div>
+            <div class="text-slate-300 text-sm space-y-4 text-left leading-relaxed">
+                <p>Nós da <strong>Emagrecer Pro</strong> valorizamos a sua privacidade. Esta política descreve como coletamos e usamos seus dados ao navegar em nosso site.</p>
+                <p><strong>1. Coleta de Informações:</strong> Coletamos informações básicas de navegação através de cookies para melhorar sua experiência e para fins de marketing (Google Ads e Facebook Ads).</p>
+                <p><strong>2. Proteção de Dados:</strong> Utilizamos criptografia SSL para garantir que todos os dados transmitidos sejam seguros. Não vendemos seus dados a terceiros.</p>
+                <p><strong>3. Transações:</strong> Todos os pagamentos são processados pela plataforma Kiwify, que possui seus próprios protocolos de segurança bancária.</p>
+                <p><strong>4. Contato:</strong> Para dúvidas sobre seus dados, entre em contato via Suporte.desafioemagrecerpro@gmail.com.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: TERMOS DE USO -->
+    <div id="terms-modal" class="modal" onclick="if(event.target == this) toggleModal('terms-modal')">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                <h3 class="text-white text-2xl font-black uppercase">Termos de Uso</h3>
+                <button onclick="toggleModal('terms-modal')" class="text-slate-400 hover:text-white text-2xl">&times;</button>
+            </div>
+            <div class="text-slate-300 text-sm space-y-4 text-left leading-relaxed">
+                <p>Ao acessar o site <strong>Alimentação Saudável 360</strong> e adquirir o <strong>Emagrecer Pro</strong>, você concorda com os seguintes termos:</p>
+                <p><strong>1. Uso Pessoal:</strong> O conteúdo do guia é para uso individual e pessoal, sendo proibida a pirataria ou revenda não autorizada.</p>
+                <p><strong>2. Isenção de Responsabilidade Médica:</strong> O material contido neste guia tem caráter informativo. Você deve consultar um médico antes de iniciar qualquer mudança drástica em sua dieta ou rotina de exercícios.</p>
+                <p><strong>3. Resultados:</strong> Como cada organismo é único, os resultados podem variar. Não garantimos perda de peso específica sem a devida adesão ao método.</p>
+                <p><strong>4. Reembolso:</strong> Oferecemos 7 dias de garantia total conforme o Código de Defesa do Consumidor para produtos digitais.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- SCRIPTS (Gerenciamento de UI, Bônus, Imagens e Performance Web) -->
     <script>
@@ -1092,6 +1136,13 @@
                 // Injetamos o iframe e permitimos eventos de ponteiro para controle total
                 container.innerHTML = `<iframe src="https://www.youtube.com/embed/91X-w1hu2Pw?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="VSL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full pointer-events-auto"></iframe>`;
             }
+        }
+
+         // Modal Toggle
+        function toggleModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.toggle('active');
+            document.body.style.overflow = modal.classList.contains('active') ? 'hidden' : 'auto';
         }
 
         // --- 1. Cronômetro Duplo (Design Fiel à Imagem) ---
