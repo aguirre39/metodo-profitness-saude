@@ -362,7 +362,7 @@
     }
     </script>
 </head>
-<body class="antialiased bg-app-bg font-inter selection:bg-app-primary selection:text-white pb-20 md:pb-0"> <!-- Padding bottom para a barra flutuante mobile -->
+<body class="antialiased bg-app-bg font-inter selection:bg-app-primary selection:text-white pb-20 md:pb-0">
 
     <!-- ═══════════════════════════════════════════════
          BLOCO GEO — CONTEÚDO SEMÂNTICO PARA IAs E GOOGLE SGE (INTOCADO)
@@ -466,7 +466,7 @@
             </p>
             
             <p class="text-app-muted text-base md:text-lg font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
-                Veja o vídeo abaixo e descubra a <strong class="text-app-text font-bold">tecnologia metabólica</strong> que vai transformar o seu corpo de forma definitiva.
+                Veja o vídeo abaixo e descubra a <strong class="text-app-text font-bold">tecnologia metabólica</strong> que vai transform o seu corpo de forma definitiva.
             </p>
 
             <!-- Video Player Premium App Style -->
@@ -574,7 +574,7 @@
 
     <!-- Seção de Bônus (Interface de Lista App) -->
     <section aria-label="Bônus exclusivos do Emagrecer Pro" itemscope itemtype="https://schema.org/ItemList" class="py-20 px-4 relative bg-white">
-        <div class="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start reveal">
+        <div class="max-w-6xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start reveal">
             
             <!-- Texto Fixo (Left Column) -->
             <div class="lg:col-span-4 lg:sticky lg:top-24 text-center lg:text-left">
@@ -583,13 +583,13 @@
                     Você ainda vai levar <br />
                     <span class="text-gradient-cta">Somente Hoje:</span>
                 </h2>
-                <p class="text-base text-app-muted leading-relaxed mb-6">
+                <p class="text-base md:text-lg text-app-muted leading-relaxed mb-6">
                     Garanta agora o nosso Guia Emagrecer Pro e destrave <strong class="text-app-text font-bold">07 Bônus Valiosos e Poderosos</strong> para acelerar a sua jornada.
                 </p>
             </div>
 
             <!-- Lista de Bônus (Renderizado via JS com design clean card) -->
-            <div class="lg:col-span-8 space-y-4" id="bonus-container">
+            <div class="lg:col-span-8 space-y-6" id="bonus-container">
             </div>
             
             <div class="lg:col-span-12 text-center mt-6 lg:hidden">
@@ -1150,7 +1150,7 @@
             });
         });
 
-        // 2. Renderização de Bônus (App Style Cards)
+        // 2. Renderização de Bônus (App Style Cards - TAMANHO AUMENTADO)
         function initBonus() {
             const bonusData = [
                 {id: 1, title: "BÔNUS 1:", desc: "200 RECEITAS LOWCARB", imgC: "imagem/imagem_1.webp", imgM: "imagem/imagem_2.webp"},
@@ -1167,17 +1167,24 @@
 
             let htmlString = "";
             bonusData.forEach(b => {
+                // Modificado: Paddings (p-5 md:p-8), Gaps (gap-6 md:gap-8)
+                // Imagem Esquerda (w-32 md:w-40), Textos maiores (text-xl md:text-2xl, text-base md:text-lg)
+                // Imagem Direita/Mockup (w-40 md:w-56)
                 htmlString += `
-                    <div class="app-card p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 hover:-translate-y-1 transition-transform duration-300 relative group overflow-hidden">
-                        <div class="w-24 md:w-28 flex-shrink-0 group-hover:scale-105 transition-transform"><img src="${b.imgC}" alt="Capa Bônus ${b.id}" width="300" height="400" loading="lazy" decoding="async" class="w-full rounded-xl object-cover border border-slate-200 shadow-sm" style="aspect-ratio: 3/4;"></div>
-                        <div class="flex-grow flex flex-col items-center md:items-start text-center md:text-left">
-                            <div class="bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full mb-2 inline-flex items-center">
-                                <span class="text-[9px] font-bold tracking-widest uppercase">Liberação Imediata</span>
-                            </div>
-                            <h3 class="text-app-text font-black text-lg md:text-xl uppercase font-sans tracking-tight mb-1 group-hover:text-app-primary transition-colors">${b.title}</h3>
-                            <p class="text-app-muted font-medium text-sm leading-snug">${b.desc}</p>
+                    <div class="app-card p-5 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 hover:-translate-y-1 transition-transform duration-300 relative group overflow-hidden">
+                        <div class="w-32 md:w-40 flex-shrink-0 group-hover:scale-105 transition-transform">
+                            <img src="${b.imgC}" alt="Capa Bônus ${b.id}" width="300" height="400" loading="lazy" decoding="async" class="w-full rounded-xl object-cover border border-slate-200 shadow-sm" style="aspect-ratio: 3/4;">
                         </div>
-                        <div class="w-32 md:w-40 flex-shrink-0 group-hover:scale-105 transition-transform mt-2 md:mt-0"><img src="${b.imgM}" alt="Mockup Bônus ${b.id}" width="400" height="300" loading="lazy" decoding="async" class="w-full object-cover drop-shadow-md"></div>
+                        <div class="flex-grow flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full mb-3 inline-flex items-center">
+                                <span class="text-[10px] md:text-xs font-bold tracking-widest uppercase">Liberação Imediata</span>
+                            </div>
+                            <h3 class="text-app-text font-black text-xl md:text-2xl uppercase font-sans tracking-tight mb-2 group-hover:text-app-primary transition-colors">${b.title}</h3>
+                            <p class="text-app-muted font-medium text-base md:text-lg leading-snug">${b.desc}</p>
+                        </div>
+                        <div class="w-40 md:w-56 flex-shrink-0 group-hover:scale-105 transition-transform mt-4 md:mt-0">
+                            <img src="${b.imgM}" alt="Mockup Bônus ${b.id}" width="400" height="300" loading="lazy" decoding="async" class="w-full object-cover drop-shadow-lg">
+                        </div>
                     </div>
                 `;
             });
