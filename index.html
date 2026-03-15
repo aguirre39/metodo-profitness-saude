@@ -431,8 +431,9 @@
         .footer-disclaimer { padding-top: 1.5rem; border-top: 1px solid #F1F5F9; font-size: 9px; color: #94A3B8; line-height: 1.625; max-width: 48rem; margin: 0 auto; }
         .footer-disclaimer-title { font-weight: 700; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px; }
 
+       
         /* 12. Mobile Bottom Bar */
-        .mobile-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); border-top: 1px solid var(--app-border); padding: 0.75rem; z-index: 50; transform: translateY(100%); transition: transform 0.3s; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); padding-bottom: env(safe-area-inset-bottom, 0.75rem); }
+        .mobile-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); border-top: 1px solid var(--app-border); padding: 0.75rem 1rem calc(1.25rem + env(safe-area-inset-bottom)); z-index: 50; transform: translateY(100%); transition: transform 0.3s; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); }
         @media (min-width: 768px) { .mobile-bar { display: none; } }
         .mobile-bar:not(.translate-y-full) { transform: translateY(0); }
         .mobile-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; max-width: 24rem; margin: 0 auto; }
@@ -440,6 +441,7 @@
         .mobile-old-price { color: #94A3B8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: line-through; }
         .mobile-new-price { color: var(--app-text); font-weight: 900; font-size: 1.125rem; line-height: 1; letter-spacing: -0.025em; }
         .mobile-btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; width: 100%; flex: 1; }
+
 
         /* Modals */
         .modal { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 20px; }
