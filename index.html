@@ -11,7 +11,7 @@
     </script>
     
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     
     <!-- ═══════════════════════════════════════════════
          SEO PRIMÁRIO — TITLE + META DESCRIPTION
@@ -57,7 +57,6 @@
     ═══════════════════════════════════════════════ -->
     <!-- Preload de imagens críticas (LCP) -->
     <link rel="preload" as="image" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" fetchpriority="high" />
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -71,10 +70,11 @@
     <!-- Favicon e Theme -->
     <link rel="icon" type="image/png" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" />
     <link rel="apple-touch-icon" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" />
-    <meta name="theme-color" content="#0B0F19" />
+    <!-- TEMA APP: Modificado para a cor clara do App Style -->
+    <meta name="theme-color" content="#F8FAFC" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Emagrecer Pro" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
 
@@ -93,39 +93,41 @@
                         inter: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        brand: {
-                            cta: '#FF5722',       // Eletric Orange
-                            cta2: '#FF3366',      // Coral Neon
-                            dark: '#0B0F19',      // Obsidian Deep
-                            card: '#131A2A',      // Glass Dark Card
-                            accent: '#00E5FF',    // Cyan/Teal
-                            gold: '#FFD700',      // Ouro Premium
+                        app: {
+                            bg: '#F8FAFC',        // Slate 50 - Fundo super clean
+                            surface: '#FFFFFF',   // Cartões brancos
+                            text: '#0F172A',      // Slate 900 - Textos principais
+                            muted: '#64748B',     // Slate 500 - Textos secundários
+                            border: '#E2E8F0',    // Slate 200 - Bordas suaves
+                            primary: '#10B981',   // Emerald 500 - Cor da saúde/sucesso
+                            cta: '#F43F5E',       // Rose 500 - Cor de conversão/urgência
+                            ctaDark: '#E11D48',   // Rose 600
+                            gold: '#F59E0B'       // Amber 500 - Premium/Garantia
                         }
                     },
                     boxShadow: {
-                        'glow-cta': '0 0 35px -5px rgba(255, 87, 34, 0.6)',
-                        'glow-accent': '0 0 40px -10px rgba(0, 229, 255, 0.3)',
-                        'glow-gold': '0 0 50px -10px rgba(255, 215, 0, 0.4)',
-                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                        'app': '0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 0 3px rgba(15, 23, 42, 0.02)',
+                        'app-hover': '0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04)',
+                        'app-cta': '0 8px 25px -5px rgba(244, 63, 94, 0.4)',
+                        'app-float': '0 -10px 30px rgba(15, 23, 42, 0.08)',
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
-                        'pulse-custom': 'pulse-custom 2.5s infinite',
-                        'shimmer': 'shimmer 2.5s infinite linear',
-                        'spin-slow': 'spin 15s linear infinite',
+                        'pulse-app': 'pulse-app 2.5s infinite',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         },
-                        'pulse-custom': {
-                            '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 20px rgba(255, 87, 34, 0.5)' },
-                            '50%': { transform: 'scale(1.04)', boxShadow: '0 0 40px rgba(255, 87, 34, 0.8)' }
+                        'pulse-app': {
+                            '0%, 100%': { transform: 'scale(1)', boxShadow: '0 8px 25px -5px rgba(244, 63, 94, 0.4)' },
+                            '50%': { transform: 'scale(1.03)', boxShadow: '0 15px 35px -5px rgba(244, 63, 94, 0.6)' }
                         },
-                        shimmer: {
-                            '0%': { transform: 'translateX(-150%) skewX(-45deg)' },
-                            '100%': { transform: 'translateX(250%) skewX(-45deg)' }
+                        'slide-up': {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
                         }
                     }
                 }
@@ -133,38 +135,49 @@
         }
     </script>
 
-    <!-- Estilos Customizados Adicionais -->
+    <!-- Estilos Customizados App Style -->
     <style>
-        body { background-color: #0B0F19; overflow-x: hidden; color: #E2E8F0; }
-        .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        /* Base e Comportamento Mobile */
+        html { overscroll-behavior-y: none; }
+        body { background-color: #F8FAFC; overflow-x: hidden; color: #0F172A; -webkit-tap-highlight-color: transparent; }
+        
+        .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1.5rem; }
         .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         
-        .text-gradient-accent { background: linear-gradient(to right, #00E5FF, #007BFF); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
-        .text-gradient-gold { background: linear-gradient(to right, #FFF3B0, #FFD700, #F59E0B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
-        .text-gradient-cta { background: linear-gradient(to right, #FF5722, #FF3366); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+        /* Text Gradients Premium */
+        .text-gradient-primary { background: linear-gradient(135deg, #10B981, #059669); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+        .text-gradient-cta { background: linear-gradient(135deg, #F43F5E, #E11D48); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+        .text-gradient-gold { background: linear-gradient(135deg, #F59E0B, #D97706); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
         
-        .glass-panel { background: rgba(19, 26, 42, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .glass-card { background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.1); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        /* Elementos de Interface do App */
+        .app-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 1.5rem; box-shadow: var(--tw-shadow-app); }
+        .app-badge { background: #F1F5F9; color: #475569; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.75rem; border-radius: 9999px; }
+        .app-icon-bg { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); color: #10B981; }
         
-        .bg-grid-pattern { background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+        /* Fundo com Padrão Sutil (App Splash Screen) */
+        .bg-app-pattern { background-image: radial-gradient(#CBD5E1 1px, transparent 1px); background-size: 30px 30px; background-position: -15px -15px; }
         
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+        /* Animações de Scroll */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
-        .masonry-grid { column-count: 1; column-gap: 1.5rem; }
-        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
-        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
-        .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; display: inline-block; width: 100%; }
+        /* Masonry para App Gallery */
+        .masonry-grid { column-count: 1; column-gap: 1rem; }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; column-gap: 1.5rem; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; column-gap: 1.5rem; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 1rem; display: inline-block; width: 100%; }
 
+        /* Accordion (FAQ) estilo App */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: fadeDown .4s ease-out forwards; }
-        @keyframes fadeDown { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+        details[open] summary ~ * { animation: fadeDown .3s ease-out forwards; }
+        @keyframes fadeDown { 0% {opacity: 0; transform: translateY(-5px)} 100% {opacity: 1; transform: translateY(0)} }
 
-        /* Modal Style */
-        .modal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 20px; }
-        .modal.active { display: flex; }
-        .modal-content { background: #131A2A; border: 1px solid rgba(255,255,255,0.1); max-width: 800px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 2rem; padding: 2rem; }
+        /* Modal Style - Clean Light */
+        .modal { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 20px; }
+        .modal.active { display: flex; animation: fadeIn 0.3s ease-out; }
+        .modal-content { background: #FFFFFF; max-width: 600px; width: 100%; max-height: 85vh; overflow-y: auto; border-radius: 2rem; padding: 2rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 
     <!-- ═══════════════════════════════════════════════
@@ -349,10 +362,10 @@
     }
     </script>
 </head>
-<body class="antialiased bg-brand-dark font-inter selection:bg-brand-accent selection:text-brand-dark">
+<body class="antialiased bg-app-bg font-inter selection:bg-app-primary selection:text-white pb-20 md:pb-0"> <!-- Padding bottom para a barra flutuante mobile -->
 
     <!-- ═══════════════════════════════════════════════
-         BLOCO GEO — CONTEÚDO SEMÂNTICO PARA IAs E GOOGLE SGE
+         BLOCO GEO — CONTEÚDO SEMÂNTICO PARA IAs E GOOGLE SGE (INTOCADO)
     ═══════════════════════════════════════════════ -->
     <article id="geo-content-block" aria-label="Informações sobre emagrecimento" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" itemscope itemtype="https://schema.org/Article">
         <h1 itemprop="headline">Como Emagrecer Rápido e com Saúde: O Guia Completo com o Emagrecer Pro</h1>
@@ -410,33 +423,33 @@
         </section>
     </article>
 
-    <!-- Ambient Orbs (Fundo) -->
-    <div class="fixed top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-brand-accent/10 rounded-full blur-[120px] pointer-events-none -z-10 mix-blend-screen"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-brand-cta2/10 rounded-full blur-[120px] pointer-events-none -z-10 mix-blend-screen"></div>
-
-    <!-- Barra de Escassez (Topo) -->
-    <div aria-label="Contagem regressiva da oferta" class="bg-[#DF002B] py-3 px-4 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 sticky top-0 z-50 shadow-xl border-b border-black/20">
+    <!-- Barra de Escassez App Style (Topo) -->
+    <div aria-label="Contagem regressiva da oferta" class="bg-app-cta py-3 px-4 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 sticky top-0 z-50 shadow-md">
         <div class="flex items-center gap-3">
-            <div class="bg-white rounded-2xl w-11 h-11 md:w-12 md:h-12 flex items-center justify-center shadow-lg p-1.5 border border-white/50">
+            <div class="bg-white rounded-[0.8rem] w-10 h-10 flex items-center justify-center shadow-sm p-1.5">
                 <img src="imagem/logo_emagrecer.webp" alt="Emagrecer Pro Logo" width="48" height="48" fetchpriority="high" class="max-w-full max-h-full object-contain" onerror="this.style.display='none'">
             </div>
-            <div class="h-6 w-[2px] bg-white/30 hidden md:block"></div>
-            <p class="text-white font-black text-sm md:text-base uppercase tracking-wide flex items-center gap-2 font-sans">
-                <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span></span>
-                ESTA OFERTA EXPIRA EM:
+            <p class="text-white font-bold text-xs md:text-sm uppercase tracking-wide flex items-center gap-2 font-sans">
+                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span></span>
+                Esta oferta expira em:
             </p>
         </div>
         <!-- Cronômetro 1 -->
-        <div class="countdown-timer flex gap-1.5 md:gap-2 items-center scale-95 md:scale-100"></div>
+        <div class="countdown-timer flex gap-2 items-center"></div>
     </div>
 
-    <!-- Hero Section -->
-    <section aria-label="Apresentação do Emagrecer Pro — Como emagrecer rápido" itemscope itemtype="https://schema.org/WebPage" class="relative py-16 md:py-28 px-4 overflow-hidden flex items-center min-h-[90vh] bg-grid-pattern">
-        <div class="max-w-5xl mx-auto text-center relative z-10 reveal">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 backdrop-blur-sm mb-8 shadow-glow-accent">
-                <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                <span class="text-brand-accent text-xs md:text-sm font-bold tracking-widest uppercase">Método Cientificamente Comprovado</span>
+    <!-- Hero Section (Splash Screen App Style) -->
+    <section aria-label="Apresentação do Emagrecer Pro — Como emagrecer rápido" itemscope itemtype="https://schema.org/WebPage" class="relative pt-10 pb-16 md:pt-16 md:pb-24 px-4 overflow-hidden flex flex-col items-center bg-white bg-app-pattern">
+        <!-- Soft gradient orbs para o light mode -->
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-emerald-100 rounded-full blur-[100px] pointer-events-none z-0"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-rose-100 rounded-full blur-[100px] pointer-events-none z-0"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 w-full reveal active">
+            
+            <!-- App Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-app-primary mb-6 shadow-sm">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                <span class="text-xs font-bold tracking-widest uppercase">Método Cientificamente Comprovado</span>
             </div>
 
             <!-- H1 REAL para SEO (invisível para usuário) -->
@@ -444,600 +457,524 @@
                 Como Emagrecer Rápido Sem Dietas Restritivas — Emagrecer Pro
             </h1>
 
-            <!-- H1 Visual (Parágrafo Estilizado) -->
-            <p class="text-white text-3xl md:text-5xl lg:text-[4rem] font-black mb-6 uppercase leading-[1.1] font-sans tracking-tight" aria-hidden="true">
-                Elas emagreceram <span class="text-gradient-accent">muito</span>,<br class="hidden md:block" />
+            <!-- H1 Visual App Style (High Contrast Light Mode) -->
+            <p class="text-app-text text-3xl md:text-5xl lg:text-6xl font-black mb-6 uppercase leading-[1.15] font-sans tracking-tight" aria-hidden="true">
+                Elas emagreceram <span class="text-gradient-primary">muito</span>,<br class="hidden md:block" />
                 Sem dietas restritivas,<br />
                 <span class="text-gradient-cta">Sem sofrer</span> na academia<br class="hidden md:block" />
                 e Sem gastar muito.
             </p>
             
-            <p class="text-slate-400 text-lg md:text-xl font-medium mb-12 max-w-3xl mx-auto leading-relaxed">
-                Veja o vídeo abaixo e descubra a <strong class="text-white font-bold">tecnologia metabólica</strong> que vai transformar o seu corpo de forma definitiva.
+            <p class="text-app-muted text-base md:text-lg font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
+                Veja o vídeo abaixo e descubra a <strong class="text-app-text font-bold">tecnologia metabólica</strong> que vai transformar o seu corpo de forma definitiva.
             </p>
 
-            <!-- Video Player Senior Fix - Now Widescreen Responsive -->
-            <div class="w-full max-w-4xl mx-auto rounded-[2.5rem] p-2 glass-panel shadow-glow-accent mb-12 animate-float relative">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-accent to-blue-600 rounded-[2.5rem] opacity-20 blur"></div>
-                <!-- aspect-video garante visualização confortável em 16:9 -->
-                <div class="rounded-[2rem] overflow-hidden bg-black relative z-10 border border-white/10 aspect-video w-full">
+            <!-- Video Player Premium App Style -->
+            <div class="w-full max-w-3xl mx-auto rounded-[2rem] p-1.5 bg-white border border-app-border shadow-app mb-10 relative">
+                <div class="rounded-[1.5rem] overflow-hidden bg-slate-100 relative z-10 aspect-video w-full group">
                     <div id="main-video-container" class="w-full h-full relative">
                         <button type="button" class="absolute inset-0 w-full h-full cursor-pointer focus:outline-none block z-20" onclick="playMainVideo()" aria-label="Reproduzir Vídeo">
                             <img src="imagem/imagem_video_vsl.webp" alt="VSL" class="w-full h-full object-cover" onerror="this.src='https://i.ytimg.com/vi/91X-w1hu2Pw/maxresdefault.jpg'">
-                            <div class="absolute inset-0 bg-brand-dark/30"></div>
-                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-brand-cta to-brand-cta2 rounded-full flex items-center justify-center shadow-glow-cta hover:scale-110 transition-transform">
-                                <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/5 transition-colors"></div>
+                            <!-- Play Button App Style -->
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <svg class="w-8 h-8 md:w-10 md:h-10 text-app-cta ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </div>
                         </button>
                     </div>
                 </div>
             </div>
 
-
-           <!-- CTA Area -->
-            <div class="flex flex-col items-center w-full max-w-xl mx-auto mt-4">
-                <!-- Highlighted Price Box -->
-                <div class="bg-[#131A2A]/80 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 w-full shadow-[0_15px_35px_rgba(0,0,0,0.5)] relative mb-8 transform hover:scale-[1.02] transition-transform duration-500">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-brand-accent to-blue-600 text-brand-dark px-6 py-1.5 rounded-full text-xs md:text-sm font-black uppercase tracking-widest shadow-glow-accent whitespace-nowrap">
-                        Acesso Liberado Imediatamente
-                    </div>
-                    
-                    <p class="text-slate-400 font-medium text-sm md:text-base mb-1 uppercase tracking-widest">Valor Especial de Lançamento:</p>
-                    
-                    <div class="flex justify-center items-start gap-1 my-2">
-                        <span class="text-2xl md:text-3xl text-emerald-400 font-bold mt-2 md:mt-3">R$</span>
-                        <span class="text-7xl md:text-8xl font-black text-white tracking-tighter drop-shadow-lg">28<span class="text-5xl md:text-6xl text-slate-300">,90</span></span>
-                    </div>
-                    
-                    <div class="flex items-center justify-center gap-2 mb-6">
-                        <span class="bg-white/10 text-slate-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-white/5">Pagamento Único</span>
-                        <span class="bg-white/10 text-slate-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-white/5">Sem Mensalidades</span>
-                    </div>
-
-                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar o Emagrecer Pro agora" class="group relative overflow-hidden animate-pulse-custom bg-gradient-to-r from-brand-cta to-brand-cta2 text-white font-black py-5 px-8 rounded-full text-center uppercase text-lg md:text-xl shadow-glow-cta hover:shadow-none transition-all w-full flex justify-center items-center">
-                        <span class="relative z-10 flex items-center justify-center gap-3">
-                            QUERO COMEÇAR A EMAGRECER!
-                            <svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </span>
-                        <span class="absolute top-0 left-[-100%] w-1/2 h-full block bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-45deg] group-hover:animate-shimmer"></span>
-                    </a>
+            <!-- CTA App Card Centralizado -->
+            <div class="app-card p-6 md:p-8 w-full max-w-lg mx-auto relative transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-app-primary text-white px-4 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-sm whitespace-nowrap">
+                    Acesso Liberado Imediatamente
                 </div>
                 
-                <!-- Ícones de Pagamento Modernos -->
-                <div class="flex flex-col justify-center items-center gap-3 w-full">
-                    <div class="flex items-center justify-center gap-2 text-xs md:text-sm font-semibold text-emerald-400 uppercase tracking-widest bg-emerald-400/10 px-5 py-2 rounded-full border border-emerald-400/20">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                        Compra 100% Segura e Criptografada
-                    </div>
-                                        
-                     <!-- Payment Icons Inline SVGs (No external image requests) -->
-                    <div class="flex flex-col items-center gap-2 opacity-60">
-                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest text-center mt-2">Aceitamos:</p>
-                        <div class="flex items-center gap-5">
-                            <div class="flex items-center gap-1.5" title="Pix">
-                                <svg viewBox="0 0 512 512" width="16" height="16" fill="currentColor" class="text-white"><path d="M141.6 195.4l94.5-94.5c10.9-10.9 28.5-10.9 39.4 0l94.5 94.5c10.9 10.9 10.9 28.5 0 39.4l-94.5 94.5c-10.9 10.9-28.5 10.9-39.4 0l-94.5-94.5c-10.9-10.9-10.9-28.5 0-39.4zM256 32l224 224-224 224L32 256 256 32z"/></svg>
-                                <span class="text-white text-sm font-semibold tracking-wide">Pix</span>
-                            </div>
-                            <div class="flex items-center gap-1.5" title="Mastercard">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="text-white"><path d="M15.245 15.424a5.52 5.52 0 0 1-2.172-4.354 5.52 5.52 0 0 1 2.172-4.354 5.56 5.56 0 0 0-6.49 9.074 5.56 5.56 0 0 0 6.49-.366zM8.755 15.424a5.56 5.56 0 0 0 6.49.366 5.56 5.56 0 0 0 0-9.44 5.56 5.56 0 0 0-6.49 9.074z"/></svg>
-                                <span class="text-white text-sm font-semibold tracking-wide">Mastercard</span>
-                            </div>
-                            <div class="flex items-center gap-1.5" title="Visa">
-                                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" class="text-white"><path d="M10.512 15.427h1.724l1.082-6.848H11.59l-1.078 6.848zm8.384-6.666c-.276-.098-.996-.296-1.966-.296-2.148 0-3.665 1.127-3.675 2.74-.018 1.187 1.077 1.838 1.895 2.224.838.394 1.116.638 1.116.985 0 .531-.664.774-1.27.774-1.054 0-1.623-.157-2.483-.516l-.35-.157-.246 1.503c.617.275 1.753.513 2.94.516 2.28 0 3.774-1.086 3.79-2.77.018-.98-.564-1.72-1.808-2.09-.745-.353-1.196-.588-1.196-.948 0-.34.394-.683 1.203-.683.812-.02 1.402.166 1.84.33l.215.1.246-1.517zM6.772 15.427l-1.64-4.498c-.1-.42-.195-1.008-.663-1.272-.85-.48-1.81-.735-2.793-.902l-.018-.117h4.538c.55 0 .947.41 1.096 1.03l.93 3.256 1.55-4.286h1.79L9.38 15.427H6.772z"/></svg>
-                                <span class="text-white text-sm font-semibold tracking-wide">Visa</span>
-                            </div>
-                        </div>
-                    </div>
+                <p class="text-app-muted font-bold text-xs uppercase tracking-widest mb-2">Valor Especial de Lançamento:</p>
+                
+                <div class="flex justify-center items-start gap-1 my-3 text-app-text">
+                    <span class="text-xl md:text-2xl font-bold mt-2 text-slate-400">R$</span>
+                    <span class="text-6xl md:text-7xl font-black tracking-tighter">28<span class="text-4xl md:text-5xl text-slate-400">,90</span></span>
+                </div>
+                
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pagamento Único</span>
+                    <span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Sem Mensalidades</span>
+                </div>
+
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar o Emagrecer Pro agora" class="app-button w-full block animate-pulse-app bg-app-cta hover:bg-app-ctaDark text-white font-black py-4 md:py-5 px-6 rounded-full text-center uppercase text-base md:text-lg transition-colors flex justify-center items-center gap-2">
+                    QUERO COMEÇAR A EMAGRECER!
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
+                </a>
+                
+                <div class="flex items-center justify-center gap-1.5 text-[10px] md:text-xs font-semibold text-app-primary uppercase tracking-widest mt-5 bg-emerald-50 py-1.5 px-3 rounded-full mx-auto inline-flex">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                    Compra 100% Segura e Criptografada
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Público Alvo -->
-    <section aria-label="Para quem é o programa Emagrecer Pro" class="py-24 px-4 relative z-20">
-        <div class="max-w-6xl mx-auto reveal">
-            <div class="text-center mb-16">
-                <span class="text-brand-cta font-bold tracking-widest uppercase text-sm mb-2 block">Diagnóstico Rápido</span>
-                <h2 class="text-white font-black text-3xl md:text-5xl uppercase tracking-tight font-sans mb-6">
-                    O Emagrecer Pro é para <span class="text-gradient-accent">quem:</span>
+    <!-- Público Alvo (Bento UI Light Mode) -->
+    <section aria-label="Para quem é o programa Emagrecer Pro" class="py-20 md:py-24 px-4 relative bg-slate-50">
+        <div class="max-w-5xl mx-auto reveal">
+            <div class="text-center mb-12">
+                <span class="text-app-cta font-bold tracking-widest uppercase text-xs mb-2 block">Diagnóstico Rápido</span>
+                <h2 class="text-app-text font-black text-3xl md:text-4xl uppercase tracking-tight font-sans">
+                    O Emagrecer Pro é para <span class="text-gradient-primary">quem:</span>
                 </h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
-                <!-- Glass Cards -->
-                <div class="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-[40px] group-hover:bg-brand-accent/20 transition-all"></div>
-                    <div class="bg-white/5 border border-white/10 rounded-2xl w-14 h-14 flex items-center justify-center mb-6 relative z-10 group-hover:border-brand-accent/50 transition-colors">
-                        <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
+                <!-- Bento Cards App Style -->
+                <div class="app-card p-6 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl app-icon-bg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <p class="text-slate-300 font-medium text-lg leading-relaxed relative z-10"><strong class="text-white">Já testou várias dietas</strong> e nunca teve resultado definitivo.</p>
+                    <p class="text-app-muted font-medium text-sm md:text-base leading-relaxed pt-1"><strong class="text-app-text">Já testou várias dietas</strong> e nunca teve resultado definitivo.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-cta/10 rounded-full blur-[40px] group-hover:bg-brand-cta/20 transition-all"></div>
-                    <div class="bg-white/5 border border-white/10 rounded-2xl w-14 h-14 flex items-center justify-center mb-6 relative z-10 group-hover:border-brand-cta/50 transition-colors">
-                        <svg class="w-7 h-7 text-brand-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div class="app-card p-6 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-50 text-app-cta flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <p class="text-slate-300 font-medium text-lg leading-relaxed relative z-10"><strong class="text-white">Não tem tempo</strong> de ir na academia todos os dias.</p>
+                    <p class="text-app-muted font-medium text-sm md:text-base leading-relaxed pt-1"><strong class="text-app-text">Não tem tempo</strong> de ir na academia todos os dias.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-[40px] group-hover:bg-brand-accent/20 transition-all"></div>
-                    <div class="bg-white/5 border border-white/10 rounded-2xl w-14 h-14 flex items-center justify-center mb-6 relative z-10 group-hover:border-brand-accent/50 transition-colors">
-                        <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <div class="app-card p-6 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-500 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <p class="text-slate-300 font-medium text-lg leading-relaxed relative z-10">Quer <strong class="text-white">resultados rápidos</strong> e visíveis em poucas semanas.</p>
+                    <p class="text-app-muted font-medium text-sm md:text-base leading-relaxed pt-1">Quer <strong class="text-app-text">resultados rápidos</strong> e visíveis em poucas semanas.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden lg:col-span-1 lg:col-start-1 lg:ml-[15%]">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-cta/10 rounded-full blur-[40px] group-hover:bg-brand-cta/20 transition-all"></div>
-                    <div class="bg-white/5 border border-white/10 rounded-2xl w-14 h-14 flex items-center justify-center mb-6 relative z-10 group-hover:border-brand-cta/50 transition-colors">
-                        <svg class="w-7 h-7 text-brand-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                <div class="app-card p-6 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                     </div>
-                    <p class="text-slate-300 font-medium text-lg leading-relaxed relative z-10"><strong class="text-white">Não consegue mais se olhar no espelho</strong> com alegria.</p>
+                    <p class="text-app-muted font-medium text-sm md:text-base leading-relaxed pt-1"><strong class="text-app-text">Não consegue mais se olhar no espelho</strong> com alegria.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-3xl group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden lg:col-span-1 lg:col-start-2 lg:-mr-[15%]">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-[40px] group-hover:bg-brand-accent/20 transition-all"></div>
-                    <div class="bg-white/5 border border-white/10 rounded-2xl w-14 h-14 flex items-center justify-center mb-6 relative z-10 group-hover:border-brand-accent/50 transition-colors">
-                        <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                <div class="app-card p-6 flex items-start gap-4 md:col-span-2 md:max-w-xl mx-auto w-full">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-500 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                     </div>
-                    <p class="text-slate-300 font-medium text-lg leading-relaxed relative z-10">Quer <strong class="text-white">melhorar a saúde</strong>, ter energia e qualidade de vida.</p>
+                    <p class="text-app-muted font-medium text-sm md:text-base leading-relaxed pt-1">Quer <strong class="text-app-text">melhorar a saúde</strong>, ter energia e qualidade de vida.</p>
                 </div>
             </div>
             
             <div class="text-center">
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar o Emagrecer Pro com Desconto" class="group relative overflow-hidden inline-flex animate-pulse-custom bg-gradient-to-r from-brand-cta to-brand-cta2 text-white font-black py-5 px-10 md:px-14 rounded-full text-center uppercase text-lg md:text-xl shadow-glow-cta hover:scale-105 transition-transform duration-300">
-                    <span class="relative z-10">SIM, O EMAGRECER PRO É PARA MIM!</span>
-                    <span class="absolute top-0 left-[-100%] w-1/2 h-full block bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-45deg] group-hover:animate-shimmer"></span>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar o Emagrecer Pro com Desconto" class="app-button inline-block bg-app-cta hover:bg-app-ctaDark text-white font-black py-4 px-8 md:px-12 rounded-full text-center uppercase text-base md:text-lg transition-transform hover:scale-105">
+                    SIM, O EMAGRECER PRO É PARA MIM!
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Bônus (Imagens Padronizadas) -->
-    <section aria-label="Bônus exclusivos do Emagrecer Pro" itemscope itemtype="https://schema.org/ItemList" class="py-24 px-4 relative overflow-hidden bg-[#070b14]">
-        <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start reveal">
+    <!-- Seção de Bônus (Interface de Lista App) -->
+    <section aria-label="Bônus exclusivos do Emagrecer Pro" itemscope itemtype="https://schema.org/ItemList" class="py-20 px-4 relative bg-white">
+        <div class="max-w-5xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start reveal">
             
             <!-- Texto Fixo (Left Column) -->
-            <div class="lg:col-span-5 text-white lg:sticky lg:top-32">
-                <span class="text-brand-gold font-bold tracking-widest uppercase text-xs border border-brand-gold/30 px-3 py-1 rounded-full bg-brand-gold/10 mb-6 inline-block">Pacote Premium</span>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight font-sans tracking-tight text-white">
+            <div class="lg:col-span-4 lg:sticky lg:top-24 text-center lg:text-left">
+                <span class="app-badge bg-amber-100 text-amber-700 mb-4 inline-block">Pacote Premium</span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight font-sans tracking-tight text-app-text">
                     Você ainda vai levar <br />
                     <span class="text-gradient-cta">Somente Hoje:</span>
                 </h2>
-                <p class="text-lg md:text-xl font-normal text-slate-400 leading-relaxed mb-8">
-                    Garanta agora o nosso Guia Emagrecer Pro e destrave <strong class="text-white font-bold">07 Bônus Valiosos e Poderosos</strong> para acelerar a sua jornada.
+                <p class="text-base text-app-muted leading-relaxed mb-6">
+                    Garanta agora o nosso Guia Emagrecer Pro e destrave <strong class="text-app-text font-bold">07 Bônus Valiosos e Poderosos</strong> para acelerar a sua jornada.
                 </p>
-                <div class="hidden lg:block relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-accent to-blue-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
-                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar o Emagrecer Pro para garantir Bônus" class="relative block bg-brand-dark border border-white/10 text-white font-black py-4 px-8 rounded-full text-center uppercase text-lg hover:bg-white/5 transition-all">
-                        GARANTIR MEUS BÔNUS
-                    </a>
-                </div>
             </div>
 
-            <!-- Lista de Bônus (Renderizado via JS) -->
-            <div class="lg:col-span-7 space-y-6" id="bonus-container">
+            <!-- Lista de Bônus (Renderizado via JS com design clean card) -->
+            <div class="lg:col-span-8 space-y-4" id="bonus-container">
             </div>
             
-            <!-- Mobile CTA -->
-            <div class="lg:hidden w-full text-center mt-8">
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Garantir os bônus do Emagrecer Pro no Mobile" class="bg-brand-accent text-brand-dark font-black py-5 px-8 rounded-full text-center uppercase text-lg inline-block shadow-glow-accent w-full">
+            <div class="lg:col-span-12 text-center mt-6 lg:hidden">
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button w-full inline-block bg-app-primary text-white font-black py-4 px-8 rounded-full text-center uppercase text-base">
                     GARANTIR MEUS BÔNUS AGORA
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Chá Saudável -->
-    <section aria-label="Chá exclusivo para emagrecer — acelerador de resultados" class="bg-brand-dark py-24 px-4 overflow-hidden relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#050810] pointer-events-none"></div>
-        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 reveal relative z-10">
-            <div class="lg:w-1/2 relative group">
-                <div class="absolute -inset-4 bg-brand-accent/20 rounded-[3rem] transform rotate-3 blur-xl group-hover:rotate-6 transition-all duration-700 -z-10"></div>
-                <img src="https://i.imgur.com/JGQPjPk.png" alt="Chá Saudável - Acelerador de emagrecimento" width="500" height="500" loading="lazy" decoding="async" class="rounded-[2.5rem] shadow-2xl w-full border border-white/10 object-cover aspect-square md:aspect-auto transform group-hover:scale-[1.02] transition-transform duration-700">
+    <!-- Chá Saudável (Organic Card Style) -->
+    <section aria-label="Chá exclusivo para emagrecer — acelerador de resultados" class="bg-slate-50 py-20 px-4 overflow-hidden relative">
+        <div class="max-w-5xl mx-auto app-card p-6 md:p-12 flex flex-col lg:flex-row items-center gap-10 reveal">
+            <div class="lg:w-1/2 relative">
+                <img src="https://i.imgur.com/JGQPjPk.png" alt="Chá Saudável - Acelerador de emagrecimento" width="500" height="500" loading="lazy" decoding="async" class="rounded-3xl shadow-lg w-full object-cover aspect-square md:aspect-auto">
             </div>
             <div class="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start">
-                <div class="border border-brand-accent/30 bg-brand-accent/10 text-brand-accent font-bold px-4 py-1.5 rounded-full text-xs mb-6 uppercase tracking-widest backdrop-blur-sm">O Acelerador Secreto</div>
-                <h2 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight font-sans tracking-tight">
-                    Multiplique seus resultados com nosso <span class="text-gradient-accent">Chá Exclusivo</span>.
+                <div class="app-badge bg-emerald-100 text-emerald-700 mb-4">O Acelerador Secreto</div>
+                <h2 class="text-3xl md:text-4xl font-black text-app-text mb-4 leading-tight font-sans tracking-tight">
+                    Multiplique seus resultados com nosso <span class="text-gradient-primary">Chá Exclusivo</span>.
                 </h2>
-                <div class="space-y-5 text-slate-400 font-normal text-lg leading-relaxed mb-10">
+                <div class="space-y-4 text-app-muted font-normal text-base leading-relaxed mb-8">
                     <p>Melhore a sua aparência física e eleve a sua autoestima com o chá natural que promove a perda de peso sem exigir sacrifícios extremos.</p>
                     <p>Alcance a perda de peso permanente impulsionando o seu metabolismo e pulverizando a gordura localizada enquanto você dorme.</p>
-                    <p class="font-medium text-slate-200 glass-panel p-5 border-l-4 border-brand-accent rounded-r-2xl">
+                    <div class="bg-emerald-50 p-4 border-l-4 border-app-primary rounded-r-xl text-emerald-900 font-medium text-sm">
                         Proporcionando um emagrecimento 100% natural e seguro. A fórmula recomendada por especialistas para o público brasileiro.
-                    </p>
+                    </div>
                 </div>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Acessar método com Chá Seca Barriga" class="group relative overflow-hidden animate-pulse-custom bg-gradient-to-r from-brand-cta to-brand-cta2 text-white font-black py-5 px-10 rounded-full text-center uppercase text-lg inline-block shadow-glow-cta hover:scale-105 transition-transform">
-                    <span class="relative z-10">QUERO SABER MAIS SOBRE O CHÁ</span>
-                    <span class="absolute top-0 left-[-100%] w-1/2 h-full block bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-45deg] group-hover:animate-shimmer"></span>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Acessar método com Chá Seca Barriga" class="app-button inline-block bg-app-primary text-white font-black py-4 px-8 rounded-full text-center uppercase text-base hover:bg-emerald-600 transition-colors shadow-[0_8px_20px_rgba(16,185,129,0.3)]">
+                    QUERO SABER MAIS SOBRE O CHÁ
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Prova Social -->
-    <section aria-label="Depoimentos reais de quem emagreceu com o Emagrecer Pro" itemscope itemtype="https://schema.org/ItemList" class="bg-[#050810] py-24 px-4 relative border-t border-white/5 bg-grid-pattern">
-        <div class="max-w-7xl mx-auto text-center reveal">
-            <span class="text-brand-cta font-bold tracking-widest uppercase text-sm mb-3 block">Casos de Sucesso</span>
-            <h2 class="text-white text-3xl md:text-5xl lg:text-6xl font-black mb-6 uppercase font-sans tracking-tight">
-                Pessoas Reais. <br/><span class="text-gradient-gold">Resultados Chocantes.</span>
+    <!-- Prova Social (App Gallery & Horizontal Scroll) -->
+    <section aria-label="Depoimentos reais de quem emagreceu com o Emagrecer Pro" itemscope itemtype="https://schema.org/ItemList" class="bg-white py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto text-center reveal">
+            <span class="text-app-primary font-bold tracking-widest uppercase text-xs mb-2 block">Casos de Sucesso</span>
+            <h2 class="text-app-text text-3xl md:text-4xl lg:text-5xl font-black mb-4 uppercase font-sans tracking-tight">
+                Pessoas Reais. <br/><span class="text-gradient-cta">Resultados Chocantes.</span>
             </h2>
-            <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto mb-16">Veja o que acontece quando você aplica a ciência correta ao seu corpo.</p>
+            <p class="text-app-muted text-base md:text-lg max-w-2xl mx-auto mb-12">Veja o que acontece quando você aplica a ciência correta ao seu corpo.</p>
             
-            <!-- Vídeos Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <!-- Vídeos (Native App Horizontal Scroll para Mobile) -->
+            <div class="flex overflow-x-auto md:grid md:grid-cols-3 gap-4 pb-6 snap-x mb-12" style="-webkit-overflow-scrolling: touch; scrollbar-width: none;">
                 <!-- Video 1 -->
-                <div class="glass-panel p-2 rounded-3xl hover:-translate-y-2 transition duration-300 group shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                    <div class="p-4 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-accent to-blue-600 flex items-center justify-center font-bold text-white text-sm shadow-inner">B</div>
-                        <span class="text-slate-200 text-sm font-semibold tracking-wide">Depoimento: Barbara</span>
+                <div class="app-card p-1.5 min-w-[280px] md:min-w-0 snap-center">
+                    <div class="p-3 flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-app-primary text-xs">B</div>
+                        <span class="text-app-text text-xs font-semibold">Depoimento: Barbara</span>
                     </div>
-                    <div class="rounded-2xl overflow-hidden border border-white/5 relative">
+                    <div class="rounded-xl overflow-hidden relative">
                         <div class="video-wrap">
-                            <iframe src="https://www.youtube.com/embed/BPOiKdOpmiI" title="Depoimento real — Bárbara perdeu peso com o Emagrecer Pro" frameborder="0" allowfullscreen loading="lazy" class="group-hover:scale-105 transition-transform duration-700"></iframe>
+                            <iframe src="https://www.youtube.com/embed/BPOiKdOpmiI" title="Depoimento real — Bárbara perdeu peso com o Emagrecer Pro" frameborder="0" allowfullscreen loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
-                <!-- Video 2
-                <div class="glass-panel p-2 rounded-3xl hover:-translate-y-2 transition duration-300 group shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                    <div class="p-4 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-accent to-blue-600 flex items-center justify-center font-bold text-white text-sm shadow-inner">A</div>
-                        <span class="text-slate-200 text-sm font-semibold tracking-wide">Depoimento: Ana</span>
-                    </div>
-                    <div class="rounded-2xl overflow-hidden border border-white/5 relative">
-                        <div class="video-wrap">
-                            <iframe src="https://www.youtube.com/embed/UTa2x7s2DqA" title="Depoimento real — Ana emagreceu com o método Emagrecer Pro" frameborder="0" allowfullscreen loading="lazy" class="group-hover:scale-105 transition-transform duration-700"></iframe>
-                        </div>
-                    </div>
-                </div>
-                -->
-
                 <!-- Video 3 -->
-                <div class="glass-panel p-2 rounded-3xl hover:-translate-y-2 transition duration-300 group shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                    <div class="p-4 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-accent to-blue-600 flex items-center justify-center font-bold text-white text-sm shadow-inner">J</div>
-                        <span class="text-slate-200 text-sm font-semibold tracking-wide">Depoimento: Juliana</span>
+                <div class="app-card p-1.5 min-w-[280px] md:min-w-0 snap-center">
+                    <div class="p-3 flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-rose-100 flex items-center justify-center font-bold text-app-cta text-xs">J</div>
+                        <span class="text-app-text text-xs font-semibold">Depoimento: Juliana</span>
                     </div>
-                    <div class="rounded-2xl overflow-hidden border border-white/5 relative">
+                    <div class="rounded-xl overflow-hidden relative">
                         <div class="video-wrap">
-                            <iframe src="https://www.youtube.com/embed/86NY-od9j6I" title="Depoimento real — Juliana perdeu medidas com o Emagrecer Pro" frameborder="0" allowfullscreen loading="lazy" class="group-hover:scale-105 transition-transform duration-700"></iframe>
+                            <iframe src="https://www.youtube.com/embed/86NY-od9j6I" title="Depoimento real — Juliana perdeu medidas com o Emagrecer Pro" frameborder="0" allowfullscreen loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
                 <!-- Video 4 -->
-                <div class="glass-panel p-2 rounded-3xl hover:-translate-y-2 transition duration-300 group shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                    <div class="p-4 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-accent to-blue-600 flex items-center justify-center font-bold text-white text-sm shadow-inner">R</div>
-                        <span class="text-slate-200 text-sm font-semibold tracking-wide">Depoimento: Raquel</span>
+                <div class="app-card p-1.5 min-w-[280px] md:min-w-0 snap-center">
+                    <div class="p-3 flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-xs">R</div>
+                        <span class="text-app-text text-xs font-semibold">Depoimento: Raquel</span>
                     </div>
-                    <div class="rounded-2xl overflow-hidden border border-white/5 relative">
+                    <div class="rounded-xl overflow-hidden relative">
                         <div class="video-wrap">
-                            <iframe src="https://www.youtube.com/embed/Agf5lxF5VOI" title="Depoimento real — Raquel transformou o corpo com o Emagrecer Pro" frameborder="0" allowfullscreen loading="lazy" class="group-hover:scale-105 transition-transform duration-700"></iframe>
+                            <iframe src="https://www.youtube.com/embed/Agf5lxF5VOI" title="Depoimento real — Raquel transformou o corpo com o Emagrecer Pro" frameborder="0" allowfullscreen loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- BLOCO DE AUTORIDADE SEMÂNTICA — SEO/GEO -->
-            <div class="max-w-4xl mx-auto mt-16 glass-panel p-8 md:p-12 rounded-3xl border border-white/5 text-left mb-16">
-                <h2 class="text-white font-black text-2xl md:text-3xl uppercase font-sans tracking-tight mb-6 text-center">
-                    Por que o <span class="text-gradient-accent">Emagrecer Pro</span> funciona quando outros métodos falham?
+            <div class="max-w-4xl mx-auto mt-4 app-card p-6 md:p-10 text-left mb-16 bg-slate-50">
+                <h2 class="text-app-text font-black text-2xl md:text-3xl uppercase font-sans tracking-tight mb-8 text-center">
+                    Por que o <span class="text-gradient-primary">Emagrecer Pro</span> funciona quando outros métodos falham?
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-slate-400 text-base leading-relaxed">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-app-muted text-sm leading-relaxed">
                     <div>
-                        <h3 class="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-brand-accent inline-block"></span>
+                        <h3 class="text-app-text font-bold text-base mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-app-primary inline-block"></span>
                             Método baseado em ciência
                         </h3>
-                        <p>O programa combina as estratégias mais eficazes para <strong class="text-slate-200">emagrecer rápido</strong>: dieta low carb, jejum intermitente, termogênicos naturais e exercícios funcionais. Essa combinação aciona a <strong class="text-slate-200">tecnologia metabólica</strong> do seu corpo para queimar gordura de forma contínua.</p>
+                        <p>O programa combina as estratégias mais eficazes para <strong class="text-slate-700">emagrecer rápido</strong>: dieta low carb, jejum intermitente, termogênicos naturais e exercícios funcionais. Essa combinação aciona a <strong class="text-slate-700">tecnologia metabólica</strong> do seu corpo para queimar gordura de forma contínua.</p>
                     </div>
                     <div>
-                        <h3 class="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-brand-cta inline-block"></span>
+                        <h3 class="text-app-text font-bold text-base mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-app-cta inline-block"></span>
                             Sem sofrimento, sem restrição extrema
                         </h3>
-                        <p>Diferente de dietas radicais, o Emagrecer Pro ensina <strong class="text-slate-200">o que comer para emagrecer</strong> sem abrir mão do sabor. Com mais de 200 receitas low carb, você come bem, emagrece e não tem efeito sanfona.</p>
+                        <p>Diferente de dietas radicais, o Emagrecer Pro ensina <strong class="text-slate-700">o que comer para emagrecer</strong> sem abrir mão do sabor. Com mais de 200 receitas low carb, você come bem, emagrece e não tem efeito sanfona.</p>
                     </div>
                     <div>
-                        <h3 class="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-brand-gold inline-block"></span>
+                        <h3 class="text-app-text font-bold text-base mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-app-gold inline-block"></span>
                             Funciona para qualquer perfil
                         </h3>
-                        <p>O método foi testado com mulheres de 18 a 70 anos, com diferentes rotinas. Seja você mãe, profissional com pouco tempo ou iniciante em <strong class="text-slate-200">reeducação alimentar</strong> — o Emagrecer Pro foi desenhado para encaixar na sua vida real.</p>
+                        <p>O método foi testado com mulheres de 18 a 70 anos, com diferentes rotinas. Seja você mãe, profissional com pouco tempo ou iniciante em <strong class="text-slate-700">reeducação alimentar</strong> — o Emagrecer Pro foi desenhado para encaixar na sua vida real.</p>
                     </div>
                     <div>
-                        <h3 class="text-white font-bold text-lg mb-3 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-brand-accent inline-block"></span>
+                        <h3 class="text-app-text font-bold text-base mb-2 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 inline-block"></span>
                             Preço acessível com acesso vitalício
                         </h3>
-                        <p>Por apenas R$28,90 em pagamento único, você recebe o guia completo + 7 bônus avaliados em R$364,70, com <strong class="text-slate-200">acesso vitalício</strong> em qualquer dispositivo. Um investimento único para uma transformação definitiva.</p>
+                        <p>Por apenas R$28,90 em pagamento único, você recebe o guia completo + 7 bônus avaliados em R$364,70, com <strong class="text-slate-700">acesso vitalício</strong> em qualquer dispositivo. Um investimento único para uma transformação definitiva.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="mb-14">
-                <h3 class="text-white text-2xl md:text-4xl font-black uppercase font-sans tracking-tight">
-                    Galeria de <span class="text-gradient-accent">Transformações</span>
+            <div class="mb-10">
+                <h3 class="text-app-text text-2xl md:text-3xl font-black uppercase font-sans tracking-tight">
+                    Galeria de <span class="text-gradient-cta">Transformações</span>
                 </h3>
             </div>
 
-            <!-- Grid de Imagens (Renderizado via JS) -->
+            <!-- Grid de Imagens (App Gallery Style) -->
             <div id="transformations-grid" class="masonry-grid px-2"></div>
             
-            <div class="mt-16">
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Garantir Emagrecimento Rápido com Desconto" class="group relative overflow-hidden inline-flex animate-pulse-custom bg-gradient-to-r from-brand-cta to-brand-cta2 text-white font-black py-5 px-12 rounded-full text-center uppercase text-xl shadow-glow-cta hover:scale-105 transition-transform">
-                    <span class="relative z-10">QUERO SER O PRÓXIMO RESULTADO!</span>
-                    <span class="absolute top-0 left-[-100%] w-1/2 h-full block bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-45deg] group-hover:animate-shimmer"></span>
+            <div class="mt-12">
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Garantir Emagrecimento Rápido com Desconto" class="app-button inline-block animate-pulse-app bg-app-cta text-white font-black py-4 px-10 rounded-full text-center uppercase text-base md:text-lg">
+                    QUERO SER O PRÓXIMO RESULTADO!
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Garantia -->
-    <section aria-label="Garantia de 7 dias — risco zero no Emagrecer Pro" class="py-24 px-4 relative overflow-hidden border-t border-white/5">
-        <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-brand-gold/5 rounded-full blur-[150px] pointer-events-none -z-10"></div>
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 reveal">
-            <div class="w-full md:w-2/5 flex justify-center">
-                <!-- Golden Seal 2026 -->
-                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full flex flex-col items-center justify-center animate-float before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-[#FFE175] before:to-[#B57A00] before:p-[2px] shadow-glow-gold">
-                    <div class="absolute inset-0 rounded-full bg-[#1A1500] backdrop-blur-xl m-[2px]"></div>
-                    <div class="absolute inset-3 border border-dashed border-[#FFD700]/30 rounded-full"></div>
-                    <div class="relative z-10 flex flex-col items-center text-center">
-                        <div class="text-gradient-gold font-black text-8xl md:text-9xl drop-shadow-md leading-none">7</div>
-                        <div class="text-[#FFD700] font-black text-2xl md:text-3xl uppercase tracking-widest mt-1">DIAS</div>
-                        <div class="bg-gradient-to-r from-[#FFD700] to-[#F59E0B] text-black font-extrabold px-6 py-1.5 rounded-full mt-4 uppercase text-xs tracking-widest shadow-md">De Garantia Risco Zero</div>
-                    </div>
+    <!-- Garantia (Clean Trust Badge) -->
+    <section aria-label="Garantia de 7 dias — risco zero no Emagrecer Pro" class="py-20 px-4 relative bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10 reveal">
+            <div class="w-full md:w-1/3 flex justify-center">
+                <!-- Golden Seal Clean -->
+                <div class="w-48 h-48 rounded-full bg-white border border-amber-200 shadow-[0_10px_30px_rgba(245,158,11,0.15)] flex flex-col items-center justify-center p-2 relative">
+                    <div class="absolute inset-2 border border-dashed border-amber-300 rounded-full"></div>
+                    <div class="text-gradient-gold font-black text-7xl leading-none font-sans">7</div>
+                    <div class="text-amber-500 font-bold text-xl uppercase tracking-widest mt-0">DIAS</div>
+                    <div class="bg-amber-100 text-amber-700 font-bold px-3 py-1 rounded-full mt-2 uppercase text-[9px] tracking-wider text-center">Risco Zero</div>
                 </div>
             </div>
-            <div class="w-full md:w-3/5 text-white text-center md:text-left flex flex-col items-center md:items-start relative z-10">
-                <h2 class="text-3xl md:text-5xl font-black mb-6 uppercase font-sans leading-tight">Garantia Blindada. <br><span class="text-gradient-gold">O Risco é todo nosso.</span></h2>
-                <div class="text-slate-400 text-lg space-y-5 mb-10 leading-relaxed font-inter">
+            <div class="w-full md:w-2/3 text-center md:text-left flex flex-col items-center md:items-start relative z-10">
+                <h2 class="text-2xl md:text-4xl font-black mb-4 uppercase font-sans leading-tight text-app-text">Garantia Blindada. <br><span class="text-gradient-gold">O Risco é todo nosso.</span></h2>
+                <div class="text-app-muted text-sm md:text-base space-y-4 mb-8 leading-relaxed font-inter">
                     <p>Entendemos o seu ceticismo. A internet está cheia de promessas falsas. É por isso que criamos uma política de risco zero para você.</p>
-                    <p>Acesse o <strong class="text-white">"Emagrecer PRO" hoje</strong>. Você tem incríveis 7 dias para devorar todo o material, os cardápios e testar as receitas.</p>
-                    <p class="glass-panel p-5 border-l-4 border-brand-gold rounded-r-xl text-slate-200">Se você não ver diferença no espelho ou na balança, ou se simplesmente não gostar da cor da fonte do guia, envie um único e-mail e <strong class="text-[#FFD700]">devolveremos cada centavo</strong>. Sem perguntas. Sem stress.</p>
+                    <p>Acesse o <strong class="text-app-text">"Emagrecer PRO" hoje</strong>. Você tem incríveis 7 dias para devorar todo o material, os cardápios e testar as receitas.</p>
+                    <p class="bg-amber-50 p-4 border-l-4 border-app-gold rounded-r-xl text-amber-900 font-medium">Se você não ver diferença no espelho ou na balança, ou se simplesmente não gostar da cor da fonte do guia, envie um único e-mail e <strong class="text-amber-600">devolveremos cada centavo</strong>. Sem perguntas. Sem stress.</p>
                 </div>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Aceitar a garantia de 7 dias e comprar" class="bg-white text-black hover:bg-brand-gold hover:text-black font-black py-5 px-10 rounded-full text-center uppercase text-xl inline-block shadow-glow-gold hover:scale-105 transition-all">
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Aceitar a garantia de 7 dias e comprar" class="bg-app-text text-white hover:bg-slate-800 font-black py-4 px-8 rounded-full text-center uppercase text-base inline-block shadow-lg transition-colors">
                     EU TOPO O DESAFIO SEM RISCOS
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Oferta e Preço -->
-    <section aria-label="Oferta especial — Emagrecer Pro por R$28,90" itemscope itemtype="https://schema.org/Offer" class="py-24 px-4 relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-card via-brand-dark to-brand-dark border-t border-white/5">
-        <!-- Lines Grid BG -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiPjxsaW5lIHgxPSIwIiB5MT0iNDAiIHgyPSI0MCIgeTI9IjQwIi8+PGxpbmUgeDE9IjQwIiB5MT0iMCIgeDI9IjQwIiB5Mj0iNDAiLz48L2c+PC9zdmc+')] opacity-50"></div>
-        
-        <div class="max-w-5xl mx-auto reveal relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-brand-cta font-bold tracking-widest uppercase text-sm mb-2 block">Liberte seu Acesso</span>
-                <h2 class="text-white text-3xl md:text-5xl font-black uppercase font-sans tracking-tight mb-4">
-                    O que você recebe <span class="text-gradient-cta">hoje:</span>
+    <!-- Oferta e Preço (Checkout App Style) -->
+    <section aria-label="Oferta especial — Emagrecer Pro por R$28,90" itemscope itemtype="https://schema.org/Offer" class="py-20 px-4 relative bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto reveal relative z-10">
+            <div class="text-center mb-10">
+                <span class="text-app-primary font-bold tracking-widest uppercase text-xs mb-2 block">Liberte seu Acesso</span>
+                <h2 class="text-app-text text-3xl md:text-4xl font-black uppercase font-sans tracking-tight mb-2">
+                    O que você recebe <span class="text-gradient-primary">hoje:</span>
                 </h2>
             </div>
             
-            <div class="glass-card rounded-[3rem] p-2 shadow-2xl">
-                <div class="bg-brand-dark rounded-[2.8rem] p-8 md:p-12 border border-white/5 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-cta/20 rounded-full blur-[100px] pointer-events-none -z-10"></div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-                        <!-- Checklist de Valor -->
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center glass-panel p-4 rounded-2xl border border-white/5 hover:border-brand-accent/30 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="bg-brand-accent/20 text-brand-accent p-1.5 rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
-                                    <span class="font-bold text-slate-200 text-lg">Emagrecer PRO</span>
-                                </div>
-                                <span class="text-slate-500 line-through font-medium text-sm">R$ 97,00</span>
+            <div class="app-card rounded-[2rem] p-6 md:p-10 border border-slate-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    <!-- Checklist de Valor App Style -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-emerald-100 text-app-primary p-1 rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                                <span class="font-bold text-app-text text-sm md:text-base">Emagrecer PRO</span>
                             </div>
-                            <div class="flex justify-between items-center glass-panel p-4 rounded-2xl border border-white/5 hover:border-brand-accent/30 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="bg-brand-accent/20 text-brand-accent p-1.5 rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
-                                    <span class="font-bold text-slate-200 text-lg">200 receitas Low Carb</span>
-                                </div>
-                                <span class="text-slate-500 line-through font-medium text-sm">R$ 49,90</span>
-                            </div>
-                            <div class="flex justify-between items-center glass-panel p-4 rounded-2xl border border-white/5 hover:border-brand-accent/30 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="bg-brand-accent/20 text-brand-accent p-1.5 rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
-                                    <span class="font-bold text-slate-200 text-lg">Cardápio completo</span>
-                                </div>
-                                <span class="text-slate-500 line-through font-medium text-sm">R$ 89,90</span>
-                            </div>
-                            <div class="flex justify-between items-center glass-panel p-4 rounded-2xl border border-white/5 hover:border-brand-accent/30 transition-colors">
-                                <div class="flex items-center gap-3">
-                                    <div class="bg-brand-accent/20 text-brand-accent p-1.5 rounded-full"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
-                                    <span class="font-bold text-slate-200 text-lg">7 BÔNUS Exclusivos</span>
-                                </div>
-                                <span class="text-slate-500 line-through font-medium text-sm">R$ 127,90</span>
-                            </div>
-                            
-                            <div class="mt-6 pt-6 border-t border-white/10 flex justify-between items-center px-4">
-                                <span class="font-black text-white text-xl uppercase">Valor Normal:</span>
-                                <span class="text-red-500 font-black text-2xl line-through decoration-2">R$ 364,70</span>
-                            </div>
+                            <span class="text-slate-400 line-through font-medium text-xs">R$ 97,00</span>
                         </div>
-
-                        <!-- Preço Final (Checkout Box) -->
-                        <div class="relative rounded-3xl p-1 bg-gradient-to-b from-brand-cta to-brand-cta2 shadow-glow-cta transform md:hover:scale-105 transition duration-500">
-                            <div class="bg-[#0f1422] rounded-[1.4rem] p-8 text-center h-full flex flex-col justify-center">
-                                <p class="text-brand-cta font-bold uppercase tracking-widest text-xs mb-4">Valor Especial Somente Hoje</p>
-                                <p class="text-slate-400 font-medium mb-1">Pagamento Único de:</p>
-                                <div class="text-6xl md:text-7xl font-black font-sans tracking-tighter mb-2 text-white drop-shadow-lg flex items-start justify-center">
-                                    <span class="text-3xl mt-2 mr-1 text-slate-300">R$</span>28<span class="text-4xl mt-1">,90</span>
-                                </div>
-                                <p class="text-slate-400 text-xs mb-8 uppercase font-bold tracking-widest bg-white/5 inline-block px-3 py-1 rounded-full mx-auto border border-white/10">Acesso Vitalício Garantido</p>
-                                
-                                <meta itemprop="priceCurrency" content="BRL" />
-                                <meta itemprop="price" content="28.90" />
-                                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Finalizar a compra do Emagrecer Pro agora" class="group relative overflow-hidden animate-pulse-custom bg-gradient-to-r from-brand-cta to-brand-cta2 text-white font-black py-5 px-8 rounded-full text-center uppercase text-lg inline-block w-full shadow-glow-cta hover:shadow-none transition-all">
-                                    <span class="relative z-10">COMPRAR AGORA</span>
-                                    <span class="absolute top-0 left-[-100%] w-1/2 h-full block bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-45deg] group-hover:animate-shimmer"></span>
-                                </a>
-                                <p class="text-xs text-slate-500 mt-5 flex items-center justify-center gap-1.5 font-medium">
-                                    <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                                    Ambiente 100% Criptografado
-                                </p>
+                        <div class="flex justify-between items-center bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-emerald-100 text-app-primary p-1 rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                                <span class="font-bold text-app-text text-sm md:text-base">200 receitas Low Carb</span>
                             </div>
+                            <span class="text-slate-400 line-through font-medium text-xs">R$ 49,90</span>
                         </div>
+                        <div class="flex justify-between items-center bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-emerald-100 text-app-primary p-1 rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                                <span class="font-bold text-app-text text-sm md:text-base">Cardápio completo</span>
+                            </div>
+                            <span class="text-slate-400 line-through font-medium text-xs">R$ 89,90</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-emerald-100 text-app-primary p-1 rounded-full"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                                <span class="font-bold text-app-text text-sm md:text-base">7 BÔNUS Exclusivos</span>
+                            </div>
+                            <span class="text-slate-400 line-through font-medium text-xs">R$ 127,90</span>
+                        </div>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-200 flex justify-between items-center px-2">
+                            <span class="font-bold text-app-text text-sm uppercase">Valor Normal:</span>
+                            <span class="text-slate-400 font-bold text-sm line-through decoration-2">R$ 364,70</span>
+                        </div>
+                    </div>
+
+                    <!-- Preço Final (Checkout Box Premium) -->
+                    <div class="bg-white rounded-2xl p-6 md:p-8 text-center border-2 border-app-cta shadow-[0_10px_30px_rgba(244,63,94,0.1)] relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-app-cta text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm">
+                            Desconto de 92% Aplicado
+                        </div>
+                        <p class="text-app-muted font-medium text-xs mb-1 mt-2 uppercase tracking-widest">Pagamento Único de:</p>
+                        <div class="text-6xl font-black font-sans tracking-tighter mb-1 text-app-text flex items-start justify-center">
+                            <span class="text-2xl mt-2 mr-1 text-slate-400">R$</span>28<span class="text-3xl mt-1.5 text-slate-400">,90</span>
+                        </div>
+                        <p class="text-app-primary text-[10px] mb-6 uppercase font-bold tracking-widest bg-emerald-50 inline-block px-3 py-1 rounded-full mx-auto">Acesso Vitalício Garantido</p>
+                        
+                        <meta itemprop="priceCurrency" content="BRL" />
+                        <meta itemprop="price" content="28.90" />
+                        <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Finalizar a compra do Emagrecer Pro agora" class="app-button w-full animate-pulse-app bg-app-cta hover:bg-app-ctaDark text-white font-black py-4 px-6 rounded-full text-center uppercase text-base inline-block transition-colors">
+                            COMPRAR AGORA
+                        </a>
+                        <p class="text-[10px] text-slate-400 mt-4 flex items-center justify-center gap-1 font-medium">
+                            <svg class="w-3 h-3 text-app-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                            Ambiente Seguro
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mockups Finais -->
-    <section class="bg-brand-dark py-20 px-4">
-        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 reveal">
-            <div class="lg:w-1/2 flex items-center justify-center gap-2 md:gap-4 scale-90 md:scale-100">
-                <div class="w-1/4 relative z-0 animate-float" style="animation-delay: 0s;">
-                    <img src="https://i.imgur.com/IcipzDy.png" alt="Celular 1 - Acesse o conteúdo do celular" width="300" height="600" loading="lazy" decoding="async" class="w-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]">
+    <!-- Mockups Finais (Clean) -->
+    <section class="bg-slate-50 py-16 px-4">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 reveal">
+            <div class="md:w-1/2 flex items-center justify-center gap-2">
+                <div class="w-1/3 relative animate-float">
+                    <img src="https://i.imgur.com/IcipzDy.png" alt="Celular 1 - Acesse o conteúdo do celular" width="300" height="600" loading="lazy" decoding="async" class="w-full object-contain drop-shadow-xl">
                 </div>
-                <div class="w-1/2 relative z-10 animate-float" style="animation-delay: 1s;">
-                    <img src="https://i.imgur.com/hcmyAvx.png" alt="Monitor Principal - Guia completo" width="600" height="400" loading="lazy" decoding="async" class="w-full object-contain drop-shadow-[0_30px_40px_rgba(0,229,255,0.15)]">
-                </div>
-                <div class="w-1/4 relative z-0 animate-float" style="animation-delay: 0.5s;">
-                    <img src="https://i.imgur.com/IcipzDy.png" alt="Celular 2 - Bônus no app" width="300" height="600" loading="lazy" decoding="async" class="w-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]">
+                <div class="w-2/3 relative animate-float" style="animation-delay: 1s;">
+                    <img src="https://i.imgur.com/hcmyAvx.png" alt="Monitor Principal - Guia completo" width="600" height="400" loading="lazy" decoding="async" class="w-full object-contain drop-shadow-2xl">
                 </div>
             </div>
 
-            <div class="lg:w-5/12 text-center lg:text-left">
-                <h3 class="text-white font-black text-4xl md:text-5xl mb-6 font-sans leading-tight">
-                    Tudo na palma <br><span class="text-gradient-accent">da sua mão.</span>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h3 class="text-app-text font-black text-3xl md:text-4xl mb-4 font-sans leading-tight">
+                    Tudo na palma <br><span class="text-gradient-primary">da sua mão.</span>
                 </h3>
-                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                <p class="text-app-muted text-sm md:text-base mb-6 leading-relaxed">
                     Acesse seu guia completo e todos os bônus de qualquer dispositivo: celular, tablet ou computador. Baixe agora e comece hoje mesmo.
                 </p>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar e acessar na hora o conteúdo" class="bg-white text-black hover:bg-brand-accent font-black py-4 px-10 rounded-full text-center uppercase text-lg inline-block transition-colors shadow-glow-accent w-full md:w-auto">
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar e acessar na hora o conteúdo" class="bg-app-text text-white font-black py-3.5 px-8 rounded-full text-center uppercase text-sm inline-block shadow-lg w-full md:w-auto">
                     QUERO ACESSAR O MATERIAL
                 </a>
             </div>
         </div>
     </section>
 
-
-    <!-- FAQ SEMÂNTICO — Visível para Google e IAs -->
-    <section aria-label="Perguntas frequentes sobre como emagrecer com o Emagrecer Pro" class="py-24 px-4 border-t border-white/5 relative overflow-hidden">
-        <div class="absolute top-0 left-[20%] w-[50vw] h-[50vw] bg-brand-accent/5 rounded-full blur-[150px] pointer-events-none -z-10"></div>
-        <div class="max-w-4xl mx-auto reveal relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">Dúvidas Frequentes</span>
-                <h2 class="text-white text-3xl md:text-5xl font-black uppercase font-sans tracking-tight mb-4">
-                    Ainda tem <span class="text-gradient-accent">dúvidas?</span>
+    <!-- FAQ SEMÂNTICO (App Accordion Light) -->
+    <section aria-label="Perguntas frequentes sobre como emagrecer com o Emagrecer Pro" class="py-20 px-4 bg-white relative">
+        <div class="max-w-3xl mx-auto reveal relative z-10">
+            <div class="text-center mb-10">
+                <span class="text-app-primary font-bold tracking-widest uppercase text-xs mb-2 block">Dúvidas Frequentes</span>
+                <h2 class="text-app-text text-3xl md:text-4xl font-black uppercase font-sans tracking-tight mb-2">
+                    Ainda tem <span class="text-gradient-primary">dúvidas?</span>
                 </h2>
             </div>
             
-            <div id="faq-seo" class="space-y-4">
-                <details class="group glass-panel rounded-2xl mb-4 transition-all duration-300" open>
-                    <summary class="flex justify-between items-center font-bold cursor-pointer text-white p-6 md:p-8 md:text-xl font-sans tracking-tight focus:outline-none">
-                        <span class="flex items-center gap-4">
-                            <span class="text-brand-accent/50 font-black text-2xl">01</span>
+            <div id="faq-seo" class="space-y-3">
+                <details class="group app-card mb-3" open>
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-app-text p-5 text-sm md:text-base font-sans tracking-tight focus:outline-none">
+                        <span class="flex items-center gap-3">
+                            <span class="text-app-primary/40 font-black text-xl">01</span>
                             Como emagrecer rápido sem academia?
                         </span>
-                        <span class="transition-transform duration-300 group-open:rotate-180 bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/10">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" class="text-brand-accent"><path d="M6 9l6 6 6-6"/></svg>
+                        <span class="transition-transform duration-300 group-open:rotate-180 bg-slate-100 p-1.5 rounded-full text-app-muted">
+                            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg>
                         </span>
                     </summary>
-                    <div class="text-slate-400 mt-2 p-6 pt-0 md:px-8 md:pb-8 leading-relaxed border-t border-white/5 pt-6 font-medium">
+                    <div class="text-app-muted text-sm p-5 pt-0 leading-relaxed border-t border-slate-100 mt-2">
                         O Emagrecer Pro ensina um método científico baseado em reeducação alimentar e tecnologia metabólica. Sem precisar ir à academia todo dia, você pode emagrecer rápido seguindo o cardápio completo e as receitas low carb do programa. Centenas de alunas já perderam de 5 a 15kg nas primeiras semanas.
                     </div>
                 </details>
-                <details class="group glass-panel rounded-2xl mb-4 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer text-white p-6 md:p-8 md:text-xl font-sans tracking-tight focus:outline-none">
-                        <span class="flex items-center gap-4">
-                            <span class="text-brand-accent/50 font-black text-2xl">02</span>
+                <details class="group app-card mb-3">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-app-text p-5 text-sm md:text-base font-sans tracking-tight focus:outline-none">
+                        <span class="flex items-center gap-3">
+                            <span class="text-app-primary/40 font-black text-xl">02</span>
                             Qual a melhor dieta para emagrecer rápido?
                         </span>
-                        <span class="transition-transform duration-300 group-open:rotate-180 bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/10">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" class="text-brand-accent"><path d="M6 9l6 6 6-6"/></svg>
+                        <span class="transition-transform duration-300 group-open:rotate-180 bg-slate-100 p-1.5 rounded-full text-app-muted">
+                            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg>
                         </span>
                     </summary>
-                    <div class="text-slate-400 mt-2 p-6 pt-0 md:px-8 md:pb-8 leading-relaxed border-t border-white/5 pt-6 font-medium">
-                        A dieta low carb combinada com jejum intermitente é uma das estratégias mais eficientes para emagrecer rápido. O Emagrecer Pro inclui cardápio semanal completo com mais de 200 receitas low carb deliciosas, marmitas fit e guia de substituições alimentares, tornando a dieta para emagrecer fácil e sustentável no longo prazo.
+                    <div class="text-app-muted text-sm p-5 pt-0 leading-relaxed border-t border-slate-100 mt-2">
+                        A dieta low carb combinada com jejum intermitente é uma das estratégias mais eficientes para emagrecer rápido. O Emagrecer Pro inclui cardápio semanal completo com mais de 200 receitas low carb deliciosas, marmitas fit e guia de substituições alimentares, tornando a dieta para emagrecer fácil e sustentável.
                     </div>
                 </details>
-                <details class="group glass-panel rounded-2xl mb-4 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer text-white p-6 md:p-8 md:text-xl font-sans tracking-tight focus:outline-none">
-                        <span class="flex items-center gap-4">
-                            <span class="text-brand-accent/50 font-black text-2xl">03</span>
+                <details class="group app-card mb-3">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-app-text p-5 text-sm md:text-base font-sans tracking-tight focus:outline-none">
+                        <span class="flex items-center gap-3">
+                            <span class="text-app-primary/40 font-black text-xl">03</span>
                             Como fazer jejum intermitente para perder peso?
                         </span>
-                        <span class="transition-transform duration-300 group-open:rotate-180 bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/10">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" class="text-brand-accent"><path d="M6 9l6 6 6-6"/></svg>
+                        <span class="transition-transform duration-300 group-open:rotate-180 bg-slate-100 p-1.5 rounded-full text-app-muted">
+                            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg>
                         </span>
                     </summary>
-                    <div class="text-slate-400 mt-2 p-6 pt-0 md:px-8 md:pb-8 leading-relaxed border-t border-white/5 pt-6 font-medium">
-                        O jejum intermitente funciona com o protocolo 16:8 — 16 horas de jejum e 8 horas de janela alimentar. No Emagrecer Pro você aprende como fazer jejum intermitente de forma segura, com cardápios específicos para cada janela de refeição, maximizando a queima de gordura localizada.
+                    <div class="text-app-muted text-sm p-5 pt-0 leading-relaxed border-t border-slate-100 mt-2">
+                        O jejum intermitente funciona com o protocolo 16:8 — 16 horas de jejum e 8 horas de janela alimentar. No Emagrecer Pro você aprende como fazer jejum intermitente de forma segura, com cardápios específicos para maximizar a queima de gordura localizada.
                     </div>
                 </details>
-                <details class="group glass-panel rounded-2xl mb-4 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer text-white p-6 md:p-8 md:text-xl font-sans tracking-tight focus:outline-none">
-                        <span class="flex items-center gap-4">
-                            <span class="text-brand-accent/50 font-black text-2xl">04</span>
+                <details class="group app-card mb-3">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-app-text p-5 text-sm md:text-base font-sans tracking-tight focus:outline-none">
+                        <span class="flex items-center gap-3">
+                            <span class="text-app-primary/40 font-black text-xl">04</span>
                             O que tomar para emagrecer naturalmente?
                         </span>
-                        <span class="transition-transform duration-300 group-open:rotate-180 bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/10">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" class="text-brand-accent"><path d="M6 9l6 6 6-6"/></svg>
+                        <span class="transition-transform duration-300 group-open:rotate-180 bg-slate-100 p-1.5 rounded-full text-app-muted">
+                            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg>
                         </span>
                     </summary>
-                    <div class="text-slate-400 mt-2 p-6 pt-0 md:px-8 md:pb-8 leading-relaxed border-t border-white/5 pt-6 font-medium">
-                        Para emagrecer naturalmente, os melhores aliados são: chá verde (acelera o metabolismo), chá de hibisco (diurético e antioxidante), chá de gengibre com limão (termogênico), suco verde detox e a fórmula exclusiva de chá do Emagrecer Pro — desenvolvida especialmente para potencializar a queima de gordura localizada durante o sono.
+                    <div class="text-app-muted text-sm p-5 pt-0 leading-relaxed border-t border-slate-100 mt-2">
+                        Os melhores aliados para emagrecer naturalmente são: chá verde (acelera o metabolismo), chá de hibisco (diurético e antioxidante), chá de gengibre com limão (termogênico), suco verde detox e a fórmula exclusiva de chá do Emagrecer Pro — desenvolvida para potencializar a queima de gordura durante o sono.
                     </div>
                 </details>
-                <details class="group glass-panel rounded-2xl mb-4 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer text-white p-6 md:p-8 md:text-xl font-sans tracking-tight focus:outline-none">
-                        <span class="flex items-center gap-4">
-                            <span class="text-brand-accent/50 font-black text-2xl">05</span>
+                <details class="group app-card mb-3">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-app-text p-5 text-sm md:text-base font-sans tracking-tight focus:outline-none">
+                        <span class="flex items-center gap-3">
+                            <span class="text-app-primary/40 font-black text-xl">05</span>
                             O que comer para emagrecer rápido e com saúde?
                         </span>
-                        <span class="transition-transform duration-300 group-open:rotate-180 bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/10">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" class="text-brand-accent"><path d="M6 9l6 6 6-6"/></svg>
+                        <span class="transition-transform duration-300 group-open:rotate-180 bg-slate-100 p-1.5 rounded-full text-app-muted">
+                            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg>
                         </span>
                     </summary>
-                    <div class="text-slate-400 mt-2 p-6 pt-0 md:px-8 md:pb-8 leading-relaxed border-t border-white/5 pt-6 font-medium">
+                    <div class="text-app-muted text-sm p-5 pt-0 leading-relaxed border-t border-slate-100 mt-2">
                         Os melhores alimentos para emagrecer com saúde são: ovos, frango grelhado, peixe, brócolis, abobrinha, couve, abacate, azeite de oliva, castanhas e frutas com baixo índice glicêmico. O Emagrecer Pro entrega um cardápio semanal completo já montado com opções de café da manhã, almoço, lanches e jantar.
                     </div>
                 </details>
-                <details class="group glass-panel rounded-2xl mb-4 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer text-white p-6 md:p-8 md:text-xl font-sans tracking-tight focus:outline-none">
-                        <span class="flex items-center gap-4">
-                            <span class="text-brand-accent/50 font-black text-2xl">06</span>
+                <details class="group app-card mb-3">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-app-text p-5 text-sm md:text-base font-sans tracking-tight focus:outline-none">
+                        <span class="flex items-center gap-3">
+                            <span class="text-app-primary/40 font-black text-xl">06</span>
                             Como perder peso em 3 dias?
                         </span>
-                        <span class="transition-transform duration-300 group-open:rotate-180 bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/10">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" class="text-brand-accent"><path d="M6 9l6 6 6-6"/></svg>
+                        <span class="transition-transform duration-300 group-open:rotate-180 bg-slate-100 p-1.5 rounded-full text-app-muted">
+                            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg>
                         </span>
                     </summary>
-                    <div class="text-slate-400 mt-2 p-6 pt-0 md:px-8 md:pb-8 leading-relaxed border-t border-white/5 pt-6 font-medium">
+                    <div class="text-app-muted text-sm p-5 pt-0 leading-relaxed border-t border-slate-100 mt-2">
                         Para perder peso em 3 dias de forma saudável: elimine sal, açúcar e farinhas brancas; aumente a ingestão de água para 3 litros/dia; consuma chás diuréticos; faça refeições leves com proteína e fibra; e siga o protocolo de desintoxicação rápida incluído no Emagrecer Pro. É possível perder de 1 a 3kg nas primeiras 72 horas.
                     </div>
                 </details>
-                <details class="group glass-panel rounded-2xl mb-4 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer text-white p-6 md:p-8 md:text-xl font-sans tracking-tight focus:outline-none">
-                        <span class="flex items-center gap-4">
-                            <span class="text-brand-accent/50 font-black text-2xl">07</span>
+                <details class="group app-card mb-3">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-app-text p-5 text-sm md:text-base font-sans tracking-tight focus:outline-none">
+                        <span class="flex items-center gap-3">
+                            <span class="text-app-primary/40 font-black text-xl">07</span>
                             Quanto tempo leva para ver resultados no Emagrecer Pro?
                         </span>
-                        <span class="transition-transform duration-300 group-open:rotate-180 bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/10">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" class="text-brand-accent"><path d="M6 9l6 6 6-6"/></svg>
+                        <span class="transition-transform duration-300 group-open:rotate-180 bg-slate-100 p-1.5 rounded-full text-app-muted">
+                            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg>
                         </span>
                     </summary>
-                    <div class="text-slate-400 mt-2 p-6 pt-0 md:px-8 md:pb-8 leading-relaxed border-t border-white/5 pt-6 font-medium">
+                    <div class="text-app-muted text-sm p-5 pt-0 leading-relaxed border-t border-slate-100 mt-2">
                         A maioria das alunas nota resultados visíveis já na primeira semana: roupas mais folgadas, menos inchaço e mais energia. Em 30 dias é possível perder entre 5 e 10kg. Em 90 dias, a transformação corporal é definitiva, sem efeito sanfona.
                     </div>
                 </details>
-                <details class="group glass-panel rounded-2xl mb-4 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer text-white p-6 md:p-8 md:text-xl font-sans tracking-tight focus:outline-none">
-                        <span class="flex items-center gap-4">
-                            <span class="text-brand-accent/50 font-black text-2xl">08</span>
+                <details class="group app-card mb-3">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-app-text p-5 text-sm md:text-base font-sans tracking-tight focus:outline-none">
+                        <span class="flex items-center gap-3">
+                            <span class="text-app-primary/40 font-black text-xl">08</span>
                             O Emagrecer Pro tem garantia?
                         </span>
-                        <span class="transition-transform duration-300 group-open:rotate-180 bg-white/5 p-2 rounded-full border border-white/10 group-hover:bg-white/10">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" class="text-brand-accent"><path d="M6 9l6 6 6-6"/></svg>
+                        <span class="transition-transform duration-300 group-open:rotate-180 bg-slate-100 p-1.5 rounded-full text-app-muted">
+                            <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg>
                         </span>
                     </summary>
-                    <div class="text-slate-400 mt-2 p-6 pt-0 md:px-8 md:pb-8 leading-relaxed border-t border-white/5 pt-6 font-medium">
+                    <div class="text-app-muted text-sm p-5 pt-0 leading-relaxed border-t border-slate-100 mt-2">
                         Sim! O Emagrecer Pro oferece 7 dias de garantia blindada com risco zero. Se você não ficar satisfeita por qualquer motivo, basta enviar um e-mail para Suporte.desafioemagrecerpro@gmail.com e devolvemos 100% do valor pago, sem perguntas e sem burocracia.
                     </div>
                 </details>
@@ -1046,51 +983,62 @@
     </section>
 
     <!-- LINKS INTERNOS SEMÂNTICOS (GEO + SEO) -->
-    <nav aria-label="Links relacionados ao emagrecimento" class="bg-brand-darker pt-10 pb-4 px-4 border-t border-white/5">
+    <nav aria-label="Links relacionados ao emagrecimento" class="bg-slate-100 py-8 px-4">
         <div class="max-w-4xl mx-auto">
-            <p class="text-slate-600 text-xs text-center mb-4 uppercase tracking-widest font-bold">Conteúdos e Buscas Relacionadas</p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-xs text-slate-500 hover:text-brand-accent transition-colors px-3 py-1 border border-white/5 rounded-full" title="Como emagrecer rápido com o Emagrecer Pro">Como emagrecer rápido</a>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-xs text-slate-500 hover:text-brand-accent transition-colors px-3 py-1 border border-white/5 rounded-full" title="Dieta para emagrecer sem sofrimento">Dieta para emagrecer</a>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-xs text-slate-500 hover:text-brand-accent transition-colors px-3 py-1 border border-white/5 rounded-full" title="Cardápio completo para perder peso">Cardápio para emagrecer</a>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-xs text-slate-500 hover:text-brand-accent transition-colors px-3 py-1 border border-white/5 rounded-full" title="Chá para emagrecer — fórmula exclusiva">Chá para emagrecer</a>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-xs text-slate-500 hover:text-brand-accent transition-colors px-3 py-1 border border-white/5 rounded-full" title="Jejum intermitente para perder peso">Jejum intermitente</a>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-xs text-slate-500 hover:text-brand-accent transition-colors px-3 py-1 border border-white/5 rounded-full" title="Receitas low carb para emagrecer">Receitas low carb</a>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-xs text-slate-500 hover:text-brand-accent transition-colors px-3 py-1 border border-white/5 rounded-full" title="Como perder peso em 3 dias">Perder peso em 3 dias</a>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-xs text-slate-500 hover:text-brand-accent transition-colors px-3 py-1 border border-white/5 rounded-full" title="Emagrecer sem academia em casa">Emagrecer sem academia</a>
+            <p class="text-slate-400 text-[10px] text-center mb-3 uppercase tracking-widest font-bold">Conteúdos e Buscas Relacionadas</p>
+            <div class="flex flex-wrap justify-center gap-2">
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-[11px] text-slate-500 hover:text-app-primary bg-white px-3 py-1 border border-slate-200 rounded-full transition-colors" title="Como emagrecer rápido com o Emagrecer Pro">Como emagrecer rápido</a>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-[11px] text-slate-500 hover:text-app-primary bg-white px-3 py-1 border border-slate-200 rounded-full transition-colors" title="Dieta para emagrecer sem sofrimento">Dieta para emagrecer</a>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-[11px] text-slate-500 hover:text-app-primary bg-white px-3 py-1 border border-slate-200 rounded-full transition-colors" title="Cardápio completo para perder peso">Cardápio para emagrecer</a>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-[11px] text-slate-500 hover:text-app-primary bg-white px-3 py-1 border border-slate-200 rounded-full transition-colors" title="Chá para emagrecer — fórmula exclusiva">Chá para emagrecer</a>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-[11px] text-slate-500 hover:text-app-primary bg-white px-3 py-1 border border-slate-200 rounded-full transition-colors" title="Jejum intermitente para perder peso">Jejum intermitente</a>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-[11px] text-slate-500 hover:text-app-primary bg-white px-3 py-1 border border-slate-200 rounded-full transition-colors" title="Receitas low carb para emagrecer">Receitas low carb</a>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-[11px] text-slate-500 hover:text-app-primary bg-white px-3 py-1 border border-slate-200 rounded-full transition-colors" title="Como perder peso em 3 dias">Perder peso em 3 dias</a>
+                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="text-[11px] text-slate-500 hover:text-app-primary bg-white px-3 py-1 border border-slate-200 rounded-full transition-colors" title="Emagrecer sem academia em casa">Emagrecer sem academia</a>
             </div>
         </div>
     </nav>
 
     <!-- Footer Otimizado com Políticas para Afiliados -->
-    <footer class="bg-brand-darker py-12 px-4 text-center border-t-2 border-white/5">
+    <footer class="bg-white py-10 px-4 text-center border-t border-slate-200">
         <div class="max-w-4xl mx-auto">
-            <!-- Links Jurídicos (Essencial para Afiliados) -->
-            <div class="flex flex-wrap justify-center gap-6 mb-8">
-                <button onclick="toggleModal('privacy-modal')" class="text-slate-500 hover:text-brand-accent text-sm underline font-medium transition-colors">Política de Privacidade</button>
-                <button onclick="toggleModal('terms-modal')" class="text-slate-500 hover:text-brand-accent text-sm underline font-medium transition-colors">Termos de Uso</button>
-                <a href="mailto:Suporte.desafioemagrecerpro@gmail.com" class="text-slate-500 hover:text-brand-accent text-sm underline font-medium transition-colors">Suporte</a>
+            <div class="flex flex-wrap justify-center gap-6 mb-6">
+                <button onclick="toggleModal('privacy-modal')" class="text-slate-500 hover:text-app-primary text-xs font-medium transition-colors">Política de Privacidade</button>
+                <button onclick="toggleModal('terms-modal')" class="text-slate-500 hover:text-app-primary text-xs font-medium transition-colors">Termos de Uso</button>
+                <a href="mailto:Suporte.desafioemagrecerpro@gmail.com" class="text-slate-500 hover:text-app-primary text-xs font-medium transition-colors">Suporte</a>
             </div>
 
-            <div class="text-slate-500 font-medium text-sm md:text-base space-y-4 font-inter">
+            <div class="text-slate-400 font-medium text-xs space-y-3 font-inter">
                 <p>&copy; 2022-2026 Emagrecer Pro - Todos os Direitos Reservados</p>
-                
-                <div class="pt-8 mt-8 border-t border-white/5 text-[10px] md:text-[11px] text-slate-600 leading-relaxed max-w-4xl mx-auto text-center">
-                    <p class="font-bold mb-3 text-slate-500 uppercase tracking-widest text-xs">Aviso Importante</p>
+                <div class="pt-6 mt-6 border-t border-slate-100 text-[9px] text-slate-400 leading-relaxed max-w-3xl mx-auto text-center">
+                    <p class="font-bold mb-1 uppercase tracking-widest text-[10px]">Aviso Importante</p>
                     <p>Este site não faz parte do site do Google ou do Facebook. Além disso, este site NÃO é endossado pelo Google ou Facebook de nenhuma maneira. Google e Facebook são marcas comerciais de suas respectivas empresas. Como afiliado, promovemos produtos de alta qualidade e os resultados apresentados podem variar de pessoa para pessoa. Este produto não substitui o parecer médico profissional.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- BARRA FLUTUANTE MOBILE (High Conversion Bottom App Bar) -->
+    <div id="mobile-bottom-bar" class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 pb-safe z-50 transform translate-y-full transition-transform duration-300 md:hidden shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+        <div class="flex items-center justify-between gap-3 max-w-sm mx-auto">
+            <div class="flex flex-col">
+                <span class="text-slate-400 text-[10px] font-bold uppercase tracking-wider line-through">R$ 364,70</span>
+                <span class="text-app-text font-black text-lg leading-none tracking-tight">R$ 28,90</span>
+            </div>
+            <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button bg-app-cta text-white font-black py-3 px-6 rounded-full text-center uppercase text-sm flex-1 shadow-app-cta">
+                COMPRAR AGORA
+            </a>
+        </div>
+    </div>
+
     <!-- MODAL: POLÍTICA DE PRIVACIDADE -->
     <div id="privacy-modal" class="modal" onclick="if(event.target == this) toggleModal('privacy-modal')">
         <div class="modal-content">
-            <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
-                <h3 class="text-white text-2xl font-black uppercase">Política de Privacidade</h3>
-                <button onclick="toggleModal('privacy-modal')" class="text-slate-400 hover:text-white text-2xl">&times;</button>
+            <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-4">
+                <h3 class="text-app-text text-xl font-black uppercase tracking-tight">Política de Privacidade</h3>
+                <button onclick="toggleModal('privacy-modal')" class="text-slate-400 hover:text-app-text text-2xl">&times;</button>
             </div>
-            <div class="text-slate-300 text-sm space-y-4 text-left leading-relaxed">
+            <div class="text-app-muted text-sm space-y-3 text-left leading-relaxed">
                 <p>Nós da <strong>Emagrecer Pro</strong> valorizamos a sua privacidade. Esta política descreve como coletamos e usamos seus dados ao navegar em nosso site.</p>
                 <p><strong>1. Coleta de Informações:</strong> Coletamos informações básicas de navegação através de cookies para melhorar sua experiência e para fins de marketing (Google Ads e Facebook Ads).</p>
                 <p><strong>2. Proteção de Dados:</strong> Utilizamos criptografia SSL para garantir que todos os dados transmitidos sejam seguros. Não vendemos seus dados a terceiros.</p>
@@ -1103,11 +1051,11 @@
     <!-- MODAL: TERMOS DE USO -->
     <div id="terms-modal" class="modal" onclick="if(event.target == this) toggleModal('terms-modal')">
         <div class="modal-content">
-            <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
-                <h3 class="text-white text-2xl font-black uppercase">Termos de Uso</h3>
-                <button onclick="toggleModal('terms-modal')" class="text-slate-400 hover:text-white text-2xl">&times;</button>
+            <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-4">
+                <h3 class="text-app-text text-xl font-black uppercase tracking-tight">Termos de Uso</h3>
+                <button onclick="toggleModal('terms-modal')" class="text-slate-400 hover:text-app-text text-2xl">&times;</button>
             </div>
-            <div class="text-slate-300 text-sm space-y-4 text-left leading-relaxed">
+            <div class="text-app-muted text-sm space-y-3 text-left leading-relaxed">
                 <p>Ao acessar o site <strong>Alimentação Saudável 360</strong> e adquirir o <strong>Emagrecer Pro</strong>, você concorda com os seguintes termos:</p>
                 <p><strong>1. Uso Pessoal:</strong> O conteúdo do guia é para uso individual e pessoal, sendo proibida a pirataria ou revenda não autorizada.</p>
                 <p><strong>2. Isenção de Responsabilidade Médica:</strong> O material contido neste guia tem caráter informativo. Você deve consultar um médico antes de iniciar qualquer mudança drástica em sua dieta ou rotina de exercícios.</p>
@@ -1117,9 +1065,9 @@
         </div>
     </div>
 
-    <!-- SCRIPTS (Gerenciamento de UI, Bônus, Imagens e Performance Web) -->
+    <!-- SCRIPTS -->
     <script>
-        // Funcionalidade de Performance: Posterga a injeção do DOM para priorizar o Core Web Vitals (FCP e LCP)
+        // Postergar operações pesadas
         const deferHeavyOperations = (callback) => {
             if ('requestIdleCallback' in window) {
                 requestIdleCallback(callback, { timeout: 1000 });
@@ -1128,24 +1076,32 @@
             }
         };
 
-
-        // Sênior Video Play: Substituição limpa do DOM para evitar falhas no mobile
+        // Video Play App Style
         function playMainVideo() {
             const container = document.getElementById('main-video-container');
             if(container) {
-                // Injetamos o iframe e permitimos eventos de ponteiro para controle total
-                container.innerHTML = `<iframe src="https://www.youtube.com/embed/91X-w1hu2Pw?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="VSL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full pointer-events-auto"></iframe>`;
+                container.innerHTML = `<iframe src="https://www.youtube.com/embed/91X-w1hu2Pw?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="VSL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full pointer-events-auto rounded-[1.5rem]"></iframe>`;
             }
         }
 
-         // Modal Toggle
+        // Modal Toggle
         function toggleModal(id) {
             const modal = document.getElementById(id);
             modal.classList.toggle('active');
             document.body.style.overflow = modal.classList.contains('active') ? 'hidden' : 'auto';
         }
 
-        // --- 1. Cronômetro Duplo (Design Fiel à Imagem) ---
+        // Barra flutuante mobile (Aparece após o hero)
+        window.addEventListener('scroll', () => {
+            const bottomBar = document.getElementById('mobile-bottom-bar');
+            if (window.scrollY > 500) {
+                bottomBar.classList.remove('translate-y-full');
+            } else {
+                bottomBar.classList.add('translate-y-full');
+            }
+        });
+
+        // 1. Cronômetro Duplo
         function startCountdown(hoursToAdd) {
             let targetTime = localStorage.getItem('emagrecerProTargetTime');
             if (!targetTime || new Date().getTime() > parseInt(targetTime)) {
@@ -1172,9 +1128,9 @@
 
         function renderTime(timerElements, d, h, m, s) {
             const pad = (num) => String(num).padStart(2, '0');
-            const boxClass = "flex flex-col items-center bg-[#6D0014] rounded-lg p-1.5 min-w-[45px] md:min-w-[55px] shadow-md border border-white/5";
-            const numClass = "text-white text-lg md:text-xl font-black font-sans leading-tight";
-            const labelClass = "text-[7px] md:text-[9px] font-bold uppercase tracking-widest text-white/80 mt-0.5";
+            const boxClass = "flex flex-col items-center bg-white/20 rounded-lg p-1 min-w-[38px] md:min-w-[45px]";
+            const numClass = "text-white text-sm md:text-base font-black font-sans leading-none";
+            const labelClass = "text-[6px] md:text-[8px] font-bold uppercase tracking-widest text-white/90 mt-0.5";
             
             const html = `
                 <div class="${boxClass}"><span class="${numClass}">${pad(d)}</span><span class="${labelClass}">DIA</span></div>
@@ -1185,20 +1141,16 @@
             timerElements.forEach(el => el.innerHTML = html);
         }
 
-        // Executar imediatamente os contadores
         document.addEventListener("DOMContentLoaded", () => {
             startCountdown(3);
-
-            // Adia funções pesadas que geram muito HTML
             deferHeavyOperations(() => {
                 initBonus();
                 initTransformations();
-                initReviews();
                 initScrollReveal();
             });
         });
 
-        // --- 2. Renderização de Bônus ---
+        // 2. Renderização de Bônus (App Style Cards)
         function initBonus() {
             const bonusData = [
                 {id: 1, title: "BÔNUS 1:", desc: "200 RECEITAS LOWCARB", imgC: "imagem/imagem_1.webp", imgM: "imagem/imagem_2.webp"},
@@ -1216,24 +1168,23 @@
             let htmlString = "";
             bonusData.forEach(b => {
                 htmlString += `
-                    <div class="glass-card p-6 md:p-8 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8 hover:-translate-y-1 transition-transform duration-300 relative group overflow-hidden">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-accent to-brand-cta opacity-0 group-hover:opacity-10 transition duration-500 blur"></div>
-                        <div class="w-28 md:w-32 flex-shrink-0 drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform relative z-10"><img src="${b.imgC}" alt="Capa Bônus ${b.id}" width="300" height="400" loading="lazy" decoding="async" class="w-full rounded-[1.2rem] object-cover border-4 border-black" style="aspect-ratio: 3/4;"></div>
-                        <div class="flex-grow flex flex-col items-center md:items-start text-center md:text-left relative z-10">
-                            <div class="bg-brand-accent/10 border border-brand-accent/20 px-3 py-1 rounded-full mb-3 inline-flex items-center">
-                                <span class="text-brand-accent text-[10px] font-black tracking-widest uppercase">Liberação Imediata</span>
+                    <div class="app-card p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 hover:-translate-y-1 transition-transform duration-300 relative group overflow-hidden">
+                        <div class="w-24 md:w-28 flex-shrink-0 group-hover:scale-105 transition-transform"><img src="${b.imgC}" alt="Capa Bônus ${b.id}" width="300" height="400" loading="lazy" decoding="async" class="w-full rounded-xl object-cover border border-slate-200 shadow-sm" style="aspect-ratio: 3/4;"></div>
+                        <div class="flex-grow flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-full mb-2 inline-flex items-center">
+                                <span class="text-[9px] font-bold tracking-widest uppercase">Liberação Imediata</span>
                             </div>
-                            <h3 class="text-white font-black text-2xl md:text-3xl uppercase font-sans tracking-tight mb-2 group-hover:text-brand-accent transition-colors">${b.title}</h3>
-                            <p class="text-slate-400 font-medium text-lg leading-snug">${b.desc}</p>
+                            <h3 class="text-app-text font-black text-lg md:text-xl uppercase font-sans tracking-tight mb-1 group-hover:text-app-primary transition-colors">${b.title}</h3>
+                            <p class="text-app-muted font-medium text-sm leading-snug">${b.desc}</p>
                         </div>
-                        <div class="w-40 md:w-56 flex-shrink-0 drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform mt-4 md:mt-0 relative z-10"><img src="${b.imgM}" alt="Mockup Bônus ${b.id}" width="400" height="300" loading="lazy" decoding="async" class="w-full object-cover"></div>
+                        <div class="w-32 md:w-40 flex-shrink-0 group-hover:scale-105 transition-transform mt-2 md:mt-0"><img src="${b.imgM}" alt="Mockup Bônus ${b.id}" width="400" height="300" loading="lazy" decoding="async" class="w-full object-cover drop-shadow-md"></div>
                     </div>
                 `;
             });
             bonusContainer.innerHTML = htmlString;
         }
 
-        // --- 3. Grid de Transformações ---
+        // 3. Grid de Transformações (Clean Polaroid Style)
         function initTransformations() {
             const transformImages = [
                 "https://i.imgur.com/o2V00Ho.png", "https://i.imgur.com/9eNb3ww.png", "https://i.imgur.com/Ma5T4Gl.png", "https://i.imgur.com/M6ynR4p.png", 
@@ -1243,31 +1194,17 @@
                 "https://i.imgur.com/RocXtr3.png", "https://i.imgur.com/gpAF6M0.png", "https://i.imgur.com/322rQVP.png", "https://i.imgur.com/LqSgndt.png", 
                 "https://i.imgur.com/xZcHFjf.png", "https://i.imgur.com/n37Gj8i.png", "https://i.imgur.com/bWFh7cQ.png", "https://i.imgur.com/zz7sVU6.png"
             ];
-            const altTexts = [
-                "Resultado de emagrecimento antes e depois — Emagrecer Pro", "Transformação corporal real com dieta low carb — Emagrecer Pro",
-                "Como emagrecer rápido: resultado em 30 dias", "Antes e depois de emagrecer sem academia",
-                "Perda de peso definitiva com o método Emagrecer Pro", "Resultado real de dieta para emagrecer em 90 dias",
-                "Transformação corporal feminina com reeducação alimentar", "Emagrecer sem sofrimento: resultado comprovado",
-                "Como perder peso rapidamente: caso real", "Resultado de jejum intermitente combinado com low carb",
-                "Emagrecimento saudável e definitivo — Emagrecer Pro", "Antes e depois: perda de medidas com cardápio completo",
-                "Resultado real de chá para emagrecer + dieta", "Transformação em 60 dias com o Emagrecer Pro",
-                "Como emagrecer a barriga: resultado real", "Perder peso após os 30 anos — caso de sucesso",
-                "Emagrecer sem passar fome: resultado em semanas", "Transformação corporal com receitas low carb",
-                "Resultado de emagrecer rápido sem academia", "Antes e depois emagrecimento definitivo",
-                "Dieta para emagrecer que funciona de verdade", "Resultado real de 90 dias com o Emagrecer Pro",
-                "Como emagrecer com saúde — transformação comprovada", "Perda de gordura localizada com método científico"
-            ];
             
             const gridContainer = document.getElementById('transformations-grid');
             if (!gridContainer) return;
 
             let htmlString = "";
-            transformImages.forEach((src, idx) => {
+            transformImages.forEach((src) => {
                 htmlString += `
-                    <div class="masonry-item group relative rounded-2xl overflow-hidden shadow-lg border border-white/5 bg-[#131A2A] hover:shadow-[0_10px_30px_rgba(0,229,255,0.15)] hover:-translate-y-1 transition-all duration-300">
-                        <img src="${src}" alt="${altTexts[idx] || 'Resultado real de emagrecimento — Emagrecer Pro'}" width="300" height="375" loading="lazy" decoding="async" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" style="aspect-ratio: 4/5;">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <span class="text-white font-bold text-xs uppercase tracking-widest flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-brand-accent"></div> Meta Alcançada</span>
+                    <div class="masonry-item group relative app-card p-1 overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                        <img src="${src}" alt="Resultado real de emagrecimento — Emagrecer Pro" width="300" height="375" loading="lazy" decoding="async" class="w-full h-auto rounded-xl object-cover transform group-hover:scale-[1.02] transition-transform duration-500" style="aspect-ratio: 4/5;">
+                        <div class="absolute inset-1 rounded-xl bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 pointer-events-none">
+                            <span class="text-white font-bold text-[10px] uppercase tracking-widest flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-app-primary"></div> Meta Alcançada</span>
                         </div>
                     </div>
                 `;
@@ -1275,48 +1212,14 @@
             gridContainer.innerHTML = htmlString;
         }
 
-        // --- 4. Avaliações (Dark Masonry Layout) ---
-        function initReviews() {
-            const reviews = [
-                {n: "Maria Eduarda Silva", t: "Gente, eu estou em choque! O Emagrecer Pro é simplesmente o melhor investimento que já fiz. O método é tão claro e os bônus são de outro mundo. O suporte é impecável e o conteúdo é de altíssima qualidade. Perdi 5kg em 10 dias sem passar fome!"},
-                {n: "Ricardo Oliveira", t: "Sensacional! Já tentei de tudo, mas nada se compara a isso. O guia é super completo e as receitas são deliciosas. Parabéns ao criador por democratizar um conhecimento tão valioso por um preço tão justo."},
-                {n: "Ana Beatriz Santos", t: "O chá natural é milagroso! Minha disposição mudou da água para o vinho. O Emagrecer Pro não é só sobre perder peso, é sobre ganhar vida. Recomendo para todas as minhas amigas de olhos fechados!"},
-                {n: "Fernanda Lima", t: "Estou amando os bônus de exercícios! São práticos e realmente funcionam. O material é muito bem organizado e fácil de seguir. Superou todas as minhas expectativas. Vale cada centavo!"},
-                {n: "Paulo Henrique Souza", t: "Melhor guia de emagrecimento do mercado, sem dúvidas. A abordagem é humana e eficaz. O dono do projeto é extremamente atencioso e o produto entrega muito mais do que promete. Minha saúde agradece!"},
-                {n: "Juliana Costa", t: "Finalmente encontrei algo que funciona de verdade! O Emagrecer Pro é direto ao ponto, sem enrolação. O criador pensou em todas as dificuldades que a gente passa e deu a solução mastigada. Gratidão!"},
-                {n: "Beatriz Rocha", t: "Amei tudo! Desde o design do material até o conteúdo das receitas lowcarb. O dono do produto é um visionário. Sinto que finalmente tenho o controle do meu corpo de volta. Apenas compre, você não vai se arrepender!"}
-            ];
-            const reviewsContainer = document.getElementById('reviews-container');
-            if (!reviewsContainer) return;
-
-            const stars = Array(5).fill('<svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>').join('');
-            
-            let htmlString = "";
-            reviews.forEach(r => {
-                htmlString += `
-                    <div class="masonry-item glass-card p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white font-black text-xl shadow-inner">${r.n.charAt(0)}</div>
-                            <div>
-                                <h4 class="text-white font-bold text-lg leading-tight font-sans tracking-tight">${r.n}</h4>
-                                <div class="flex gap-0.5 text-brand-gold mt-1 drop-shadow-[0_0_5px_rgba(255,215,0,0.5)]">${stars}</div>
-                            </div>
-                        </div>
-                        <p class="text-slate-400 font-normal leading-relaxed">"${r.t}"</p>
-                    </div>
-                `;
-            });
-            reviewsContainer.innerHTML = htmlString;
-        }
-
-        // --- 5. Scroll Reveal Animation ---
+        // 4. Scroll Reveal Animation
         function initScrollReveal() {
             const reveals = document.querySelectorAll(".reveal");
             const revealOnScroll = () => {
                 const windowHeight = window.innerHeight;
                 reveals.forEach(reveal => {
                     const revealTop = reveal.getBoundingClientRect().top;
-                    if (revealTop < windowHeight - 50) {
+                    if (revealTop < windowHeight - 40) {
                         reveal.classList.add("active");
                     }
                 });
