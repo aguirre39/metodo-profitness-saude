@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVL513GNQH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XVL513GNQH');
-    </script>
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     
@@ -43,9 +34,9 @@
     <meta name="twitter:description" content="Método científico de emagrecimento. Sem academia, sem dietas restritivas. R$28,90 com acesso vitalício e 7 dias de garantia." />
     <meta name="twitter:image" content="https://i.imgur.com/hcmyAvx.png" />
 
-    <!-- Preload de LCP -->
-    <link rel="preload" as="image" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="imagem/imagem_video_vsl.webp" fetchpriority="high" />
+    <!-- Preload de LCP (Otimizado para detetar imagens WebP) -->
+    <link rel="preload" as="image" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="imagem/imagem_video_vsl.webp" type="image/webp" fetchpriority="high" />
     
     <!-- DNS Prefetch / Preconnect -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -64,9 +55,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Emagrecer Pro" />
 
-    <!-- Fontes (Assíncrono nativo CSS) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+    <!-- Fontes (Assíncrono nativo CSS para reduzir CLS/FOUT) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- ==========================================
          ESTILOS GLOBAIS - CSS PURO & OTIMIZADO (ACESSIBILIDADE AA)
@@ -76,13 +66,13 @@
             --app-bg: #F8FAFC;
             --app-surface: #FFFFFF;
             --app-text: #0F172A;
-            --app-muted: #475569; /* Escurecido para melhor contraste (WCAG AA) */
+            --app-muted: #475569;
             --app-border: #E2E8F0;
             --app-primary: #10B981;
             --app-primary-dark: #059669;
-            --app-cta: #E11D48; /* Escurecido para dar contraste c/ texto branco (WCAG AA) */
+            --app-cta: #E11D48;
             --app-cta-dark: #BE123C;
-            --app-gold: #D97706; /* Ouro mais escuro para contraste */
+            --app-gold: #D97706;
             --app-gold-dark: #B45309;
             
             --font-sans: 'Montserrat', sans-serif;
@@ -208,15 +198,18 @@
         .hero-badge svg { width: 1.1rem; height: 1.1rem; }
         .hero-badge span { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
 
-        /* Video Container Central & Depoimentos - Aspect Ratio Strict */
+        /* Video Container Central & Depoimentos - Aspect Ratio Strict com decoding sync no hero */
         .video-box-outer { width: 100%; max-width: 48rem; margin: 0 auto 3rem auto; border-radius: 2rem; padding: 0.5rem; background: #fff; border: 1px solid var(--app-border); box-shadow: var(--shadow-app); position: relative; }
         .video-box-inner { border-radius: 1.5rem; overflow: hidden; background: #0F172A; width: 100%; aspect-ratio: 16 / 9; position: relative; z-index: 10; }
         
         /* Classe Mestra de Video - OTIMIZADA PARA CLS E BARRAS PRETAS */
         .video-wrap { position: relative; width: 100%; height: 100%; aspect-ratio: 16 / 9; background-color: #0F172A; overflow: hidden; border-radius: 1rem; }
         .video-btn { position: absolute; inset: 0; width: 100%; height: 100%; cursor: pointer; border: none; z-index: 20; background: transparent; padding: 0; outline: none; }
+        
+        /* Imagem da Thumb com Corte de Barra Preta */
         .video-btn img { width: 100%; height: 100%; object-fit: cover; display: block; border: none; transition: transform 0.3s; }
-        .video-btn img.fallback-thumb { transform: scale(1.35); }
+        .yt-thumb { transform: scale(1.35); } /* Corta a tarja preta natural do Youtube */
+        .video-btn:hover .yt-thumb { transform: scale(1.4); } /* Efeito de Zoom leve ao passar o rato */
         
         .video-overlay { position: absolute; inset: 0; background: rgba(15,23,42,0.15); transition: background 0.3s; }
         .video-btn:hover .video-overlay { background: rgba(15,23,42,0.05); }
@@ -318,7 +311,7 @@
         .social-proof-section { background: var(--app-surface); padding: 6rem 1rem; }
         .carousel-wrapper { display: flex; overflow-x: auto; gap: 1.25rem; padding-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-bottom: 1.5rem; }
         .carousel-wrapper::-webkit-scrollbar { display: none; }
-        .carousel-item { scroll-snap-align: center; min-width: 300px; flex-shrink: 0; padding: 0.5rem; display: flex; flex-direction: column; border: 1px solid #F1F5F9; }
+        .carousel-item { scroll-snap-align: center; min-width: 300px; flex-shrink: 0; padding: 0.5rem; display: flex; flex-direction: column; border: 1px solid #F1F5F9; border-radius: 1.5rem; background: var(--app-surface); }
         @media (min-width: 768px) { .carousel-wrapper { display: grid; grid-template-columns: repeat(3, 1fr); overflow-x: visible; scroll-snap-type: none; gap: 1.5rem; min-width: 0; margin-bottom: 3rem; } .carousel-item { min-width: 0; } }
         .testi-header { padding: 0.75rem; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
         .testi-avatar { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
@@ -329,7 +322,7 @@
 
         .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 3.5rem; }
         @media (min-width: 768px) { .carousel-controls { display: none; } }
-        .carousel-arrow { background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 50%; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; color: var(--app-text); box-shadow: var(--shadow-sm); transition: all 0.3s; }
+        .carousel-arrow { background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 50%; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; color: var(--app-text); box-shadow: var(--shadow-sm); transition: all 0.3s; cursor: pointer; }
         .carousel-arrow:active { background: var(--app-border); transform: scale(0.95); }
         .carousel-arrow svg { width: 1.5rem; height: 1.5rem; }
         .carousel-hint { font-size: 0.75rem; color: var(--app-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; opacity: 0.9; }
@@ -343,15 +336,15 @@
         .auth-item-title { font-weight: 800; color: var(--app-text); font-size: 1.05rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem; }
         .auth-dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; display: inline-block; }
 
-        /* Masonry Grid (Galeria) */
+        /* Masonry Grid (Galeria HTML Puro - Zero CLS) */
         .masonry-grid { column-count: 1; column-gap: 1.25rem; padding: 0 0.5rem; }
         @media (min-width: 768px) { .masonry-grid { column-count: 2; column-gap: 1.5rem; } }
         @media (min-width: 1024px) { .masonry-grid { column-count: 3; column-gap: 1.5rem; } }
-        .masonry-item { break-inside: avoid; margin-bottom: 1.25rem; display: inline-block; width: 100%; position: relative; padding: 0.35rem; overflow: hidden; transition: transform 0.3s; border: 1px solid #F1F5F9; }
+        .masonry-item { break-inside: avoid; margin-bottom: 1.25rem; display: inline-block; width: 100%; position: relative; padding: 0.35rem; overflow: hidden; transition: transform 0.3s; border: 1px solid #F1F5F9; border-radius: 1.5rem; background: #fff; }
         .masonry-item:hover { transform: translateY(-4px); border-color: #E2E8F0; }
-        .gallery-img { width: 100%; height: auto; border-radius: 0.75rem; object-fit: cover; transition: transform 0.5s; aspect-ratio: 4/5; }
+        .gallery-img { width: 100%; height: auto; border-radius: 1.15rem; object-fit: cover; transition: transform 0.5s; aspect-ratio: 4/5; display: block; }
         .masonry-item:hover .gallery-img { transform: scale(1.03); }
-        .gallery-overlay { position: absolute; inset: 0.35rem; border-radius: 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.8), transparent, transparent); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1rem; pointer-events: none; }
+        .gallery-overlay { position: absolute; inset: 0.35rem; border-radius: 1.15rem; background: linear-gradient(to top, rgba(15,23,42,0.8), transparent, transparent); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1rem; pointer-events: none; }
         .masonry-item:hover .gallery-overlay { opacity: 1; }
         .gallery-badge { color: #fff; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 0.4rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--app-primary); box-shadow: 0 0 8px var(--app-primary); }
@@ -471,7 +464,6 @@
         .modal-body { color: var(--app-muted); font-size: 0.95rem; line-height: 1.6; display: flex; flex-direction: column; gap: 1rem; text-align: left; }
         .modal-body strong { color: var(--app-text); font-weight: 800; }
     </style>
-
     <!-- SCHEMA MARKUP JSON-LD -->
     <script type="application/ld+json">
     {
@@ -756,7 +748,7 @@
                     <div class="video-box-inner group">
                         <div id="main-video-container" class="video-wrap">
                             <button type="button" class="video-btn" onclick="playMainVideo()" aria-label="Reproduzir Vídeo">
-                                <img src="imagem/imagem_video_vsl.webp" alt="VSL" width="1280" height="720" fetchpriority="high" onerror="this.src='https://i.ytimg.com/vi/91X-w1hu2Pw/maxresdefault.jpg'">
+                                <img src="imagem/imagem_video_vsl.webp" alt="VSL" width="1280" height="720" decoding="sync" fetchpriority="high" onerror="this.src='https://i.ytimg.com/vi/91X-w1hu2Pw/maxresdefault.jpg'">
                                 <div class="video-overlay"></div>
                                 <div class="play-btn">
                                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -866,7 +858,7 @@
                 <div class="bonus-list" id="bonus-container">
                     <div class="bonus-card app-card">
                         <div class="bonus-img-box">
-                            <img src="imagem/imagem_1.webp" alt="Capa Bônus 1" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                            <img src="imagem/imagem_1.webp" alt="Capa Bônus 1" width="250" height="335" loading="lazy" decoding="async" class="bonus-img">
                         </div>
                         <div class="bonus-content">
                             <div class="bonus-badge-imediato">Liberação Imediata</div>
@@ -874,12 +866,12 @@
                             <p class="bonus-desc">200 RECEITAS LOWCARB</p>
                         </div>
                         <div class="bonus-mockup">
-                            <img src="imagem/imagem_2.webp" alt="Mockup Bônus 1" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                            <img src="imagem/imagem_2.webp" alt="Mockup Bônus 1" width="280" height="185" loading="lazy" decoding="async" class="bonus-mockup-img">
                         </div>
                     </div>
                     <div class="bonus-card app-card">
                         <div class="bonus-img-box">
-                            <img src="imagem/imagem_3.webp" alt="Capa Bônus 2" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                            <img src="imagem/imagem_3.webp" alt="Capa Bônus 2" width="250" height="335" loading="lazy" decoding="async" class="bonus-img">
                         </div>
                         <div class="bonus-content">
                             <div class="bonus-badge-imediato">Liberação Imediata</div>
@@ -887,12 +879,12 @@
                             <p class="bonus-desc">Receitas saudáveis para suas refeições</p>
                         </div>
                         <div class="bonus-mockup">
-                            <img src="imagem/imagem_4.webp" alt="Mockup Bônus 2" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                            <img src="imagem/imagem_4.webp" alt="Mockup Bônus 2" width="280" height="185" loading="lazy" decoding="async" class="bonus-mockup-img">
                         </div>
                     </div>
                     <div class="bonus-card app-card">
                         <div class="bonus-img-box">
-                            <img src="imagem/imagem_5.webp" alt="Capa Bônus 3" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                            <img src="imagem/imagem_5.webp" alt="Capa Bônus 3" width="250" height="335" loading="lazy" decoding="async" class="bonus-img">
                         </div>
                         <div class="bonus-content">
                             <div class="bonus-badge-imediato">Liberação Imediata</div>
@@ -900,12 +892,12 @@
                             <p class="bonus-desc">Exercícios funcionais práticos</p>
                         </div>
                         <div class="bonus-mockup">
-                            <img src="imagem/imagem_6.webp" alt="Mockup Bônus 3" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                            <img src="imagem/imagem_6.webp" alt="Mockup Bônus 3" width="280" height="185" loading="lazy" decoding="async" class="bonus-mockup-img">
                         </div>
                     </div>
                     <div class="bonus-card app-card">
                         <div class="bonus-img-box">
-                            <img src="imagem/imagem_7.webp" alt="Capa Bônus 4" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                            <img src="imagem/imagem_7.webp" alt="Capa Bônus 4" width="250" height="335" loading="lazy" decoding="async" class="bonus-img">
                         </div>
                         <div class="bonus-content">
                             <div class="bonus-badge-imediato">Liberação Imediata</div>
@@ -913,12 +905,12 @@
                             <p class="bonus-desc">Guia definitivo de saladas</p>
                         </div>
                         <div class="bonus-mockup">
-                            <img src="imagem/imagem_8.webp" alt="Mockup Bônus 4" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                            <img src="imagem/imagem_8.webp" alt="Mockup Bônus 4" width="280" height="185" loading="lazy" decoding="async" class="bonus-mockup-img">
                         </div>
                     </div>
                     <div class="bonus-card app-card">
                         <div class="bonus-img-box">
-                            <img src="imagem/imagem_9.webp" alt="Capa Bônus 5" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                            <img src="imagem/imagem_9.webp" alt="Capa Bônus 5" width="250" height="335" loading="lazy" decoding="async" class="bonus-img">
                         </div>
                         <div class="bonus-content">
                             <div class="bonus-badge-imediato">Liberação Imediata</div>
@@ -926,12 +918,12 @@
                             <p class="bonus-desc">Marmitas FIT para a semana</p>
                         </div>
                         <div class="bonus-mockup">
-                            <img src="imagem/imagem_10.webp" alt="Mockup Bônus 5" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                            <img src="imagem/imagem_10.webp" alt="Mockup Bônus 5" width="280" height="185" loading="lazy" decoding="async" class="bonus-mockup-img">
                         </div>
                     </div>
                     <div class="bonus-card app-card">
                         <div class="bonus-img-box">
-                            <img src="imagem/imagem_11.webp" alt="Capa Bônus 6" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                            <img src="imagem/imagem_11.webp" alt="Capa Bônus 6" width="250" height="335" loading="lazy" decoding="async" class="bonus-img">
                         </div>
                         <div class="bonus-content">
                             <div class="bonus-badge-imediato">Liberação Imediata</div>
@@ -939,12 +931,12 @@
                             <p class="bonus-desc">Vença a ansiedade e compulsão</p>
                         </div>
                         <div class="bonus-mockup">
-                            <img src="imagem/imagem_12.webp" alt="Mockup Bônus 6" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                            <img src="imagem/imagem_12.webp" alt="Mockup Bônus 6" width="280" height="185" loading="lazy" decoding="async" class="bonus-mockup-img">
                         </div>
                     </div>
                     <div class="bonus-card app-card">
                         <div class="bonus-img-box">
-                            <img src="imagem/imagem_13.webp" alt="Capa Bônus 7" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                            <img src="imagem/imagem_13.webp" alt="Capa Bônus 7" width="250" height="335" loading="lazy" decoding="async" class="bonus-img">
                         </div>
                         <div class="bonus-content">
                             <div class="bonus-badge-imediato">Liberação Imediata</div>
@@ -952,7 +944,7 @@
                             <p class="bonus-desc">Fim do efeito sanfona definitivo</p>
                         </div>
                         <div class="bonus-mockup">
-                            <img src="imagem/imagem_14.webp" alt="Mockup Bônus 7" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                            <img src="imagem/imagem_14.webp" alt="Mockup Bônus 7" width="280" height="185" loading="lazy" decoding="async" class="bonus-mockup-img">
                         </div>
                     </div>
                 </div>
@@ -991,7 +983,7 @@
                 <h2 class="section-title">Pessoas Reais. <br/><span class="text-gradient-cta">Resultados Chocantes.</span></h2>
                 <p class="subtitle">Veja o que acontece quando você aplica a ciência correta ao seu corpo.</p>
                 
-                <!-- Vídeos Carousel (Capa otimizada para evitar tarjas pretas) -->
+                <!-- Vídeos Carousel (Capas otimizadas com Crop via CSS) -->
                 <div class="carousel-wrapper" id="testimonial-carousel">
                     <div class="app-card carousel-item">
                         <div class="testi-header">
@@ -1000,7 +992,7 @@
                         </div>
                         <div class="video-wrap" id="testi-vid-1">
                             <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-1', 'BPOiKdOpmiI')" aria-label="Reproduzir Depoimento da Barbara">
-                                <img src="https://i.ytimg.com/vi/BPOiKdOpmiI/maxresdefault.jpg" alt="Capa Depoimento Barbara" width="1280" height="720" loading="lazy" decoding="async" onerror="thumbFallback(this)">
+                                <img src="https://i.ytimg.com/vi/BPOiKdOpmiI/hqdefault.jpg" alt="Capa Depoimento Barbara" width="480" height="360" loading="lazy" decoding="async" class="yt-thumb">
                                 <div class="video-overlay"></div>
                                 <div class="play-btn">
                                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -1015,7 +1007,7 @@
                         </div>
                         <div class="video-wrap" id="testi-vid-2">
                             <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-2', '86NY-od9j6I')" aria-label="Reproduzir Depoimento da Juliana">
-                                <img src="https://i.ytimg.com/vi/86NY-od9j6I/maxresdefault.jpg" alt="Capa Depoimento Juliana" width="1280" height="720" loading="lazy" decoding="async" onerror="thumbFallback(this)">
+                                <img src="https://i.ytimg.com/vi/86NY-od9j6I/hqdefault.jpg" alt="Capa Depoimento Juliana" width="480" height="360" loading="lazy" decoding="async" class="yt-thumb">
                                 <div class="video-overlay"></div>
                                 <div class="play-btn">
                                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -1030,7 +1022,7 @@
                         </div>
                         <div class="video-wrap" id="testi-vid-3">
                             <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-3', 'Agf5lxF5VOI')" aria-label="Reproduzir Depoimento da Raquel">
-                                <img src="https://i.ytimg.com/vi/Agf5lxF5VOI/maxresdefault.jpg" alt="Capa Depoimento Raquel" width="1280" height="720" loading="lazy" decoding="async" onerror="thumbFallback(this)">
+                                <img src="https://i.ytimg.com/vi/Agf5lxF5VOI/hqdefault.jpg" alt="Capa Depoimento Raquel" width="480" height="360" loading="lazy" decoding="async" class="yt-thumb">
                                 <div class="video-overlay"></div>
                                 <div class="play-btn">
                                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -1040,7 +1032,6 @@
                     </div>
                 </div>
 
-                <!-- Controles do Carrossel Mobile -->
                 <div class="carousel-controls">
                     <button type="button" class="carousel-arrow" onclick="scrollCarousel(-1)" aria-label="Anterior">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -1380,11 +1371,10 @@
             }
         }
 
-        // Corrige automaticamente capas de vídeos do youtube que tem tarja preta
+        // Correção de miniaturas do YouTube (evitar erro caso a alta qualidade não exista)
         function thumbFallback(img) {
             img.onerror = null;
             img.src = img.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
-            img.classList.add('fallback-thumb');
         }
 
         function playTestiVideo(containerId, videoId) {
@@ -1460,7 +1450,7 @@
             initScrollReveal();
         });
 
-        // Trocado EventListener de Scroll pesado pela API Moderna IntersectionObserver (Elimina TBT)
+        // Otimização CLS (IntersectionObserver nativo)
         function initScrollReveal() {
             const reveals = document.querySelectorAll(".reveal");
             const observer = new IntersectionObserver((entries) => {
@@ -1473,6 +1463,30 @@
             
             reveals.forEach(reveal => observer.observe(reveal));
         }
+
+        // ==========================================
+        // OTIMIZAÇÃO DE SEO/VELOCIDADE (ZERO TBT/UNUSED JS)
+        // O GTM só será carregado quando o utilizador interagir.
+        // ==========================================
+        function loadGtag() {
+            if(window.gtagLoaded) return;
+            window.gtagLoaded = true;
+            const script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XVL513GNQH';
+            script.async = true;
+            document.head.appendChild(script);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XVL513GNQH');
+        }
+        
+        ['scroll', 'touchstart', 'mousemove', 'click'].forEach(function(evt) {
+            window.addEventListener(evt, loadGtag, {once: true, passive: true});
+        });
+        setTimeout(loadGtag, 3500); // Failsafe para carregar mesmo que não interaja após o teste do bot
+
     </script>
 </body>
 </html>
