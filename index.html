@@ -102,7 +102,7 @@
             color: var(--app-text); 
             font-family: var(--font-inter); 
             -webkit-tap-highlight-color: transparent; 
-            padding-bottom: 80px; 
+            padding-bottom: 120px; 
             overflow-x: hidden;
         }
         @media (min-width: 768px) { body { padding-bottom: 0; } }
@@ -305,16 +305,24 @@
 
         /* 6. Prova Social e Galeria */
         .social-proof-section { background: var(--app-surface); padding: 5rem 1rem; }
-        .carousel-wrapper { display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-bottom: 3rem; }
+        .carousel-wrapper { display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-bottom: 1rem; }
         .carousel-wrapper::-webkit-scrollbar { display: none; }
         .carousel-item { scroll-snap-align: center; min-width: 280px; flex-shrink: 0; padding: 0.375rem; }
-        @media (min-width: 768px) { .carousel-wrapper { display: grid; grid-template-columns: repeat(3, 1fr); overflow-x: visible; scroll-snap-type: none; gap: 1rem; min-width: 0; } .carousel-item { min-width: 0; } }
+        @media (min-width: 768px) { .carousel-wrapper { display: grid; grid-template-columns: repeat(3, 1fr); overflow-x: visible; scroll-snap-type: none; gap: 1rem; min-width: 0; margin-bottom: 3rem; } .carousel-item { min-width: 0; } }
         .testi-header { padding: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
         .testi-avatar { width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem; }
         .avatar-em { background: #D1FAE5; color: var(--app-primary); }
         .avatar-ro { background: #FFE4E6; color: var(--app-cta); }
         .avatar-bl { background: #DBEAFE; color: #2563EB; }
         .testi-name { color: var(--app-text); font-size: 0.75rem; font-weight: 600; }
+
+        /* Controles do Carrossel Mobile */
+        .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+        @media (min-width: 768px) { .carousel-controls { display: none; } }
+        .carousel-arrow { background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; color: var(--app-text); box-shadow: var(--shadow-sm); transition: all 0.3s; }
+        .carousel-arrow:active { background: var(--app-border); transform: scale(0.95); }
+        .carousel-arrow svg { width: 1.25rem; height: 1.25rem; }
+        .carousel-hint { font-size: 0.65rem; color: var(--app-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; opacity: 0.8; }
 
         .authority-block { background: #F8FAFC; padding: 1.5rem; text-align: left; margin: 1rem auto 4rem auto; max-width: 56rem; }
         @media (min-width: 768px) { .authority-block { padding: 2.5rem; } }
@@ -431,9 +439,8 @@
         .footer-disclaimer { padding-top: 1.5rem; border-top: 1px solid #F1F5F9; font-size: 9px; color: #94A3B8; line-height: 1.625; max-width: 48rem; margin: 0 auto; }
         .footer-disclaimer-title { font-weight: 700; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px; }
 
-       
         /* 12. Mobile Bottom Bar */
-        .mobile-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); border-top: 1px solid var(--app-border); padding: 0.75rem 1rem calc(1.25rem + env(safe-area-inset-bottom)); z-index: 50; transform: translateY(100%); transition: transform 0.3s; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); }
+        .mobile-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); border-top: 1px solid var(--app-border); padding: 1rem 1rem calc(2rem + env(safe-area-inset-bottom)); z-index: 50; transform: translateY(100%); transition: transform 0.3s; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); }
         @media (min-width: 768px) { .mobile-bar { display: none; } }
         .mobile-bar:not(.translate-y-full) { transform: translateY(0); }
         .mobile-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; max-width: 24rem; margin: 0 auto; }
@@ -441,7 +448,6 @@
         .mobile-old-price { color: #94A3B8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: line-through; }
         .mobile-new-price { color: var(--app-text); font-weight: 900; font-size: 1.125rem; line-height: 1; letter-spacing: -0.025em; }
         .mobile-btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; width: 100%; flex: 1; }
-
 
         /* Modals */
         .modal { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 20px; }
@@ -878,14 +884,20 @@
             <p class="subtitle">Veja o que acontece quando você aplica a ciência correta ao seu corpo.</p>
             
             <!-- Vídeos Carousel -->
-            <div class="carousel-wrapper">
+            <div class="carousel-wrapper" id="testimonial-carousel">
                 <div class="app-card carousel-item">
                     <div class="testi-header">
                         <div class="testi-avatar avatar-em">B</div>
                         <span class="testi-name">Depoimento: Barbara</span>
                     </div>
-                    <div class="video-wrap">
-                        <iframe src="https://www.youtube.com/embed/BPOiKdOpmiI" title="Depoimento Bárbara" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                    <div class="video-wrap" id="testi-vid-1">
+                        <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-1', 'BPOiKdOpmiI')" aria-label="Reproduzir Depoimento da Barbara">
+                            <img src="https://i.ytimg.com/vi/BPOiKdOpmiI/hqdefault.jpg" alt="Capa Depoimento Barbara" loading="lazy">
+                            <div class="video-overlay"></div>
+                            <div class="play-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </button>
                     </div>
                 </div>
                 <div class="app-card carousel-item">
@@ -893,8 +905,14 @@
                         <div class="testi-avatar avatar-ro">J</div>
                         <span class="testi-name">Depoimento: Juliana</span>
                     </div>
-                    <div class="video-wrap">
-                        <iframe src="https://www.youtube.com/embed/86NY-od9j6I" title="Depoimento Juliana" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                    <div class="video-wrap" id="testi-vid-2">
+                        <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-2', '86NY-od9j6I')" aria-label="Reproduzir Depoimento da Juliana">
+                            <img src="https://i.ytimg.com/vi/86NY-od9j6I/hqdefault.jpg" alt="Capa Depoimento Juliana" loading="lazy">
+                            <div class="video-overlay"></div>
+                            <div class="play-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </button>
                     </div>
                 </div>
                 <div class="app-card carousel-item">
@@ -902,10 +920,27 @@
                         <div class="testi-avatar avatar-bl">R</div>
                         <span class="testi-name">Depoimento: Raquel</span>
                     </div>
-                    <div class="video-wrap">
-                        <iframe src="https://www.youtube.com/embed/Agf5lxF5VOI" title="Depoimento Raquel" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                    <div class="video-wrap" id="testi-vid-3">
+                        <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-3', 'Agf5lxF5VOI')" aria-label="Reproduzir Depoimento da Raquel">
+                            <img src="https://i.ytimg.com/vi/Agf5lxF5VOI/hqdefault.jpg" alt="Capa Depoimento Raquel" loading="lazy">
+                            <div class="video-overlay"></div>
+                            <div class="play-btn">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </button>
                     </div>
                 </div>
+            </div>
+
+            <!-- Controles do Carrossel Mobile -->
+            <div class="carousel-controls">
+                <button type="button" class="carousel-arrow" onclick="scrollCarousel(-1)" aria-label="Anterior">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <span class="carousel-hint">Deslize para ver</span>
+                <button type="button" class="carousel-arrow" onclick="scrollCarousel(1)" aria-label="Próximo">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
             </div>
 
             <!-- Bloco Autoridade Semântico -->
@@ -922,7 +957,7 @@
                     </div>
                     <div>
                         <h3 class="auth-item-title"><span class="auth-dot" style="background:var(--app-gold)"></span> Funciona para qualquer perfil</h3>
-                        <p>O método foi testado com mulheres de 18 a 70 anos, com diferentes rotinas. Seja você mãe, profissional com pouco tempo ou iniciante em <strong>reeducação alimentar</strong> — o Emagrecer Pro foi desenhado para encaixar na sua vida real.</p>
+                        <p>O methodo foi testado com mulheres de 18 a 70 anos, com diferentes rotinas. Seja você mãe, profissional com pouco tempo ou iniciante em <strong>reeducação alimentar</strong> — o Emagrecer Pro foi desenhado para encaixar na sua vida real.</p>
                     </div>
                     <div>
                         <h3 class="auth-item-title"><span class="auth-dot" style="background:#3B82F6"></span> Preço acessível e vitalício</h3>
@@ -1216,6 +1251,23 @@
             const container = document.getElementById('main-video-container');
             if(container) {
                 container.innerHTML = `<iframe src="https://www.youtube.com/embed/91X-w1hu2Pw?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="VSL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1.5rem; z-index: 30;"></iframe>`;
+            }
+        }
+
+        // Função Inteligente para carregar o vídeo dos depoimentos apenas no clique
+        function playTestiVideo(containerId, videoId) {
+            const container = document.getElementById(containerId);
+            if(container) {
+                container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1&modestbranding=1" title="Depoimento" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 30;"></iframe>`;
+            }
+        }
+        
+        // Função para os botões do carrossel mobile
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('testimonial-carousel');
+            if(carousel) {
+                const scrollAmount = carousel.offsetWidth * 0.8; // Rola 80% da largura visível
+                carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
             }
         }
 
