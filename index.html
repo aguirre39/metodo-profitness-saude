@@ -12,7 +12,6 @@
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <meta name="msvalidate.01" content="50D0CBD346E5A971EDB410E8C97C005F" />
     
     <title>Como Emagrecer Rápido e com Saúde | Emagrecer Pro — Método Científico em 90 Dias</title>
     <meta name="description" content="Descubra como emagrecer rápido sem dietas restritivas com o Emagrecer Pro. Método científico comprovado: cardápio completo, 200 receitas low carb e 7 bônus exclusivos por apenas R$28,90. Acesso vitalício. Garantia de 7 dias." />
@@ -21,11 +20,13 @@
     <meta name="author" content="Emagrecer Pro" />
     <link rel="canonical" href="https://alimentacaosaudavel360.com.br/" />
 
+    <!-- GEO Targeting -->
     <meta name="geo.region" content="BR" />
     <meta name="geo.placename" content="Brasil" />
     <meta name="language" content="pt-BR" />
     <meta http-equiv="content-language" content="pt-BR" />
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content="Como Emagrecer Rápido | Emagrecer Pro — Método Científico" />
@@ -36,22 +37,22 @@
     <meta property="og:url" content="https://alimentacaosaudavel360.com.br/" />
     <meta property="og:site_name" content="Emagrecer Pro" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Como Emagrecer Rápido | Emagrecer Pro" />
     <meta name="twitter:description" content="Método científico de emagrecimento. Sem academia, sem dietas restritivas. R$28,90 com acesso vitalício e 7 dias de garantia." />
     <meta name="twitter:image" content="https://i.imgur.com/hcmyAvx.png" />
 
-    <!-- Preload de imagens críticas (LCP) -->
+    <!-- Preload de LCP -->
     <link rel="preload" as="image" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" fetchpriority="high" />
     <link rel="preload" as="image" href="imagem/imagem_video_vsl.webp" fetchpriority="high" />
     
-    <!-- DNS Prefetch -->
+    <!-- DNS Prefetch / Preconnect -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://www.youtube.com" />
     <link rel="dns-prefetch" href="https://i.imgur.com" />
     <link rel="dns-prefetch" href="https://pay.kiwify.com.br" />
-    
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -63,26 +64,26 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Emagrecer Pro" />
 
-    <!-- Fontes -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    <!-- Fontes (Assíncrono nativo CSS) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
     <!-- ==========================================
-         ESTILOS GLOBAIS - CSS PURO
+         ESTILOS GLOBAIS - CSS PURO & OTIMIZADO (ACESSIBILIDADE AA)
     =========================================== -->
     <style>
         :root {
             --app-bg: #F8FAFC;
             --app-surface: #FFFFFF;
             --app-text: #0F172A;
-            --app-muted: #64748B;
+            --app-muted: #475569; /* Escurecido para melhor contraste (WCAG AA) */
             --app-border: #E2E8F0;
             --app-primary: #10B981;
             --app-primary-dark: #059669;
-            --app-cta: #F43F5E;
-            --app-cta-dark: #E11D48;
-            --app-gold: #F59E0B;
-            --app-gold-dark: #D97706;
+            --app-cta: #E11D48; /* Escurecido para dar contraste c/ texto branco (WCAG AA) */
+            --app-cta-dark: #BE123C;
+            --app-gold: #D97706; /* Ouro mais escuro para contraste */
+            --app-gold-dark: #B45309;
             
             --font-sans: 'Montserrat', sans-serif;
             --font-inter: 'Inter', sans-serif;
@@ -92,7 +93,6 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             --shadow-app: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 0 3px rgba(15, 23, 42, 0.02);
-            --shadow-app-cta: 0 8px 25px -5px rgba(244, 63, 94, 0.4);
         }
 
         /* Reset e Base */
@@ -103,8 +103,9 @@
             color: var(--app-text); 
             font-family: var(--font-inter); 
             -webkit-tap-highlight-color: transparent; 
-            padding-bottom: 120px; 
+            padding-bottom: 140px; 
             overflow-x: hidden;
+            line-height: 1.6;
         }
         @media (min-width: 768px) { body { padding-bottom: 0; } }
         img { max-width: 100%; height: auto; display: block; }
@@ -121,18 +122,18 @@
         .desktop-only { display: none; }
         @media (min-width: 768px) { .desktop-only { display: block; } }
 
-        .title-main { font-size: 1.875rem; font-weight: 900; text-transform: uppercase; font-family: var(--font-sans); line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.025em; }
+        .title-main { font-size: 2rem; font-weight: 900; text-transform: uppercase; font-family: var(--font-sans); line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.025em; }
         @media (min-width: 768px) { .title-main { font-size: 3rem; } }
         @media (min-width: 1024px) { .title-main { font-size: 3.75rem; } }
 
-        .subtitle { font-size: 1rem; color: var(--app-muted); font-weight: 500; margin-bottom: 2.5rem; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.625; }
-        @media (min-width: 768px) { .subtitle { font-size: 1.125rem; } }
+        .subtitle { font-size: 1.125rem; color: var(--app-muted); font-weight: 500; margin-bottom: 2.5rem; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.625; }
+        @media (min-width: 768px) { .subtitle { font-size: 1.25rem; } }
 
         .section-title { font-size: 1.875rem; font-weight: 900; text-transform: uppercase; font-family: var(--font-sans); margin-bottom: 1rem; letter-spacing: -0.025em; line-height: 1.2; }
         @media (min-width: 768px) { .section-title { font-size: 2.25rem; } }
         @media (min-width: 1024px) { .section-title { font-size: 3rem; } }
 
-        .text-gradient-primary { background: linear-gradient(135deg, var(--app-primary), var(--app-primary-dark)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .text-gradient-primary { background: linear-gradient(135deg, var(--app-primary-dark), #047857); -webkit-background-clip: text; background-clip: text; color: transparent; }
         .text-gradient-cta { background: linear-gradient(135deg, var(--app-cta), var(--app-cta-dark)); -webkit-background-clip: text; background-clip: text; color: transparent; }
         .text-gradient-gold { background: linear-gradient(135deg, var(--app-gold), var(--app-gold-dark)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
@@ -140,331 +141,338 @@
         .app-button { 
             display: inline-flex; justify-content: center; align-items: center; gap: 0.5rem; 
             width: 100%; background: var(--app-cta); color: #fff; font-weight: 900; 
-            padding: 1rem 1.5rem; border-radius: 9999px; text-transform: uppercase; 
-            transition: transform 0.3s, background 0.3s; font-size: 1rem; 
+            padding: 1.125rem 1.5rem; border-radius: 9999px; text-transform: uppercase; 
+            transition: transform 0.3s, background 0.3s; font-size: 1.05rem; 
+            position: relative; letter-spacing: 0.05em;
         }
         .app-button:hover { background: var(--app-cta-dark); transform: translateY(-2px); }
         .app-button.btn-dark { background: var(--app-text); }
         .app-button.btn-dark:hover { background: #1E293B; }
-        @media (min-width: 768px) { .app-button { width: auto; font-size: 1.125rem; padding: 1.25rem 2rem; } }
+        @media (min-width: 768px) { .app-button { width: auto; font-size: 1.125rem; padding: 1.25rem 2.5rem; } }
 
         .app-card { background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 1.5rem; box-shadow: var(--shadow-app); }
-        .app-badge { background: #F1F5F9; color: #475569; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.75rem; border-radius: 9999px; display: inline-block; }
+        .app-badge { background: #F1F5F9; color: #334155; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.35rem 0.85rem; border-radius: 9999px; display: inline-block; }
 
-        /* Animações e Efeitos */
+        /* Animações GPU-Accelerated (Zero TBT) */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .animate-float { animation: float 6s ease-in-out infinite; }
         
-        @keyframes pulse-app { 0%, 100% { transform: scale(1); box-shadow: var(--shadow-app-cta); } 50% { transform: scale(1.03); box-shadow: 0 15px 35px -5px rgba(244, 63, 94, 0.6); } }
-        .animate-pulse-app { animation: pulse-app 2.5s infinite; }
-        
-        @keyframes pulse-dark { 0%, 100% { transform: scale(1); box-shadow: 0 8px 25px -5px rgba(15, 23, 42, 0.4); } 50% { transform: scale(1.03); box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.6); } }
-        .animate-pulse-dark { animation: pulse-dark 2.5s infinite; }
+        /* Nova Animação Pulsante Otimizada (Performance Fix) */
+        .animate-pulse-app { z-index: 1; }
+        .animate-pulse-app::after {
+            content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1;
+            box-shadow: 0 0 0 0 var(--app-cta);
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        .animate-pulse-dark { z-index: 1; }
+        .animate-pulse-dark::after {
+            content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1;
+            box-shadow: 0 0 0 0 var(--app-text);
+            animation: pulse-ring-dark 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.6); } 70% { box-shadow: 0 0 0 15px rgba(225, 29, 72, 0); } 100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); } }
+        @keyframes pulse-ring-dark { 0% { box-shadow: 0 0 0 0 rgba(15, 23, 42, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(15, 23, 42, 0); } 100% { box-shadow: 0 0 0 0 rgba(15, 23, 42, 0); } }
 
-        /* -------------------------------------
-           COMPONENTS (SEÇÕES)
-        -------------------------------------- */
-        
-        /* 1. Scarcity Bar */
-        .scarcity-bar { background-color: var(--app-cta); padding: 0.75rem 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.75rem; position: sticky; top: 0; z-index: 50; box-shadow: var(--shadow-md); }
+        /* 1. Scarcity Bar - Contraste Acessibilidade (#BE123C) */
+        .scarcity-bar { background-color: var(--app-cta-dark); padding: 0.85rem 1rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.75rem; position: sticky; top: 0; z-index: 50; box-shadow: var(--shadow-md); }
         @media (min-width: 768px) { .scarcity-bar { flex-direction: row; gap: 1.5rem; } }
         .scarcity-content { display: flex; align-items: center; gap: 0.75rem; }
-        .scarcity-logo { background: #fff; border-radius: 0.8rem; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; padding: 0.375rem; box-shadow: var(--shadow-sm); }
+        .scarcity-logo { background: #fff; border-radius: 0.8rem; width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center; padding: 0.375rem; box-shadow: var(--shadow-sm); }
         .scarcity-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .scarcity-text { color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-sans); }
-        @media (min-width: 768px) { .scarcity-text { font-size: 0.875rem; } }
-        .pulse-indicator { position: relative; display: flex; width: 0.5rem; height: 0.5rem; }
+        .scarcity-text { color: #fff; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-sans); }
+        @media (min-width: 768px) { .scarcity-text { font-size: 0.95rem; } }
+        .pulse-indicator { position: relative; display: flex; width: 0.6rem; height: 0.6rem; }
         .pulse-indicator .ping { position: absolute; width: 100%; height: 100%; border-radius: 50%; background: #fff; opacity: 0.75; animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
-        .pulse-indicator .dot { position: relative; display: inline-flex; border-radius: 50%; width: 0.5rem; height: 0.5rem; background: #fff; }
-        @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+        .pulse-indicator .dot { position: relative; display: inline-flex; border-radius: 50%; width: 0.6rem; height: 0.6rem; background: #fff; }
         
         .countdown-timer { display: flex; gap: 0.5rem; align-items: center; }
-        .timer-box { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.2); border-radius: 0.5rem; padding: 0.25rem; min-width: 38px; }
-        @media (min-width: 768px) { .timer-box { min-width: 45px; } }
-        .timer-num { color: #fff; font-size: 0.875rem; font-weight: 900; font-family: var(--font-sans); line-height: 1; }
-        @media (min-width: 768px) { .timer-num { font-size: 1rem; } }
-        .timer-label { font-size: 6px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.9); margin-top: 2px; }
-        @media (min-width: 768px) { .timer-label { font-size: 8px; } }
+        .timer-box { display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.25); border-radius: 0.5rem; padding: 0.35rem; min-width: 42px; }
+        @media (min-width: 768px) { .timer-box { min-width: 50px; } }
+        .timer-num { color: #fff; font-size: 1rem; font-weight: 900; font-family: var(--font-sans); line-height: 1; }
+        @media (min-width: 768px) { .timer-num { font-size: 1.15rem; } }
+        .timer-label { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.95); margin-top: 3px; }
+        @media (min-width: 768px) { .timer-label { font-size: 10px; } }
 
         /* 2. Hero Section */
-        .hero-section { position: relative; padding: 2.5rem 1rem 4rem 1rem; overflow: hidden; display: flex; flex-direction: column; align-items: center; background-color: var(--app-surface); background-image: radial-gradient(#CBD5E1 1px, transparent 1px); background-size: 30px 30px; background-position: -15px -15px; }
-        @media (min-width: 768px) { .hero-section { padding: 4rem 1rem 6rem 1rem; } }
+        .hero-section { position: relative; padding: 3rem 1rem 5rem 1rem; overflow: hidden; display: flex; flex-direction: column; align-items: center; background-color: var(--app-surface); background-image: radial-gradient(#CBD5E1 1px, transparent 1px); background-size: 30px 30px; background-position: -15px -15px; }
+        @media (min-width: 768px) { .hero-section { padding: 5rem 1rem 7rem 1rem; } }
         .orb { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
         .orb-emerald { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #D1FAE5; }
         .orb-rose { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: #FFE4E6; }
         .hero-container { position: relative; z-index: 10; width: 100%; }
         
-        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.375rem 1rem; border-radius: 9999px; background: #ECFDF5; border: 1px solid #D1FAE5; color: var(--app-primary); margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); }
-        .hero-badge svg { width: 1rem; height: 1rem; }
-        .hero-badge span { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; border-radius: 9999px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #047857; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); }
+        .hero-badge svg { width: 1.1rem; height: 1.1rem; }
+        .hero-badge span { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
 
-        /* Video Container */
-        .video-box-outer { width: 100%; max-width: 48rem; margin: 0 auto 2.5rem auto; border-radius: 2rem; padding: 0.375rem; background: #fff; border: 1px solid var(--app-border); box-shadow: var(--shadow-app); position: relative; }
-        .video-box-inner { border-radius: 1.5rem; overflow: hidden; background: #F1F5F9; position: relative; z-index: 10; width: 100%; }
-        .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; width: 100%; }
-        .video-btn { position: absolute; inset: 0; width: 100%; height: 100%; cursor: pointer; border: none; z-index: 20; }
-        .video-btn img { width: 100%; height: 100%; object-fit: cover; }
-        .video-overlay { position: absolute; inset: 0; background: rgba(15,23,42,0.1); transition: background 0.3s; }
+        /* Video Container Central & Depoimentos - Aspect Ratio Strict */
+        .video-box-outer { width: 100%; max-width: 48rem; margin: 0 auto 3rem auto; border-radius: 2rem; padding: 0.5rem; background: #fff; border: 1px solid var(--app-border); box-shadow: var(--shadow-app); position: relative; }
+        .video-box-inner { border-radius: 1.5rem; overflow: hidden; background: #0F172A; width: 100%; aspect-ratio: 16 / 9; position: relative; z-index: 10; }
+        
+        /* Classe Mestra de Video - OTIMIZADA PARA CLS E BARRAS PRETAS */
+        .video-wrap { position: relative; width: 100%; height: 100%; aspect-ratio: 16 / 9; background-color: #0F172A; overflow: hidden; border-radius: 1rem; }
+        .video-btn { position: absolute; inset: 0; width: 100%; height: 100%; cursor: pointer; border: none; z-index: 20; background: transparent; padding: 0; outline: none; }
+        .video-btn img { width: 100%; height: 100%; object-fit: cover; display: block; border: none; transition: transform 0.3s; }
+        .video-btn img.fallback-thumb { transform: scale(1.35); }
+        
+        .video-overlay { position: absolute; inset: 0; background: rgba(15,23,42,0.15); transition: background 0.3s; }
         .video-btn:hover .video-overlay { background: rgba(15,23,42,0.05); }
-        .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 4rem; height: 4rem; background: rgba(255,255,255,0.9); backdrop-filter: blur(4px); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); transition: transform 0.3s; }
+        .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 4.5rem; height: 4.5rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); transition: transform 0.3s; }
         .video-btn:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); }
-        .play-btn svg { width: 2rem; height: 2rem; color: var(--app-cta); margin-left: 0.25rem; }
-        @media (min-width: 768px) { .play-btn { width: 5rem; height: 5rem; } .play-btn svg { width: 2.5rem; height: 2.5rem; } }
+        .play-btn svg { width: 2.25rem; height: 2.25rem; color: var(--app-cta); margin-left: 0.25rem; }
+        @media (min-width: 768px) { .play-btn { width: 5.5rem; height: 5.5rem; } .play-btn svg { width: 2.75rem; height: 2.75rem; } }
 
         /* Main CTA Card */
-        .cta-card { padding: 1.5rem; width: 100%; max-width: 32rem; margin: 0 auto; position: relative; transition: transform 0.3s; }
-        @media (min-width: 768px) { .cta-card { padding: 2rem; } }
-        .cta-card:hover { transform: translateY(-4px); }
-        .cta-floating-badge { position: absolute; top: -0.875rem; left: 50%; transform: translateX(-50%); background: var(--app-primary); color: #fff; padding: 0.25rem 1rem; border-radius: 9999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: var(--shadow-sm); white-space: nowrap; }
-        @media (min-width: 768px) { .cta-floating-badge { font-size: 0.75rem; } }
-        .cta-price-label { color: var(--app-muted); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-        .cta-price-value { display: flex; justify-content: center; align-items: flex-start; gap: 0.25rem; margin: 0.75rem 0; color: var(--app-text); }
-        .cta-currency { font-size: 1.25rem; font-weight: 700; margin-top: 0.5rem; color: #94A3B8; }
-        @media (min-width: 768px) { .cta-currency { font-size: 1.5rem; } }
-        .cta-amount { font-size: 3.75rem; font-weight: 900; letter-spacing: -0.05em; font-family: var(--font-sans); }
-        @media (min-width: 768px) { .cta-amount { font-size: 4.5rem; } }
-        .cta-cents { font-size: 2.25rem; color: #94A3B8; }
+        .cta-card { padding: 2rem; width: 100%; max-width: 34rem; margin: 0 auto; position: relative; transition: transform 0.3s; border: 2px solid #F1F5F9; }
+        @media (min-width: 768px) { .cta-card { padding: 2.5rem; } }
+        .cta-card:hover { transform: translateY(-4px); border-color: #E2E8F0; }
+        .cta-floating-badge { position: absolute; top: -1rem; left: 50%; transform: translateX(-50%); background: #059669; color: #fff; padding: 0.35rem 1.25rem; border-radius: 9999px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: var(--shadow-sm); white-space: nowrap; }
+        @media (min-width: 768px) { .cta-floating-badge { font-size: 0.8rem; } }
+        .cta-price-label { color: var(--app-muted); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+        .cta-price-value { display: flex; justify-content: center; align-items: flex-start; gap: 0.25rem; margin: 1rem 0; color: var(--app-text); }
+        .cta-currency { font-size: 1.5rem; font-weight: 700; margin-top: 0.5rem; color: #64748B; }
+        @media (min-width: 768px) { .cta-currency { font-size: 1.75rem; } }
+        .cta-amount { font-size: 4rem; font-weight: 900; letter-spacing: -0.05em; font-family: var(--font-sans); }
+        @media (min-width: 768px) { .cta-amount { font-size: 5rem; } }
+        .cta-cents { font-size: 2.25rem; color: #64748B; font-weight: 700; }
         @media (min-width: 768px) { .cta-cents { font-size: 3rem; } }
-        .cta-tags { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
-        .cta-tag { background: #F1F5F9; color: #475569; font-size: 10px; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; }
-        .cta-secure { display: inline-flex; align-items: center; justify-content: center; gap: 0.375rem; font-size: 10px; font-weight: 600; color: var(--app-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 1.25rem; background: #ECFDF5; padding: 0.375rem 0.75rem; border-radius: 9999px; }
-        @media (min-width: 768px) { .cta-secure { font-size: 0.75rem; } }
-        .cta-secure svg { width: 0.875rem; height: 0.875rem; }
+        .cta-tags { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1.75rem; }
+        .cta-tag { background: #F1F5F9; color: #334155; font-size: 11px; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .cta-secure { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 11px; font-weight: 700; color: #047857; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 1.5rem; background: #ECFDF5; padding: 0.5rem 1rem; border-radius: 9999px; border: 1px solid #D1FAE5; }
+        @media (min-width: 768px) { .cta-secure { font-size: 0.8rem; } }
+        .cta-secure svg { width: 1rem; height: 1rem; }
 
-        /* 3. Target Audience / Diagnóstico (Bento UI) */
-        .bento-section { padding: 5rem 1rem; background: #F8FAFC; }
-        .bento-pre-title { color: var(--app-cta); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.5rem; display: block; }
-        .bento-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 3rem; }
+        /* 3. Target Audience / Diagnóstico */
+        .bento-section { padding: 6rem 1rem; background: #F8FAFC; }
+        .bento-pre-title { color: var(--app-cta-dark); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 0.75rem; display: block; }
+        .bento-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 3.5rem; }
         @media (min-width: 768px) { .bento-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
-        .bento-card { padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem; }
+        .bento-card { padding: 1.75rem; display: flex; align-items: flex-start; gap: 1.25rem; }
         .bento-span-2 { width: 100%; }
-        @media (min-width: 768px) { .bento-span-2 { grid-column: span 2; max-width: 36rem; margin: 0 auto; } }
-        .bento-icon { width: 3rem; height: 3rem; border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .bento-icon svg { width: 1.5rem; height: 1.5rem; }
-        .bento-text { color: var(--app-muted); font-weight: 500; font-size: 0.875rem; line-height: 1.625; padding-top: 0.25rem; }
-        @media (min-width: 768px) { .bento-text { font-size: 1rem; } }
-        .bento-text strong { color: var(--app-text); font-weight: 700; }
+        @media (min-width: 768px) { .bento-span-2 { grid-column: span 2; max-width: 40rem; margin: 0 auto; } }
+        .bento-icon { width: 3.5rem; height: 3.5rem; border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .bento-icon svg { width: 1.75rem; height: 1.75rem; }
+        .bento-text { color: var(--app-muted); font-weight: 500; font-size: 0.95rem; line-height: 1.6; padding-top: 0.25rem; }
+        @media (min-width: 768px) { .bento-text { font-size: 1.05rem; } }
+        .bento-text strong { color: var(--app-text); font-weight: 800; }
         
-        .icon-emerald { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); color: var(--app-primary); }
-        .icon-rose { background: #FFF1F2; color: var(--app-cta); }
-        .icon-blue { background: #EFF6FF; color: #3B82F6; }
-        .icon-amber { background: #FFFBEB; color: #F59E0B; }
-        .icon-purple { background: #FAF5FF; color: #A855F7; }
+        .icon-emerald { background: #ECFDF5; color: #047857; border: 1px solid #D1FAE5; }
+        .icon-rose { background: #FFF1F2; color: #BE123C; border: 1px solid #FFE4E6; }
+        .icon-blue { background: #EFF6FF; color: #1D4ED8; border: 1px solid #DBEAFE; }
+        .icon-amber { background: #FFFBEB; color: #B45309; border: 1px solid #FEF3C7; }
+        .icon-purple { background: #FAF5FF; color: #7E22CE; border: 1px solid #F3E8FF; }
 
         /* 4. Bônus Section */
-        .bonus-section { padding: 5rem 1rem; background: var(--app-surface); }
-        .bonus-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: flex-start; }
+        .bonus-section { padding: 6rem 1rem; background: var(--app-surface); }
+        .bonus-grid { display: grid; grid-template-columns: 1fr; gap: 3.5rem; align-items: flex-start; }
         @media (min-width: 1024px) { .bonus-grid { grid-template-columns: repeat(12, 1fr); } }
         .bonus-sidebar { text-align: center; }
-        @media (min-width: 1024px) { .bonus-sidebar { grid-column: span 4; position: sticky; top: 6rem; text-align: left; } }
-        .badge-premium { background: #FEF3C7; color: #B45309; margin-bottom: 1rem; }
-        .bonus-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        @media (min-width: 1024px) { .bonus-sidebar { grid-column: span 4; position: sticky; top: 7rem; text-align: left; } }
+        .badge-premium { background: #FEF3C7; color: #B45309; margin-bottom: 1.25rem; }
+        .bonus-list { display: flex; flex-direction: column; gap: 2rem; }
         @media (min-width: 1024px) { .bonus-list { grid-column: span 8; } }
         
-        /* Estrutura do Bonus Card (Injetado via JS) */
-        .bonus-card { padding: 1.25rem; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1.5rem; transition: transform 0.3s; position: relative; overflow: hidden; }
-        @media (min-width: 768px) { .bonus-card { padding: 2rem; flex-direction: row; gap: 2rem; } }
-        .bonus-card:hover { transform: translateY(-4px); }
-        .bonus-img-box { width: 8rem; flex-shrink: 0; transition: transform 0.3s; }
-        @media (min-width: 768px) { .bonus-img-box { width: 10rem; } }
-        .bonus-img { width: 100%; border-radius: 0.75rem; object-fit: cover; border: 1px solid var(--app-border); box-shadow: var(--shadow-sm); aspect-ratio: 3/4; }
+        .bonus-card { padding: 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1.75rem; transition: transform 0.3s; position: relative; overflow: hidden; border: 1px solid #F1F5F9; }
+        @media (min-width: 768px) { .bonus-card { padding: 2.5rem; flex-direction: row; gap: 2.5rem; } }
+        .bonus-card:hover { transform: translateY(-4px); border-color: #E2E8F0; }
+        .bonus-img-box { width: 9rem; flex-shrink: 0; transition: transform 0.3s; }
+        @media (min-width: 768px) { .bonus-img-box { width: 11rem; } }
+        .bonus-img { width: 100%; border-radius: 0.75rem; object-fit: cover; border: 1px solid var(--app-border); box-shadow: var(--shadow-md); aspect-ratio: 3/4; }
         .bonus-content { flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
         @media (min-width: 768px) { .bonus-content { align-items: flex-start; text-align: left; } }
-        .bonus-badge-imediato { background: #ECFDF5; color: #059669; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; display: inline-flex; align-items: center; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
-        @media (min-width: 768px) { .bonus-badge-imediato { font-size: 0.75rem; } }
-        .bonus-card-title { color: var(--app-text); font-weight: 900; font-size: 1.25rem; text-transform: uppercase; font-family: var(--font-sans); letter-spacing: -0.025em; margin-bottom: 0.5rem; transition: color 0.3s; }
-        @media (min-width: 768px) { .bonus-card-title { font-size: 1.5rem; } }
-        .bonus-desc { color: var(--app-muted); font-weight: 500; font-size: 1rem; line-height: 1.375; margin: 0; }
-        @media (min-width: 768px) { .bonus-desc { font-size: 1.125rem; } }
-        .bonus-mockup { width: 10rem; flex-shrink: 0; transition: transform 0.3s; margin-top: 1rem; }
-        @media (min-width: 768px) { .bonus-mockup { width: 14rem; margin-top: 0; } }
+        .bonus-badge-imediato { background: #ECFDF5; color: #047857; padding: 0.35rem 0.85rem; border-radius: 9999px; margin-bottom: 1rem; display: inline-flex; align-items: center; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid #D1FAE5;}
+        @media (min-width: 768px) { .bonus-badge-imediato { font-size: 0.8rem; } }
+        .bonus-card-title { color: var(--app-text); font-weight: 900; font-size: 1.35rem; text-transform: uppercase; font-family: var(--font-sans); letter-spacing: -0.025em; margin-bottom: 0.5rem; transition: color 0.3s; }
+        @media (min-width: 768px) { .bonus-card-title { font-size: 1.6rem; } }
+        .bonus-desc { color: var(--app-muted); font-weight: 500; font-size: 1.05rem; line-height: 1.4; margin: 0; }
+        @media (min-width: 768px) { .bonus-desc { font-size: 1.15rem; } }
+        .bonus-mockup { width: 11rem; flex-shrink: 0; transition: transform 0.3s; margin-top: 1rem; }
+        @media (min-width: 768px) { .bonus-mockup { width: 15rem; margin-top: 0; } }
         .bonus-mockup-img { width: 100%; object-fit: cover; filter: drop-shadow(0 10px 8px rgba(0,0,0,0.04)) drop-shadow(0 4px 3px rgba(0,0,0,0.1)); }
         
         .bonus-card:hover .bonus-img-box { transform: scale(1.05); }
         .bonus-card:hover .bonus-mockup { transform: scale(1.05); }
-        .bonus-card:hover .bonus-card-title { color: var(--app-primary); }
+        .bonus-card:hover .bonus-card-title { color: var(--app-primary-dark); }
 
-        .btn-mobile-only { display: block; margin-top: 1.5rem; text-align: center; }
+        .btn-mobile-only { display: block; margin-top: 2rem; text-align: center; }
         @media (min-width: 1024px) { .btn-mobile-only { display: none; } }
 
         /* 5. Chá Saudável */
-        .tea-section { background: #F8FAFC; padding: 5rem 1rem; overflow: hidden; }
-        .tea-card { padding: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
-        @media (min-width: 768px) { .tea-card { padding: 3rem; } }
+        .tea-section { background: #F8FAFC; padding: 6rem 1rem; overflow: hidden; }
+        .tea-card { padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 3rem; }
+        @media (min-width: 768px) { .tea-card { padding: 4rem; } }
         @media (min-width: 1024px) { .tea-card { flex-direction: row; } }
         .tea-img-box { width: 100%; position: relative; }
         @media (min-width: 1024px) { .tea-img-box { width: 50%; } }
-        .tea-img { border-radius: 1.5rem; box-shadow: var(--shadow-lg); width: 100%; object-fit: cover; aspect-ratio: 1/1; }
+        .tea-img { border-radius: 1.5rem; box-shadow: var(--shadow-lg); width: 100%; object-fit: cover; aspect-ratio: 1/1; border: 4px solid #fff; }
         @media (min-width: 768px) { .tea-img { aspect-ratio: auto; } }
         .tea-content { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
         @media (min-width: 1024px) { .tea-content { width: 50%; align-items: flex-start; text-align: left; } }
-        .tea-desc { color: var(--app-muted); font-size: 1rem; line-height: 1.625; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1rem; }
-        .tea-highlight { background: #ECFDF5; padding: 1rem; border-left: 4px solid var(--app-primary); border-radius: 0 0.75rem 0.75rem 0; color: #064E3B; font-weight: 500; font-size: 0.875rem; }
+        .tea-desc { color: var(--app-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+        .tea-highlight { background: #ECFDF5; padding: 1.25rem; border-left: 4px solid var(--app-primary); border-radius: 0 0.75rem 0.75rem 0; color: #047857; font-weight: 600; font-size: 0.95rem; }
 
         /* 6. Prova Social e Galeria */
-        .social-proof-section { background: var(--app-surface); padding: 5rem 1rem; }
-        .carousel-wrapper { display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-bottom: 1rem; }
+        .social-proof-section { background: var(--app-surface); padding: 6rem 1rem; }
+        .carousel-wrapper { display: flex; overflow-x: auto; gap: 1.25rem; padding-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin-bottom: 1.5rem; }
         .carousel-wrapper::-webkit-scrollbar { display: none; }
-        .carousel-item { scroll-snap-align: center; min-width: 280px; flex-shrink: 0; padding: 0.375rem; }
-        @media (min-width: 768px) { .carousel-wrapper { display: grid; grid-template-columns: repeat(3, 1fr); overflow-x: visible; scroll-snap-type: none; gap: 1rem; min-width: 0; margin-bottom: 3rem; } .carousel-item { min-width: 0; } }
-        .testi-header { padding: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
-        .testi-avatar { width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem; }
-        .avatar-em { background: #D1FAE5; color: var(--app-primary); }
-        .avatar-ro { background: #FFE4E6; color: var(--app-cta); }
-        .avatar-bl { background: #DBEAFE; color: #2563EB; }
-        .testi-name { color: var(--app-text); font-size: 0.75rem; font-weight: 600; }
+        .carousel-item { scroll-snap-align: center; min-width: 300px; flex-shrink: 0; padding: 0.5rem; display: flex; flex-direction: column; border: 1px solid #F1F5F9; }
+        @media (min-width: 768px) { .carousel-wrapper { display: grid; grid-template-columns: repeat(3, 1fr); overflow-x: visible; scroll-snap-type: none; gap: 1.5rem; min-width: 0; margin-bottom: 3rem; } .carousel-item { min-width: 0; } }
+        .testi-header { padding: 0.75rem; display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+        .testi-avatar { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+        .avatar-em { background: #D1FAE5; color: #047857; }
+        .avatar-ro { background: #FFE4E6; color: #BE123C; }
+        .avatar-bl { background: #DBEAFE; color: #1D4ED8; }
+        .testi-name { color: var(--app-text); font-size: 0.95rem; font-weight: 800; }
 
-        /* Controles do Carrossel Mobile */
-        .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+        .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 3.5rem; }
         @media (min-width: 768px) { .carousel-controls { display: none; } }
-        .carousel-arrow { background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 50%; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; color: var(--app-text); box-shadow: var(--shadow-sm); transition: all 0.3s; }
+        .carousel-arrow { background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 50%; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; color: var(--app-text); box-shadow: var(--shadow-sm); transition: all 0.3s; }
         .carousel-arrow:active { background: var(--app-border); transform: scale(0.95); }
-        .carousel-arrow svg { width: 1.25rem; height: 1.25rem; }
-        .carousel-hint { font-size: 0.65rem; color: var(--app-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; opacity: 0.8; }
+        .carousel-arrow svg { width: 1.5rem; height: 1.5rem; }
+        .carousel-hint { font-size: 0.75rem; color: var(--app-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; opacity: 0.9; }
 
-        .authority-block { background: #F8FAFC; padding: 1.5rem; text-align: left; margin: 1rem auto 4rem auto; max-width: 56rem; }
-        @media (min-width: 768px) { .authority-block { padding: 2.5rem; } }
-        .auth-title { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; font-family: var(--font-sans); text-align: center; margin-bottom: 2rem; }
-        @media (min-width: 768px) { .auth-title { font-size: 1.875rem; } }
-        .auth-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; color: var(--app-muted); font-size: 0.875rem; line-height: 1.625; }
+        .authority-block { background: #F8FAFC; padding: 2rem; text-align: left; margin: 1rem auto 5rem auto; max-width: 56rem; border: 1px solid #F1F5F9; border-radius: 1.5rem; }
+        @media (min-width: 768px) { .authority-block { padding: 3rem; } }
+        .auth-title { font-size: 1.6rem; font-weight: 900; text-transform: uppercase; font-family: var(--font-sans); text-align: center; margin-bottom: 2.5rem; line-height: 1.2; }
+        @media (min-width: 768px) { .auth-title { font-size: 2rem; } }
+        .auth-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; color: var(--app-muted); font-size: 0.95rem; line-height: 1.6; }
         @media (min-width: 768px) { .auth-grid { grid-template-columns: repeat(2, 1fr); } }
-        .auth-item-title { font-weight: 700; color: var(--app-text); font-size: 1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        .auth-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; display: inline-block; }
+        .auth-item-title { font-weight: 800; color: var(--app-text); font-size: 1.05rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem; }
+        .auth-dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; display: inline-block; }
 
         /* Masonry Grid (Galeria) */
-        .masonry-grid { column-count: 1; column-gap: 1rem; padding: 0 0.5rem; }
+        .masonry-grid { column-count: 1; column-gap: 1.25rem; padding: 0 0.5rem; }
         @media (min-width: 768px) { .masonry-grid { column-count: 2; column-gap: 1.5rem; } }
         @media (min-width: 1024px) { .masonry-grid { column-count: 3; column-gap: 1.5rem; } }
-        .masonry-item { break-inside: avoid; margin-bottom: 1rem; display: inline-block; width: 100%; position: relative; padding: 0.25rem; overflow: hidden; transition: transform 0.3s; }
-        .masonry-item:hover { transform: translateY(-4px); }
+        .masonry-item { break-inside: avoid; margin-bottom: 1.25rem; display: inline-block; width: 100%; position: relative; padding: 0.35rem; overflow: hidden; transition: transform 0.3s; border: 1px solid #F1F5F9; }
+        .masonry-item:hover { transform: translateY(-4px); border-color: #E2E8F0; }
         .gallery-img { width: 100%; height: auto; border-radius: 0.75rem; object-fit: cover; transition: transform 0.5s; aspect-ratio: 4/5; }
-        .masonry-item:hover .gallery-img { transform: scale(1.02); }
-        .gallery-overlay { position: absolute; inset: 0.25rem; border-radius: 0.75rem; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent, transparent); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 0.75rem; pointer-events: none; }
+        .masonry-item:hover .gallery-img { transform: scale(1.03); }
+        .gallery-overlay { position: absolute; inset: 0.35rem; border-radius: 0.75rem; background: linear-gradient(to top, rgba(15,23,42,0.8), transparent, transparent); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1rem; pointer-events: none; }
         .masonry-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-badge { color: #fff; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 0.375rem; }
-        .gallery-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--app-primary); }
+        .gallery-badge { color: #fff; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 0.4rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--app-primary); box-shadow: 0 0 8px var(--app-primary); }
 
         /* 7. Garantia Blindada */
-        .guarantee-section { background: #F8FAFC; padding: 5rem 1rem; border-top: 1px solid var(--app-border); }
-        .guarantee-container { display: flex; flex-direction: column; align-items: center; gap: 2.5rem; max-width: 56rem; margin: 0 auto; }
+        .guarantee-section { background: #F8FAFC; padding: 6rem 1rem; border-top: 1px solid var(--app-border); }
+        .guarantee-container { display: flex; flex-direction: column; align-items: center; gap: 3rem; max-width: 56rem; margin: 0 auto; }
         @media (min-width: 768px) { .guarantee-container { flex-direction: row; } }
         .seal-wrapper { width: 100%; display: flex; justify-content: center; }
         @media (min-width: 768px) { .seal-wrapper { width: 33.333%; } }
-        .seal { width: 12rem; height: 12rem; border-radius: 50%; background: #fff; border: 1px solid #FDE68A; box-shadow: 0 10px 30px rgba(245,158,11,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 0.5rem; }
-        .seal-inner { position: absolute; inset: 0.5rem; border: 1px dashed #FCD34D; border-radius: 50%; }
-        .seal-num { font-size: 4.5rem; font-weight: 900; line-height: 1; font-family: var(--font-sans); }
-        .seal-text { color: var(--app-gold); font-weight: 700; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0; }
-        .seal-badge { background: #FEF3C7; color: #B45309; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; text-transform: uppercase; font-size: 9px; letter-spacing: 0.05em; margin-top: 0.5rem; text-align: center; z-index: 1; }
+        .seal { width: 14rem; height: 14rem; border-radius: 50%; background: #fff; border: 1px solid #FDE68A; box-shadow: 0 10px 30px rgba(245,158,11,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 0.5rem; }
+        .seal-inner { position: absolute; inset: 0.5rem; border: 2px dashed #FCD34D; border-radius: 50%; }
+        .seal-num { font-size: 5.5rem; font-weight: 900; line-height: 1; font-family: var(--font-sans); }
+        .seal-text { color: var(--app-gold-dark); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0; }
+        .seal-badge { background: #FEF3C7; color: #B45309; font-weight: 800; padding: 0.35rem 1rem; border-radius: 9999px; text-transform: uppercase; font-size: 10px; letter-spacing: 0.05em; margin-top: 0.75rem; text-align: center; z-index: 1; }
         .guarantee-content { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; z-index: 10; }
         @media (min-width: 768px) { .guarantee-content { width: 66.666%; text-align: left; align-items: flex-start; } }
-        .guarantee-title { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; font-family: var(--font-sans); line-height: 1.2; margin-bottom: 1rem; color: var(--app-text); }
-        @media (min-width: 768px) { .guarantee-title { font-size: 2.25rem; } }
-        .guarantee-desc { color: var(--app-muted); font-size: 0.875rem; line-height: 1.625; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1rem; }
-        @media (min-width: 768px) { .guarantee-desc { font-size: 1rem; } }
-        .guarantee-highlight { background: #FFFBEB; padding: 1rem; border-left: 4px solid var(--app-gold); border-radius: 0 0.75rem 0.75rem 0; color: #78350F; font-weight: 500; }
+        .guarantee-title { font-size: 1.75rem; font-weight: 900; text-transform: uppercase; font-family: var(--font-sans); line-height: 1.2; margin-bottom: 1.25rem; color: var(--app-text); }
+        @media (min-width: 768px) { .guarantee-title { font-size: 2.5rem; } }
+        .guarantee-desc { color: var(--app-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+        @media (min-width: 768px) { .guarantee-desc { font-size: 1.05rem; } }
+        .guarantee-highlight { background: #FFFBEB; padding: 1.25rem; border-left: 4px solid var(--app-gold); border-radius: 0 0.75rem 0.75rem 0; color: #92400E; font-weight: 600; font-size: 0.95rem; }
 
         /* 8. Oferta e Checkout */
-        .checkout-section { padding: 5rem 1rem; background: var(--app-surface); border-top: 1px solid var(--app-border); position: relative; }
-        .checkout-wrapper { padding: 1.5rem; border-radius: 2rem; border: 1px solid var(--app-border); }
-        @media (min-width: 768px) { .checkout-wrapper { padding: 2.5rem; } }
-        .checkout-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
-        @media (min-width: 768px) { .checkout-grid { grid-template-columns: repeat(2, 1fr); } }
+        .checkout-section { padding: 6rem 1rem; background: var(--app-surface); border-top: 1px solid var(--app-border); position: relative; }
+        .checkout-wrapper { padding: 2rem; border-radius: 2rem; border: 1px solid var(--app-border); }
+        @media (min-width: 768px) { .checkout-wrapper { padding: 3rem; } }
+        .checkout-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+        @media (min-width: 768px) { .checkout-grid { grid-template-columns: repeat(2, 1fr); gap: 4rem; } }
         
-        .check-list { display: flex; flex-direction: column; gap: 0.75rem; }
-        .check-item { display: flex; justify-content: space-between; align-items: center; background: #F8FAFC; padding: 0.875rem; border-radius: 0.75rem; border: 1px solid #F1F5F9; }
-        .check-left { display: flex; align-items: center; gap: 0.75rem; }
-        .check-icon { background: #D1FAE5; color: var(--app-primary); padding: 0.25rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .check-icon svg { width: 1rem; height: 1rem; }
-        .check-text { font-weight: 700; color: var(--app-text); font-size: 0.875rem; }
-        @media (min-width: 768px) { .check-text { font-size: 1rem; } }
-        .check-price { color: #94A3B8; text-decoration: line-through; font-weight: 500; font-size: 0.75rem; }
-        .check-total { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--app-border); display: flex; justify-content: space-between; align-items: center; padding: 0 0.5rem; }
-        .total-label { font-weight: 700; color: var(--app-text); font-size: 0.875rem; text-transform: uppercase; }
-        .total-val { color: #94A3B8; font-weight: 700; font-size: 0.875rem; text-decoration: line-through; text-decoration-thickness: 2px; }
+        .check-list { display: flex; flex-direction: column; gap: 1rem; }
+        .check-item { display: flex; justify-content: space-between; align-items: center; background: #F8FAFC; padding: 1rem; border-radius: 0.75rem; border: 1px solid #F1F5F9; }
+        .check-left { display: flex; align-items: center; gap: 0.85rem; }
+        .check-icon { background: #D1FAE5; color: #047857; padding: 0.35rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .check-icon svg { width: 1.1rem; height: 1.1rem; }
+        .check-text { font-weight: 800; color: var(--app-text); font-size: 0.95rem; }
+        @media (min-width: 768px) { .check-text { font-size: 1.05rem; } }
+        .check-price { color: #64748B; text-decoration: line-through; font-weight: 600; font-size: 0.85rem; }
+        .check-total { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 2px solid #F1F5F9; display: flex; justify-content: space-between; align-items: center; padding: 0 0.5rem; }
+        .total-label { font-weight: 900; color: var(--app-text); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .total-val { color: #64748B; font-weight: 800; font-size: 0.95rem; text-decoration: line-through; text-decoration-thickness: 2px; }
 
-        .price-box { background: var(--app-surface); border-radius: 1.5rem; padding: 1.5rem; text-align: center; border: 2px solid var(--app-cta); box-shadow: var(--shadow-app-cta); position: relative; }
-        @media (min-width: 768px) { .price-box { padding: 2rem; } }
-        .price-badge { position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%); background: var(--app-cta); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: var(--shadow-sm); white-space: nowrap; }
-        .price-label { color: var(--app-muted); font-weight: 500; font-size: 0.75rem; margin-bottom: 0.25rem; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        .price-value-wrap { display: flex; align-items: flex-start; justify-content: center; margin-bottom: 0.25rem; color: var(--app-text); }
-        .price-currency { font-size: 1.5rem; margin-top: 0.5rem; margin-right: 0.25rem; color: #94A3B8; font-weight: 700; }
-        .price-amount { font-size: 3.75rem; font-weight: 900; font-family: var(--font-sans); letter-spacing: -0.05em; line-height: 1; }
-        .price-cents { font-size: 1.875rem; margin-top: 0.375rem; color: #94A3B8; font-weight: 700; }
-        .price-guarantee { color: var(--app-primary); font-size: 10px; margin-bottom: 1.5rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; background: #ECFDF5; display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; }
-        .secure-env { font-size: 10px; color: #94A3B8; margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.25rem; font-weight: 500; }
-        .secure-env svg { width: 0.75rem; height: 0.75rem; color: var(--app-primary); }
+        .price-box { background: var(--app-surface); border-radius: 1.5rem; padding: 2rem; text-align: center; border: 2px solid var(--app-cta); box-shadow: var(--shadow-app-cta); position: relative; }
+        @media (min-width: 768px) { .price-box { padding: 2.5rem; } }
+        .price-badge { position: absolute; top: -0.85rem; left: 50%; transform: translateX(-50%); background: var(--app-cta); color: #fff; padding: 0.35rem 1rem; border-radius: 9999px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: var(--shadow-sm); white-space: nowrap; }
+        .price-label { color: var(--app-muted); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .price-value-wrap { display: flex; align-items: flex-start; justify-content: center; margin-bottom: 0.5rem; color: var(--app-text); }
+        .price-currency { font-size: 1.5rem; margin-top: 0.6rem; margin-right: 0.35rem; color: #64748B; font-weight: 800; }
+        .price-amount { font-size: 4rem; font-weight: 900; font-family: var(--font-sans); letter-spacing: -0.05em; line-height: 1; }
+        .price-cents { font-size: 2rem; margin-top: 0.5rem; color: #64748B; font-weight: 800; }
+        .price-guarantee { color: #047857; font-size: 11px; margin-bottom: 1.75rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; background: #ECFDF5; display: inline-block; padding: 0.35rem 0.85rem; border-radius: 9999px; border: 1px solid #D1FAE5; }
+        .secure-env { font-size: 11px; color: #64748B; margin-top: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 0.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .secure-env svg { width: 0.85rem; height: 0.85rem; color: #047857; }
 
         /* 9. Mockups Finais */
-        .mockups-section { background: #F8FAFC; padding: 4rem 1rem; }
-        .mockups-container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; max-width: 64rem; margin: 0 auto; }
-        @media (min-width: 768px) { .mockups-container { flex-direction: row; } }
+        .mockups-section { background: #F8FAFC; padding: 5rem 1rem; border-top: 1px solid var(--app-border); }
+        .mockups-container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3rem; max-width: 64rem; margin: 0 auto; }
+        @media (min-width: 768px) { .mockups-container { flex-direction: row; gap: 4rem; } }
         .mockups-images { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; }
         @media (min-width: 768px) { .mockups-images { width: 50%; } }
         .mockup-mobile { width: 33.333%; position: relative; }
         .mockup-desktop { width: 66.666%; position: relative; animation-delay: 1s; }
-        .drop-shadow-xl { filter: drop-shadow(0 20px 13px rgba(0,0,0,0.03)) drop-shadow(0 8px 5px rgba(0,0,0,0.08)); }
-        .drop-shadow-2xl { filter: drop-shadow(0 25px 25px rgba(0,0,0,0.15)); }
+        .drop-shadow-xl { filter: drop-shadow(0 20px 13px rgba(0,0,0,0.05)) drop-shadow(0 8px 5px rgba(0,0,0,0.1)); }
+        .drop-shadow-2xl { filter: drop-shadow(0 25px 25px rgba(0,0,0,0.2)); }
         .mockups-content { width: 100%; text-align: center; }
         @media (min-width: 768px) { .mockups-content { width: 50%; text-align: left; } }
         
         /* 10. FAQ */
-        .faq-section { padding: 5rem 1rem; background: var(--app-surface); position: relative; }
+        .faq-section { padding: 6rem 1rem; background: var(--app-surface); position: relative; }
         .faq-container { max-width: 48rem; margin: 0 auto; position: relative; z-index: 10; }
-        .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
-        .faq-card { background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 1.5rem; box-shadow: var(--shadow-sm); cursor: pointer; overflow: hidden; }
-        .faq-summary { display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: var(--app-text); padding: 1.25rem; font-size: 0.875rem; font-family: var(--font-sans); outline: none; list-style: none; }
+        .faq-list { display: flex; flex-direction: column; gap: 1rem; }
+        .faq-card { background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 1.5rem; box-shadow: var(--shadow-sm); cursor: pointer; overflow: hidden; transition: border-color 0.3s; }
+        .faq-card:hover { border-color: #CBD5E1; }
+        .faq-summary { display: flex; justify-content: space-between; align-items: center; font-weight: 800; color: var(--app-text); padding: 1.5rem; font-size: 0.95rem; font-family: var(--font-sans); outline: none; list-style: none; }
         .faq-summary::-webkit-details-marker { display: none; }
-        @media (min-width: 768px) { .faq-summary { font-size: 1rem; } }
-        .faq-summary-left { display: flex; align-items: center; gap: 0.75rem; }
-        .faq-num { color: rgba(16,185,129,0.4); font-weight: 900; font-size: 1.25rem; }
-        .faq-icon { background: #F1F5F9; padding: 0.375rem; border-radius: 50%; color: var(--app-muted); transition: transform 0.3s; display: flex; align-items: center; justify-content: center; }
-        details[open] .faq-icon { transform: rotate(180deg); }
-        .faq-answer { color: var(--app-muted); font-size: 0.875rem; padding: 0 1.25rem 1.25rem 1.25rem; line-height: 1.625; border-top: 1px solid #F1F5F9; margin-top: 0.5rem; padding-top: 1.25rem; animation: fadeDown 0.3s ease-out forwards; }
+        @media (min-width: 768px) { .faq-summary { font-size: 1.05rem; } }
+        .faq-summary-left { display: flex; align-items: center; gap: 1rem; }
+        .faq-num { color: rgba(16,185,129,0.5); font-weight: 900; font-size: 1.35rem; }
+        .faq-icon { background: #F1F5F9; padding: 0.5rem; border-radius: 50%; color: var(--app-muted); transition: transform 0.3s; display: flex; align-items: center; justify-content: center; }
+        details[open] .faq-icon { transform: rotate(180deg); background: #ECFDF5; color: #047857; }
+        .faq-answer { color: var(--app-muted); font-size: 0.95rem; padding: 0 1.5rem 1.5rem 1.5rem; line-height: 1.6; border-top: 1px solid #F1F5F9; margin-top: 0.5rem; padding-top: 1.5rem; animation: fadeDown 0.3s ease-out forwards; }
         @keyframes fadeDown { 0% {opacity: 0; transform: translateY(-5px)} 100% {opacity: 1; transform: translateY(0)} }
 
         /* 11. Links e Footer */
-        .seo-nav { background: #F1F5F9; padding: 2rem 1rem; }
-        .seo-title { color: #94A3B8; font-size: 10px; text-align: center; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
-        .seo-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; max-width: 56rem; margin: 0 auto; }
-        .seo-link { font-size: 11px; color: var(--app-muted); background: #fff; padding: 0.25rem 0.75rem; border: 1px solid var(--app-border); border-radius: 9999px; transition: color 0.3s; }
-        .seo-link:hover { color: var(--app-primary); }
+        .seo-nav { background: #F1F5F9; padding: 2.5rem 1rem; }
+        .seo-title { color: var(--app-muted); font-size: 11px; text-align: center; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; }
+        .seo-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; max-width: 56rem; margin: 0 auto; }
+        .seo-link { font-size: 12px; color: var(--app-muted); background: #fff; padding: 0.35rem 0.85rem; border: 1px solid var(--app-border); border-radius: 9999px; transition: all 0.3s; font-weight: 500; }
+        .seo-link:hover { color: var(--app-primary-dark); border-color: var(--app-primary-dark); }
 
-        .footer { background: var(--app-surface); padding: 2.5rem 1rem; text-align: center; border-top: 1px solid var(--app-border); }
+        .footer { background: var(--app-surface); padding: 3rem 1rem; text-align: center; border-top: 1px solid var(--app-border); }
         .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
-        .footer-link { color: var(--app-muted); font-size: 0.75rem; font-weight: 500; transition: color 0.3s; }
-        .footer-link:hover { color: var(--app-primary); }
-        .footer-copy { color: #94A3B8; font-weight: 500; font-size: 0.75rem; margin-bottom: 1.5rem; }
-        .footer-disclaimer { padding-top: 1.5rem; border-top: 1px solid #F1F5F9; font-size: 9px; color: #94A3B8; line-height: 1.625; max-width: 48rem; margin: 0 auto; }
-        .footer-disclaimer-title { font-weight: 700; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px; }
+        .footer-link { color: var(--app-muted); font-size: 0.85rem; font-weight: 600; transition: color 0.3s; }
+        .footer-link:hover { color: var(--app-primary-dark); }
+        .footer-copy { color: var(--app-muted); font-weight: 600; font-size: 0.85rem; margin-bottom: 1.5rem; }
+        .footer-disclaimer { padding-top: 1.5rem; border-top: 1px solid #F1F5F9; font-size: 10px; color: var(--app-muted); line-height: 1.6; max-width: 48rem; margin: 0 auto; }
+        .footer-disclaimer-title { font-weight: 800; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--app-text); }
 
         /* 12. Mobile Bottom Bar */
-        .mobile-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); border-top: 1px solid var(--app-border); padding: 1rem 1rem calc(2rem + env(safe-area-inset-bottom)); z-index: 50; transform: translateY(100%); transition: transform 0.3s; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); }
+        .mobile-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-top: 1px solid var(--app-border); padding: 1rem 1rem calc(1.5rem + env(safe-area-inset-bottom)); z-index: 50; transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 -10px 25px rgba(0,0,0,0.08); }
         @media (min-width: 768px) { .mobile-bar { display: none; } }
         .mobile-bar:not(.translate-y-full) { transform: translateY(0); }
-        .mobile-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; max-width: 24rem; margin: 0 auto; }
+        .mobile-bar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 26rem; margin: 0 auto; }
         .mobile-price-col { display: flex; flex-direction: column; }
-        .mobile-old-price { color: #94A3B8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: line-through; }
-        .mobile-new-price { color: var(--app-text); font-weight: 900; font-size: 1.125rem; line-height: 1; letter-spacing: -0.025em; }
-        .mobile-btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; width: 100%; flex: 1; }
+        .mobile-old-price { color: #64748B; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: line-through; margin-bottom: 0.15rem; }
+        .mobile-new-price { color: var(--app-text); font-weight: 900; font-size: 1.25rem; line-height: 1; letter-spacing: -0.025em; }
+        .mobile-btn { padding: 0.85rem 1.5rem; font-size: 0.95rem; width: 100%; flex: 1; }
 
         /* Modals */
-        .modal { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 20px; }
+        .modal { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 20px; }
         .modal.active { display: flex; animation: fadeIn 0.3s ease-out; }
         .modal-content { background: var(--app-surface); max-width: 600px; width: 100%; max-height: 85vh; overflow-y: auto; border-radius: 2rem; padding: 2rem; box-shadow: var(--shadow-xl); }
-        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--app-border); padding-bottom: 1rem; }
-        .modal-title { color: var(--app-text); font-size: 1.25rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.025em; }
-        .modal-close { color: var(--app-muted); font-size: 1.5rem; transition: color 0.3s; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid var(--app-border); padding-bottom: 1rem; }
+        .modal-title { color: var(--app-text); font-size: 1.35rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.025em; }
+        .modal-close { color: var(--app-muted); font-size: 1.75rem; transition: color 0.3s; line-height: 1; }
         .modal-close:hover { color: var(--app-text); }
-        .modal-body { color: var(--app-muted); font-size: 0.875rem; line-height: 1.625; display: flex; flex-direction: column; gap: 0.75rem; text-align: left; }
-        .modal-body strong { color: var(--app-text); }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .modal-body { color: var(--app-muted); font-size: 0.95rem; line-height: 1.6; display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+        .modal-body strong { color: var(--app-text); font-weight: 800; }
     </style>
-     <!-- ═══════════════════════════════════════════════
-         SCHEMA MARKUP JSON-LD
-    ═══════════════════════════════════════════════ -->
+
+    <!-- SCHEMA MARKUP JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -634,7 +642,7 @@
       "@type": "Organization",
       "name": "Emagrecer Pro",
       "url": "https://alimentacaosaudavel360.com.br/",
-      "logo": "https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.pn",
+      "logo": "https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "Suporte.desafioemagrecerpro@gmail.com",
@@ -646,522 +654,647 @@
 </head>
 <body>
 
-    <!-- BLOCO GEO SEO -->
-    <article id="geo-content-block" aria-label="Informações sobre emagrecimento" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" itemscope itemtype="https://schema.org/Article">
-        <h1 itemprop="headline">Como Emagrecer Rápido e com Saúde: O Guia Completo com o Emagrecer Pro</h1>
-        <meta itemprop="datePublished" content="2026-01-01T08:00:00-03:00" />
-        <meta itemprop="dateModified" content="2026-03-14T15:00:00-03:00" />
-        <link itemprop="image" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" />
-        <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
-            <meta itemprop="name" content="Emagrecer Pro" />
-            <link itemprop="url" href="https://alimentacaosaudavel360.com.br/" />
-        </span>
-        <meta itemprop="description" content="Guia definitivo sobre como emagrecer rápido sem dietas restritivas. Método científico para perda de peso definitiva no Brasil." />
-        <section>
-            <h2>O que é o Emagrecer Pro?</h2>
-            <p>O <strong>Emagrecer Pro</strong> é um programa digital completo de emagrecimento desenvolvido para o público brasileiro. Com base em <strong>tecnologia metabólica e reeducação alimentar</strong>, o método foi criado para quem quer <strong>emagrecer rápido</strong> sem passar fome, sem ir à academia todo dia e sem gastar muito. Disponível por acesso vitalício por apenas R$28,90.</p>
-        </section>
-        <section>
-            <h2>Como emagrecer rápido sem academia?</h2>
-            <p>É possível <strong>emagrecer rápido sem academia</strong> através de reeducação alimentar com dieta low carb, jejum intermitente, controle do metabolismo e uso de chás emagrecedores naturais. O Emagrecer Pro reúne todas essas estratégias em um único guia digital com cardápio semanal completo, 200 receitas low carb e exercícios funcionais práticos para fazer em casa.</p>
-        </section>
-        <section>
-            <h2>O que fazer para emagrecer de verdade?</h2>
-            <p>Para <strong>emagrecer de verdade</strong> é preciso: 1) seguir um cardápio adequado com déficit calórico moderado; 2) consumir alimentos que aceleram o metabolismo; 3) fazer jejum intermitente; 4) usar chás termogênicos naturais; 5) manter consistência no método. O Emagrecer Pro entrega um passo a passo completo com essas cinco estratégias integradas.</p>
-        </section>
-        <section>
-            <h2>Qual a melhor dieta para emagrecer rápido?</h2>
-            <p>A <strong>dieta low carb</strong> combinada com jejum intermitente é considerada uma das mais eficazes para perda de peso rápida e sustentável. O Emagrecer Pro inclui um cardápio semanal low carb completo com mais de 200 receitas deliciosas, tornando a dieta para emagrecer fácil de manter no dia a dia.</p>
-        </section>
-        <section>
-            <h2>Como fazer jejum intermitente para perder peso?</h2>
-            <p>O <strong>jejum intermitente para emagrecer</strong> consiste em alternar períodos de alimentação e jejum. O protocolo mais popular é o 16:8 — 16 horas de jejum e 8 horas de janela alimentar. No Emagrecer Pro, você aprende exatamente como fazer jejum intermitente de forma segura, com cardápios específicos para maximizar a queima de gordura localizada.</p>
-        </section>
-        <section>
-            <h2>Chá para emagrecer: quais funcionam?</h2>
-            <p>Alguns <strong>chás para emagrecer</strong> são comprovadamente eficazes para acelerar o metabolismo e reduzir a gordura localizada: chá verde, chá de hibisco, chá de gengibre com limão, chá de canela e o <strong>chá exclusivo do Emagrecer Pro</strong>. O programa ensina como preparar e consumir cada um para potencializar os resultados de emagrecimento.</p>
-        </section>
-        <section>
-            <h2>O que comer para emagrecer sem sofrer?</h2>
-            <p>Para <strong>emagrecer sem passar fome</strong>, priorize: proteínas magras (frango, ovo, peixe), vegetais fibrosos (brócolis, abobrinha, couve), gorduras boas (abacate, azeite, castanhas) e evite ultraprocessados e açúcar. O Emagrecer Pro oferece mais de 200 receitas práticas e saborosas baseadas nesses princípios, com marmitas fit e cardápios semanais prontos.</p>
-        </section>
-        <section>
-            <h2>Como perder peso em 3 dias?</h2>
-            <p>Para <strong>perder peso em 3 dias</strong> de forma saudável, combine: redução de sódio e carboidratos simples para desinchar, aumento do consumo de água, chás diuréticos naturais e refeições leves com muita proteína e fibra. O Emagrecer Pro inclui um protocolo de desintoxicação rápida com receitas específicas para resultados visíveis em poucos dias.</p>
-        </section>
-        <section>
-            <h2>Emagrecer Pro tem garantia?</h2>
-            <p>Sim. O <strong>Emagrecer Pro oferece 7 dias de garantia total</strong>. Se por qualquer motivo você não ficar satisfeita, basta enviar um e-mail para Suporte.desafioemagrecerpro@gmail.com e o valor pago é devolvido integralmente, sem perguntas. O risco é zero para o comprador.</p>
-        </section>
-        <section>
-            <h2>Quanto custa o Emagrecer Pro?</h2>
-            <p>O Emagrecer Pro está disponível por <strong>R$28,90 em pagamento único</strong>, com acesso vitalício ao guia principal, 200 receitas low carb, cardápio semanal completo e 7 bônus exclusivos no valor de R$364,70. O pagamento é aceito via Pix, cartão de crédito Visa e Mastercard, com ambiente 100% criptografado pela Kiwify.</p>
-        </section>
-        <section>
-            <h2>Quanto tempo leva para ver resultados?</h2>
-            <p>A maioria das alunas nota resultados visíveis já na primeira semana seguindo o método Emagrecer Pro. Em 30 dias seguindo o método completo, é possível perder entre 5 e 10kg. Em 90 dias, a transformação corporal é definitiva e sem efeito sanfona.</p>
-        </section>
-    </article>
+    <!-- BLOCO GEO SEO OTIMIZADO (Landmark main adicionado para acessibilidade) -->
+    <main>
+        <article id="geo-content-block" aria-label="Informações sobre emagrecimento" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" itemscope itemtype="https://schema.org/Article">
+            <h1 itemprop="headline">Como Emagrecer Rápido e com Saúde: O Guia Completo com o Emagrecer Pro</h1>
+            <meta itemprop="datePublished" content="2026-01-01T08:00:00-03:00" />
+            <meta itemprop="dateModified" content="2026-03-14T15:00:00-03:00" />
+            <link itemprop="image" href="https://alimentacaosaudavel360.com.br/imagem/logo_emagrecer.webp" />
+            <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="Emagrecer Pro" />
+                <link itemprop="url" href="https://alimentacaosaudavel360.com.br/" />
+            </span>
+            <meta itemprop="description" content="Guia definitivo sobre como emagrecer rápido sem dietas restritivas. Método científico para perda de peso definitiva no Brasil." />
+            <section>
+                <h2>O que é o Emagrecer Pro?</h2>
+                <p>O <strong>Emagrecer Pro</strong> é um programa digital completo de emagrecimento desenvolvido para o público brasileiro. Com base em <strong>tecnologia metabólica e reeducação alimentar</strong>, o método foi criado para quem quer <strong>emagrecer rápido</strong> sem passar fome, sem ir à academia todo dia e sem gastar muito. Disponível por acesso vitalício por apenas R$28,90.</p>
+            </section>
+            <section>
+                <h2>Como emagrecer rápido sem academia?</h2>
+                <p>É possível <strong>emagrecer rápido sem academia</strong> através de reeducação alimentar com dieta low carb, jejum intermitente, controle do metabolismo e uso de chás emagrecedores naturais. O Emagrecer Pro reúne todas essas estratégias em um único guia digital com cardápio semanal completo, 200 receitas low carb e exercícios funcionais práticos para fazer em casa.</p>
+            </section>
+            <section>
+                <h2>O que fazer para emagrecer de verdade?</h2>
+                <p>Para <strong>emagrecer de verdade</strong> é preciso: 1) seguir um cardápio adequado com déficit calórico moderado; 2) consumir alimentos que aceleram o metabolismo; 3) fazer jejum intermitente; 4) usar chás termogênicos naturais; 5) manter consistência no método. O Emagrecer Pro entrega um passo a passo completo com essas cinco estratégias integradas.</p>
+            </section>
+            <section>
+                <h2>Qual a melhor dieta para emagrecer rápido?</h2>
+                <p>A <strong>dieta low carb</strong> combinada com jejum intermitente é considerada uma das mais eficazes para perda de peso rápida e sustentável. O Emagrecer Pro inclui um cardápio semanal low carb completo com mais de 200 receitas deliciosas, tornando a dieta para emagrecer fácil de manter no dia a dia.</p>
+            </section>
+            <section>
+                <h2>Como fazer jejum intermitente para perder peso?</h2>
+                <p>O <strong>jejum intermitente para emagrecer</strong> consiste em alternar períodos de alimentação e jejum. O protocolo mais popular é o 16:8 — 16 horas de jejum e 8 horas de janela alimentar. No Emagrecer Pro, você aprende exatamente como fazer jejum intermitente de forma segura, com cardápios específicos para maximizar a queima de gordura localizada.</p>
+            </section>
+            <section>
+                <h2>Chá para emagrecer: quais funcionam?</h2>
+                <p>Alguns <strong>chás para emagrecer</strong> são comprovadamente eficazes para acelerar o metabolismo e reduzir a gordura localizada: chá verde, chá de hibisco, chá de gengibre com limão, chá de canela e o <strong>chá exclusivo do Emagrecer Pro</strong>. O programa ensina como preparar e consumir cada um para potencializar os resultados de emagrecimento.</p>
+            </section>
+            <section>
+                <h2>O que comer para emagrecer sem sofrer?</h2>
+                <p>Para <strong>emagrecer sem passar fome</strong>, priorize: proteínas magras (frango, ovo, peixe), vegetais fibrosos (brócolis, abobrinha, couve), gorduras boas (abacate, azeite, castanhas) e evite ultraprocessados e açúcar. O Emagrecer Pro oferece mais de 200 receitas práticas e saborosas baseadas nesses princípios, com marmitas fit e cardápios semanais prontos.</p>
+            </section>
+            <section>
+                <h2>Como perder peso em 3 dias?</h2>
+                <p>Para <strong>perder peso em 3 dias</strong> de forma saudável, combine: redução de sódio e carboidratos simples para desinchar, aumento do consumo de água, chás diuréticos naturais e refeições leves com muita proteína e fibra. O Emagrecer Pro inclui um protocolo de desintoxicação rápida com receitas específicas para resultados visíveis em poucos dias.</p>
+            </section>
+            <section>
+                <h2>Emagrecer Pro tem garantia?</h2>
+                <p>Sim. O <strong>Emagrecer Pro oferece 7 dias de garantia total</strong>. Se por qualquer motivo você não ficar satisfeita, basta enviar um e-mail para Suporte.desafioemagrecerpro@gmail.com e devolvemos 100% do valor pago, sem perguntas e sem burocracia. O risco é zero para o comprador.</p>
+            </section>
+            <section>
+                <h2>Quanto custa o Emagrecer Pro?</h2>
+                <p>O Emagrecer Pro está disponível por <strong>R$28,90 em pagamento único</strong>, com acesso vitalício ao guia principal, 200 receitas low carb, cardápio semanal completo e 7 bônus exclusivos no valor de R$364,70. O pagamento é aceito via Pix, cartão de crédito Visa e Mastercard, com ambiente 100% criptografado pela Kiwify.</p>
+            </section>
+            <section>
+                <h2>Quanto tempo leva para ver resultados?</h2>
+                <p>A maioria das alunas nota resultados visíveis já na primeira semana seguindo o método Emagrecer Pro. Em 30 dias seguindo o método completo, é possível perder entre 5 e 10kg. Em 90 dias, a transformação corporal é definitiva e sem efeito sanfona.</p>
+            </section>
+        </article>
 
-    <!-- Barra de Escassez -->
-    <div class="scarcity-bar" aria-label="Contagem regressiva da oferta">
-        <div class="scarcity-content">
-            <div class="scarcity-logo">
-                <img src="imagem/logo_emagrecer.webp" alt="Emagrecer Pro Logo" width="48" height="48" fetchpriority="high" onerror="this.style.display='none'">
-            </div>
-            <p class="scarcity-text">
-                <span class="pulse-indicator"><span class="ping"></span><span class="dot"></span></span>
-                Esta oferta expira em:
-            </p>
-        </div>
-        <div class="countdown-timer"></div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero-section" aria-label="Apresentação do Emagrecer Pro" itemscope itemtype="https://schema.org/WebPage">
-        <div class="orb orb-emerald"></div>
-        <div class="orb orb-rose"></div>
-
-        <div class="hero-container max-container-sm text-center reveal active">
-            <div class="hero-badge">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                <span>Método Cientificamente Comprovado</span>
-            </div>
-
-            <h1 class="title-main">
-                Como emagrecer <span class="text-gradient-primary">rápido</span><br class="desktop-only" />
-                sem dietas <span class="text-gradient-cta">restritivas</span>
-            </h1>
-            
-            <p class="subtitle">
-                Descubra o <strong>método metabólico do Emagrecer Pro:</strong> veja o vídeo abaixo e entenda a tecnologia que vai transformar o seu corpo de forma definitiva, sem sofrer na academia.
-            </p>
-
-            <div class="video-box-outer">
-                <div class="video-box-inner group">
-                    <div id="main-video-container" class="video-wrap">
-                        <button type="button" class="video-btn" onclick="playMainVideo()" aria-label="Reproduzir Vídeo">
-                            <img src="imagem/imagem_video_vsl.webp" alt="VSL" width="1280" height="720" fetchpriority="high" onerror="this.src='https://i.ytimg.com/vi/91X-w1hu2Pw/maxresdefault.jpg'">
-                            <div class="video-overlay"></div>
-                            <div class="play-btn">
-                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </button>
-                    </div>
+        <!-- Barra de Escassez -->
+        <div class="scarcity-bar" aria-label="Contagem regressiva da oferta">
+            <div class="scarcity-content">
+                <div class="scarcity-logo">
+                    <img src="imagem/logo_emagrecer.webp" alt="Emagrecer Pro Logo" width="48" height="48" fetchpriority="high" onerror="this.style.display='none'">
                 </div>
-            </div>
-
-            <div class="app-card cta-card">
-                <div class="cta-floating-badge">Acesso Liberado Imediatamente</div>
-                
-                <p class="cta-price-label">Valor Especial de Lançamento:</p>
-                
-                <div class="cta-price-value">
-                    <span class="cta-currency">R$</span>
-                    <span class="cta-amount">28</span>
-                    <span class="cta-cents">,90</span>
-                </div>
-                
-                <div class="cta-tags">
-                    <span class="cta-tag">Pagamento Único</span>
-                    <span class="cta-tag">Sem Mensalidades</span>
-                </div>
-
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar o Emagrecer Pro agora" class="app-button animate-pulse-app">
-                    QUERO COMEÇAR A EMAGRECER!
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
-                </a>
-                
-                <div class="cta-secure">
-                    <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                    Compra 100% Segura e Criptografada
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Público Alvo (Bento UI) -->
-    <section class="bento-section" aria-label="Para quem é o programa Emagrecer Pro">
-        <div class="max-container reveal">
-            <div class="text-center mb-12">
-                <span class="bento-pre-title">Diagnóstico Rápido</span>
-                <h2 class="section-title">O Emagrecer Pro é para <span class="text-gradient-primary">quem:</span></h2>
-            </div>
-            
-            <div class="bento-grid">
-                <div class="app-card bento-card">
-                    <div class="bento-icon icon-emerald">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <p class="bento-text"><strong>Já testou várias dietas</strong> e nunca teve resultado definitivo.</p>
-                </div>
-
-                <div class="app-card bento-card">
-                    <div class="bento-icon icon-rose">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <p class="bento-text"><strong>Não tem tempo</strong> de ir na academia todos os dias.</p>
-                </div>
-
-                <div class="app-card bento-card">
-                    <div class="bento-icon icon-blue">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <p class="bento-text">Quer <strong>resultados rápidos</strong> e visíveis em poucas semanas.</p>
-                </div>
-
-                <div class="app-card bento-card">
-                    <div class="bento-icon icon-amber">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                    </div>
-                    <p class="bento-text"><strong>Não consegue mais se olhar no espelho</strong> com alegria.</p>
-                </div>
-
-                <div class="app-card bento-card bento-span-2">
-                    <div class="bento-icon icon-purple">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    </div>
-                    <p class="bento-text">Quer <strong>melhorar a saúde</strong>, ter energia e qualidade de vida.</p>
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app" style="max-width: 32rem; margin: 0 auto;">
-                    SIM, O EMAGRECER PRO É PARA MIM!
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bônus Section -->
-    <section class="bonus-section" aria-label="Bônus exclusivos do Emagrecer Pro" itemscope itemtype="https://schema.org/ItemList">
-        <div class="max-container-lg bonus-grid reveal">
-            <div class="bonus-sidebar">
-                <span class="app-badge badge-premium">Pacote Premium</span>
-                <h2 class="section-title">
-                    Você ainda vai levar <br />
-                    <span class="text-gradient-cta">Somente Hoje:</span>
-                </h2>
-                <p class="subtitle" style="margin-bottom: 1.5rem;">
-                    Garanta agora o nosso Guia Emagrecer Pro e destrave <strong>07 Bônus Valiosos e Poderosos</strong> para acelerar a sua jornada.
+                <p class="scarcity-text">
+                    <span class="pulse-indicator"><span class="ping"></span><span class="dot"></span></span>
+                    Esta oferta expira em:
                 </p>
             </div>
-
-            <!-- Lista de Bônus renderizada via JS -->
-            <div class="bonus-list" id="bonus-container"></div>
-            
-            <div class="btn-mobile-only">
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app">GARANTIR MEUS BÔNUS AGORA</a>
+            <!-- CLS WIN: Pré-preenchido para não pular layout no carregamento -->
+            <div class="countdown-timer">
+                <div class="timer-box"><span class="timer-num">00</span><span class="timer-label">DIA</span></div>
+                <div class="timer-box"><span class="timer-num">00</span><span class="timer-label">HOR</span></div>
+                <div class="timer-box"><span class="timer-num">00</span><span class="timer-label">MIN</span></div>
+                <div class="timer-box"><span class="timer-num">00</span><span class="timer-label">SEG</span></div>
             </div>
         </div>
-    </section>
 
-    <!-- Chá Saudável -->
-    <section class="tea-section" aria-label="Chá exclusivo para emagrecer">
-        <div class="max-container app-card tea-card reveal">
-            <div class="tea-img-box animate-float">
-                <img src="https://i.imgur.com/JGQPjPk.png" alt="Chá Saudável - Acelerador de emagrecimento" width="500" height="500" loading="lazy" class="tea-img">
-            </div>
-            <div class="tea-content">
-                <div class="app-badge" style="background:#D1FAE5;color:#064E3B;margin-bottom:1rem;">O Acelerador Secreto</div>
-                <h2 class="section-title" style="font-size: 2rem;">Multiplique seus resultados com nosso <span class="text-gradient-primary">Chá Exclusivo</span>.</h2>
-                <div class="tea-desc">
-                    <p>Melhore a sua aparência física e eleve a sua autoestima com o chá natural que promove a perda de peso sem exigir sacrifícios extremos.</p>
-                    <p>Alcance a perda de peso permanente impulsionando o seu metabolismo e pulverizando a gordura localizada enquanto você dorme.</p>
-                    <div class="tea-highlight">
-                        Proporcionando um emagrecimento 100% natural e seguro. A fórmula recomendada por especialistas para o público brasileiro.
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero-section" aria-label="Apresentação do Emagrecer Pro" itemscope itemtype="https://schema.org/WebPage">
+            <div class="orb orb-emerald"></div>
+            <div class="orb orb-rose"></div>
+
+            <div class="hero-container max-container-sm text-center reveal active">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <span>Método Cientificamente Comprovado</span>
                 </div>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app" style="max-width: 24rem;">QUERO SABER MAIS SOBRE O CHÁ</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Prova Social e Galeria -->
-    <section class="social-proof-section" aria-label="Depoimentos reais" itemscope itemtype="https://schema.org/ItemList">
-        <div class="max-container-lg text-center reveal">
-            <span class="bento-pre-title" style="color:var(--app-primary);">Casos de Sucesso</span>
-            <h2 class="section-title">Pessoas Reais. <br/><span class="text-gradient-cta">Resultados Chocantes.</span></h2>
-            <p class="subtitle">Veja o que acontece quando você aplica a ciência correta ao seu corpo.</p>
-            
-            <!-- Vídeos Carousel -->
-            <div class="carousel-wrapper" id="testimonial-carousel">
-                <div class="app-card carousel-item">
-                    <div class="testi-header">
-                        <div class="testi-avatar avatar-em">B</div>
-                        <span class="testi-name">Depoimento: Barbara</span>
-                    </div>
-                    <div class="video-wrap" id="testi-vid-1">
-                        <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-1', 'BPOiKdOpmiI')" aria-label="Reproduzir Depoimento da Barbara">
-                            <img src="https://i.ytimg.com/vi/BPOiKdOpmiI/hqdefault.jpg" alt="Capa Depoimento Barbara" loading="lazy">
-                            <div class="video-overlay"></div>
-                            <div class="play-btn">
-                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="app-card carousel-item">
-                    <div class="testi-header">
-                        <div class="testi-avatar avatar-ro">J</div>
-                        <span class="testi-name">Depoimento: Juliana</span>
-                    </div>
-                    <div class="video-wrap" id="testi-vid-2">
-                        <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-2', '86NY-od9j6I')" aria-label="Reproduzir Depoimento da Juliana">
-                            <img src="https://i.ytimg.com/vi/86NY-od9j6I/hqdefault.jpg" alt="Capa Depoimento Juliana" loading="lazy">
-                            <div class="video-overlay"></div>
-                            <div class="play-btn">
-                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="app-card carousel-item">
-                    <div class="testi-header">
-                        <div class="testi-avatar avatar-bl">R</div>
-                        <span class="testi-name">Depoimento: Raquel</span>
-                    </div>
-                    <div class="video-wrap" id="testi-vid-3">
-                        <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-3', 'Agf5lxF5VOI')" aria-label="Reproduzir Depoimento da Raquel">
-                            <img src="https://i.ytimg.com/vi/Agf5lxF5VOI/hqdefault.jpg" alt="Capa Depoimento Raquel" loading="lazy">
-                            <div class="video-overlay"></div>
-                            <div class="play-btn">
-                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                <h1 class="title-main">
+                    Como emagrecer <span class="text-gradient-primary">rápido</span><br class="desktop-only" />
+                    sem dietas <span class="text-gradient-cta">restritivas</span>
+                </h1>
+                
+                <p class="subtitle">
+                    Descubra o <strong>método metabólico do Emagrecer Pro:</strong> veja o vídeo abaixo e entenda a tecnologia que vai transformar o seu corpo de forma definitiva, sem sofrer na academia.
+                </p>
 
-            <!-- Controles do Carrossel Mobile -->
-            <div class="carousel-controls">
-                <button type="button" class="carousel-arrow" onclick="scrollCarousel(-1)" aria-label="Anterior">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                </button>
-                <span class="carousel-hint">Deslize para ver</span>
-                <button type="button" class="carousel-arrow" onclick="scrollCarousel(1)" aria-label="Próximo">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                </button>
-            </div>
-
-            <!-- Bloco Autoridade Semântico -->
-            <div class="app-card authority-block">
-                <h2 class="auth-title">Por que o <span class="text-gradient-primary">Emagrecer Pro</span> funciona quando outros métodos falham?</h2>
-                <div class="auth-grid">
-                    <div>
-                        <h3 class="auth-item-title"><span class="auth-dot" style="background:var(--app-primary)"></span> Método baseado em ciência</h3>
-                        <p>O programa combina as estratégias mais eficazes para <strong>emagrecer rápido</strong>: dieta low carb, jejum intermitente, termogênicos naturais e exercícios funcionais. Essa combinação aciona a <strong>tecnologia metabólica</strong> do seu corpo para queimar gordura de forma contínua.</p>
-                    </div>
-                    <div>
-                        <h3 class="auth-item-title"><span class="auth-dot" style="background:var(--app-cta)"></span> Sem sofrimento, sem restrição</h3>
-                        <p>Diferente de dietas radicais, o Emagrecer Pro ensina <strong>o que comer para emagrecer</strong> sem abrir mão do sabor. Com mais de 200 receitas low carb, você come bem, emagrece e não tem efeito sanfona.</p>
-                    </div>
-                    <div>
-                        <h3 class="auth-item-title"><span class="auth-dot" style="background:var(--app-gold)"></span> Funciona para qualquer perfil</h3>
-                        <p>O methodo foi testado com mulheres de 18 a 70 anos, com diferentes rotinas. Seja você mãe, profissional com pouco tempo ou iniciante em <strong>reeducação alimentar</strong> — o Emagrecer Pro foi desenhado para encaixar na sua vida real.</p>
-                    </div>
-                    <div>
-                        <h3 class="auth-item-title"><span class="auth-dot" style="background:#3B82F6"></span> Preço acessível e vitalício</h3>
-                        <p>Por apenas R$28,90 em pagamento único, você recebe o guia completo + 7 bônus avaliados em R$364,70, com <strong>acesso vitalício</strong> em qualquer dispositivo. Um investimento único para uma transformação definitiva.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-bottom: 2.5rem;">
-                <h3 class="section-title" style="font-size: 1.875rem;">Galeria de <span class="text-gradient-cta">Transformações</span></h3>
-            </div>
-
-            <!-- Grid de Imagens (Masonry via JS) -->
-            <div id="transformations-grid" class="masonry-grid"></div>
-            
-            <div style="margin-top: 3rem;">
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app" style="max-width: 32rem; margin: 0 auto;">QUERO SER O PRÓXIMO RESULTADO!</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Garantia Blindada -->
-    <section class="guarantee-section" aria-label="Garantia de 7 dias">
-        <div class="guarantee-container reveal">
-            <div class="seal-wrapper animate-float">
-                <div class="seal">
-                    <div class="seal-inner"></div>
-                    <div class="seal-num text-gradient-gold">7</div>
-                    <div class="seal-text">DIAS</div>
-                    <div class="seal-badge">Risco Zero</div>
-                </div>
-            </div>
-            <div class="guarantee-content">
-                <h2 class="guarantee-title">Garantia Blindada. <br><span class="text-gradient-gold">O Risco é todo nosso.</span></h2>
-                <div class="guarantee-desc">
-                    <p>Entendemos o seu ceticismo. A internet está cheia de promessas falsas. É por isso que criamos uma política de risco zero para você.</p>
-                    <p>Acesse o <strong>"Emagrecer PRO" hoje</strong>. Você tem incríveis 7 dias para devorar todo o material, os cardápios e testar as receitas.</p>
-                    <div class="guarantee-highlight">Se você não ver diferença no espelho ou na balança, ou se simplesmente não gostar da cor da fonte do guia, envie um único e-mail e <strong>devolveremos cada centavo</strong>. Sem perguntas. Sem stress.</div>
-                </div>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button btn-dark animate-pulse-dark" style="max-width: 24rem;">EU TOPO O DESAFIO SEM RISCOS</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Oferta e Preço -->
-    <section class="checkout-section" aria-label="Oferta especial" itemscope itemtype="https://schema.org/Offer">
-        <div class="max-container-sm reveal z-10">
-            <div class="text-center mb-10">
-                <span class="bento-pre-title" style="color:var(--app-primary);">Liberte seu Acesso</span>
-                <h2 class="section-title">O que você recebe <span class="text-gradient-primary">hoje:</span></h2>
-            </div>
-            
-            <div class="checkout-wrapper app-card">
-                <div class="checkout-grid">
-                    <div class="check-list">
-                        <div class="check-item">
-                            <div class="check-left">
-                                <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
-                                <span class="check-text">Emagrecer PRO</span>
-                            </div>
-                            <span class="check-price">R$ 97,00</span>
-                        </div>
-                        <div class="check-item">
-                            <div class="check-left">
-                                <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
-                                <span class="check-text">200 receitas Low Carb</span>
-                            </div>
-                            <span class="check-price">R$ 49,90</span>
-                        </div>
-                        <div class="check-item">
-                            <div class="check-left">
-                                <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
-                                <span class="check-text">Cardápio completo</span>
-                            </div>
-                            <span class="check-price">R$ 89,90</span>
-                        </div>
-                        <div class="check-item">
-                            <div class="check-left">
-                                <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
-                                <span class="check-text">7 BÔNUS Exclusivos</span>
-                            </div>
-                            <span class="check-price">R$ 127,90</span>
-                        </div>
-                        
-                        <div class="check-total">
-                            <span class="total-label">Valor Normal:</span>
-                            <span class="total-val">R$ 364,70</span>
-                        </div>
-                    </div>
-
-                    <div class="price-box">
-                        <div class="price-badge">Desconto de 92% Aplicado</div>
-                        <p class="price-label">Pagamento Único de:</p>
-                        <div class="price-value-wrap">
-                            <span class="price-currency">R$</span>
-                            <span class="price-amount">28</span>
-                            <span class="price-cents">,90</span>
-                        </div>
-                        <div class="price-guarantee">Acesso Vitalício Garantido</div>
-                        
-                        <meta itemprop="priceCurrency" content="BRL" />
-                        <meta itemprop="price" content="28.90" />
-                        
-                        <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app">COMPRAR AGORA</a>
-                        
-                        <div class="secure-env">
-                            <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                            Ambiente Seguro
+                <div class="video-box-outer">
+                    <div class="video-box-inner group">
+                        <div id="main-video-container" class="video-wrap">
+                            <button type="button" class="video-btn" onclick="playMainVideo()" aria-label="Reproduzir Vídeo">
+                                <img src="imagem/imagem_video_vsl.webp" alt="VSL" width="1280" height="720" fetchpriority="high" onerror="this.src='https://i.ytimg.com/vi/91X-w1hu2Pw/maxresdefault.jpg'">
+                                <div class="video-overlay"></div>
+                                <div class="play-btn">
+                                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Mockups -->
-    <section class="mockups-section">
-        <div class="mockups-container reveal">
-            <div class="mockups-images">
-                <div class="mockup-mobile animate-float">
-                    <img src="https://i.imgur.com/IcipzDy.png" alt="Celular" class="mockup-img drop-shadow-xl" loading="lazy">
+                <div class="app-card cta-card">
+                    <div class="cta-floating-badge">Acesso Liberado Imediatamente</div>
+                    
+                    <p class="cta-price-label">Valor Especial de Lançamento:</p>
+                    
+                    <div class="cta-price-value">
+                        <span class="cta-currency">R$</span>
+                        <span class="cta-amount">28</span>
+                        <span class="cta-cents">,90</span>
+                    </div>
+                    
+                    <div class="cta-tags">
+                        <span class="cta-tag">Pagamento Único</span>
+                        <span class="cta-tag">Sem Mensalidades</span>
+                    </div>
+
+                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" aria-label="Comprar o Emagrecer Pro agora" class="app-button animate-pulse-app">
+                        QUERO COMEÇAR A EMAGRECER!
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                    
+                    <div class="cta-secure">
+                        <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                        Compra 100% Segura e Criptografada
+                    </div>
                 </div>
-                <div class="mockup-desktop animate-float">
-                    <img src="https://i.imgur.com/hcmyAvx.png" alt="Monitor" class="mockup-img drop-shadow-2xl" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Público Alvo (Bento UI) -->
+        <section class="bento-section" aria-label="Para quem é o programa Emagrecer Pro">
+            <div class="max-container reveal">
+                <div class="text-center mb-12">
+                    <span class="bento-pre-title">Diagnóstico Rápido</span>
+                    <h2 class="section-title">O Emagrecer Pro é para <span class="text-gradient-primary">quem:</span></h2>
+                </div>
+                
+                <div class="bento-grid">
+                    <div class="app-card bento-card">
+                        <div class="bento-icon icon-emerald">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <p class="bento-text"><strong>Já testou várias dietas</strong> e nunca teve resultado definitivo.</p>
+                    </div>
+
+                    <div class="app-card bento-card">
+                        <div class="bento-icon icon-rose">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <p class="bento-text"><strong>Não tem tempo</strong> de ir na academia todos os dias.</p>
+                    </div>
+
+                    <div class="app-card bento-card">
+                        <div class="bento-icon icon-blue">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <p class="bento-text">Quer <strong>resultados rápidos</strong> e visíveis em poucas semanas.</p>
+                    </div>
+
+                    <div class="app-card bento-card">
+                        <div class="bento-icon icon-amber">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </div>
+                        <p class="bento-text"><strong>Não consegue mais se olhar no espelho</strong> com alegria.</p>
+                    </div>
+
+                    <div class="app-card bento-card bento-span-2">
+                        <div class="bento-icon icon-purple">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <p class="bento-text">Quer <strong>melhorar a saúde</strong>, ter energia e qualidade de vida.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app" style="max-width: 32rem; margin: 0 auto;">
+                        SIM, O EMAGRECER PRO É PARA MIM!
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <div class="mockups-content">
-                <h3 class="title-main" style="font-size: 2rem;">Tudo na palma <br><span class="text-gradient-primary">da sua mão.</span></h3>
-                <p class="subtitle" style="margin-left: 0; margin-right: 0;">Acesse seu guia completo e todos os bônus de qualquer dispositivo: celular, tablet ou computador. Baixe agora e comece hoje mesmo.</p>
-                <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button btn-dark animate-pulse-dark">QUERO ACESSAR O MATERIAL</a>
-            </div>
-        </div>
-    </section>
+        <!-- Bônus Section -->
+        <section class="bonus-section" aria-label="Bônus exclusivos do Emagrecer Pro" itemscope itemtype="https://schema.org/ItemList">
+            <div class="max-container-lg bonus-grid reveal">
+                <div class="bonus-sidebar">
+                    <span class="app-badge badge-premium">Pacote Premium</span>
+                    <h2 class="section-title">
+                        Você ainda vai levar <br />
+                        <span class="text-gradient-cta">Somente Hoje:</span>
+                    </h2>
+                    <p class="subtitle" style="margin-bottom: 1.5rem;">
+                        Garanta agora o nosso Guia Emagrecer Pro e destrave <strong>07 Bônus Valiosos e Poderosos</strong> para acelerar a sua jornada.
+                    </p>
+                </div>
 
-    <!-- FAQ -->
-    <section class="faq-section" aria-label="Perguntas frequentes">
-        <div class="faq-container reveal">
-            <div class="text-center mb-10">
-                <span class="bento-pre-title" style="color:var(--app-primary);">Dúvidas Frequentes</span>
-                <h2 class="section-title">Ainda tem <span class="text-gradient-primary">dúvidas?</span></h2>
+                <!-- Lista de Bônus renderizada nativamente (Reduz CLS/TBT absurdamente) -->
+                <div class="bonus-list" id="bonus-container">
+                    <div class="bonus-card app-card">
+                        <div class="bonus-img-box">
+                            <img src="imagem/imagem_1.webp" alt="Capa Bônus 1" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-badge-imediato">Liberação Imediata</div>
+                            <h3 class="bonus-card-title">BÔNUS 1:</h3>
+                            <p class="bonus-desc">200 RECEITAS LOWCARB</p>
+                        </div>
+                        <div class="bonus-mockup">
+                            <img src="imagem/imagem_2.webp" alt="Mockup Bônus 1" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                        </div>
+                    </div>
+                    <div class="bonus-card app-card">
+                        <div class="bonus-img-box">
+                            <img src="imagem/imagem_3.webp" alt="Capa Bônus 2" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-badge-imediato">Liberação Imediata</div>
+                            <h3 class="bonus-card-title">BÔNUS 2:</h3>
+                            <p class="bonus-desc">Receitas saudáveis para suas refeições</p>
+                        </div>
+                        <div class="bonus-mockup">
+                            <img src="imagem/imagem_4.webp" alt="Mockup Bônus 2" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                        </div>
+                    </div>
+                    <div class="bonus-card app-card">
+                        <div class="bonus-img-box">
+                            <img src="imagem/imagem_5.webp" alt="Capa Bônus 3" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-badge-imediato">Liberação Imediata</div>
+                            <h3 class="bonus-card-title">BÔNUS 3:</h3>
+                            <p class="bonus-desc">Exercícios funcionais práticos</p>
+                        </div>
+                        <div class="bonus-mockup">
+                            <img src="imagem/imagem_6.webp" alt="Mockup Bônus 3" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                        </div>
+                    </div>
+                    <div class="bonus-card app-card">
+                        <div class="bonus-img-box">
+                            <img src="imagem/imagem_7.webp" alt="Capa Bônus 4" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-badge-imediato">Liberação Imediata</div>
+                            <h3 class="bonus-card-title">BÔNUS 4:</h3>
+                            <p class="bonus-desc">Guia definitivo de saladas</p>
+                        </div>
+                        <div class="bonus-mockup">
+                            <img src="imagem/imagem_8.webp" alt="Mockup Bônus 4" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                        </div>
+                    </div>
+                    <div class="bonus-card app-card">
+                        <div class="bonus-img-box">
+                            <img src="imagem/imagem_9.webp" alt="Capa Bônus 5" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-badge-imediato">Liberação Imediata</div>
+                            <h3 class="bonus-card-title">BÔNUS 5:</h3>
+                            <p class="bonus-desc">Marmitas FIT para a semana</p>
+                        </div>
+                        <div class="bonus-mockup">
+                            <img src="imagem/imagem_10.webp" alt="Mockup Bônus 5" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                        </div>
+                    </div>
+                    <div class="bonus-card app-card">
+                        <div class="bonus-img-box">
+                            <img src="imagem/imagem_11.webp" alt="Capa Bônus 6" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-badge-imediato">Liberação Imediata</div>
+                            <h3 class="bonus-card-title">BÔNUS 6:</h3>
+                            <p class="bonus-desc">Vença a ansiedade e compulsão</p>
+                        </div>
+                        <div class="bonus-mockup">
+                            <img src="imagem/imagem_12.webp" alt="Mockup Bônus 6" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                        </div>
+                    </div>
+                    <div class="bonus-card app-card">
+                        <div class="bonus-img-box">
+                            <img src="imagem/imagem_13.webp" alt="Capa Bônus 7" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
+                        </div>
+                        <div class="bonus-content">
+                            <div class="bonus-badge-imediato">Liberação Imediata</div>
+                            <h3 class="bonus-card-title">BÔNUS 7:</h3>
+                            <p class="bonus-desc">Fim do efeito sanfona definitivo</p>
+                        </div>
+                        <div class="bonus-mockup">
+                            <img src="imagem/imagem_14.webp" alt="Mockup Bônus 7" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="btn-mobile-only">
+                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app">GARANTIR MEUS BÔNUS AGORA</a>
+                </div>
             </div>
-            
-            <div class="faq-list">
-                <details class="faq-card" open>
-                    <summary class="faq-summary">
-                        <span class="faq-summary-left"><span class="faq-num">01</span> Como emagrecer rápido sem academia?</span>
-                        <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
-                    </summary>
-                    <div class="faq-answer">O Emagrecer Pro ensina um método científico baseado em reeducação alimentar e tecnologia metabólica. Sem precisar ir à academia todo dia, você pode emagrecer rápido seguindo o cardápio completo e as receitas low carb do programa. Centenas de alunas já perderam de 5 a 15kg nas primeiras semanas.</div>
-                </details>
-                <details class="faq-card">
-                    <summary class="faq-summary">
-                        <span class="faq-summary-left"><span class="faq-num">02</span> Qual a melhor dieta para emagrecer rápido?</span>
-                        <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
-                    </summary>
-                    <div class="faq-answer">A dieta low carb combinada com jejum intermitente é uma das estratégias mais eficientes para emagrecer rápido. O Emagrecer Pro inclui cardápio semanal completo com mais de 200 receitas low carb deliciosas, marmitas fit e guia de substituições alimentares, tornando a dieta para emagrecer fácil e sustentável.</div>
-                </details>
-                <details class="faq-card">
-                    <summary class="faq-summary">
-                        <span class="faq-summary-left"><span class="faq-num">03</span> Como fazer jejum intermitente para perder peso?</span>
-                        <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
-                    </summary>
-                    <div class="faq-answer">O jejum intermitente funciona com o protocolo 16:8 — 16 horas de jejum e 8 horas de janela alimentar. No Emagrecer Pro você aprende como fazer jejum intermitente de forma segura, com cardápios específicos para maximizar a queima de gordura localizada.</div>
-                </details>
-                <details class="faq-card">
-                    <summary class="faq-summary">
-                        <span class="faq-summary-left"><span class="faq-num">04</span> O que tomar para emagrecer naturalmente?</span>
-                        <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
-                    </summary>
-                    <div class="faq-answer">Os melhores aliados para emagrecer naturalmente são: chá verde (acelera o metabolismo), chá de hibisco (diurético e antioxidante), chá de gengibre com limão (termogênico), suco verde detox e a fórmula exclusiva de chá do Emagrecer Pro — desenvolvida para potencializar a queima de gordura durante o sono.</div>
-                </details>
-                <details class="faq-card">
-                    <summary class="faq-summary">
-                        <span class="faq-summary-left"><span class="faq-num">05</span> O que comer para emagrecer rápido e com saúde?</span>
-                        <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
-                    </summary>
-                    <div class="faq-answer">Os melhores alimentos para emagrecer com saúde são: ovos, frango grelhado, peixe, brócolis, abobrinha, couve, abacate, azeite de oliva, castanhas e frutas com baixo índice glicêmico. O Emagrecer Pro entrega um cardápio semanal completo já montado com opções de café da manhã, almoço, lanches e jantar.</div>
-                </details>
-                <details class="faq-card">
-                    <summary class="faq-summary">
-                        <span class="faq-summary-left"><span class="faq-num">06</span> Como perder peso em 3 dias?</span>
-                        <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
-                    </summary>
-                    <div class="faq-answer">Para perder peso em 3 dias de forma saudável: elimine sal, açúcar e farinhas brancas; aumente a ingestão de água para 3 litros/dia; consuma chás diuréticos; faça refeições leves com proteína e fibra; e siga o protocolo de desintoxicação rápida incluído no Emagrecer Pro. É possível perder de 1 a 3kg nas primeiras 72 horas.</div>
-                </details>
-                <details class="faq-card">
-                    <summary class="faq-summary">
-                        <span class="faq-summary-left"><span class="faq-num">07</span> Quanto tempo leva para ver resultados no Emagrecer Pro?</span>
-                        <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
-                    </summary>
-                    <div class="faq-answer">A maioria das alunas nota resultados visíveis já na primeira semana: roupas mais folgadas, menos inchaço e mais energia. Em 30 dias é possível perder entre 5 e 10kg. Em 90 dias, a transformação corporal é definitiva, sem efeito sanfona.</div>
-                </details>
-                <details class="faq-card">
-                    <summary class="faq-summary">
-                        <span class="faq-summary-left"><span class="faq-num">08</span> O Emagrecer Pro tem garantia?</span>
-                        <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
-                    </summary>
-                    <div class="faq-answer">Sim! O Emagrecer Pro oferece 7 dias de garantia blindada com risco zero. Se você não ficar satisfeita por qualquer motivo, basta enviar um e-mail para Suporte.desafioemagrecerpro@gmail.com e devolvemos 100% do valor pago, sem perguntas e sem burocracia.</div>
-                </details>
+        </section>
+
+        <!-- Chá Saudável -->
+        <section class="tea-section" aria-label="Chá exclusivo para emagrecer">
+            <div class="max-container app-card tea-card reveal">
+                <div class="tea-img-box animate-float">
+                    <img src="https://i.imgur.com/JGQPjPk.webp" alt="Chá Saudável - Acelerador de emagrecimento" width="500" height="500" loading="lazy" class="tea-img">
+                </div>
+                <div class="tea-content">
+                    <div class="app-badge" style="background:#D1FAE5;color:#047857;margin-bottom:1rem;">O Acelerador Secreto</div>
+                    <h2 class="section-title" style="font-size: 2rem;">Multiplique seus resultados com nosso <span class="text-gradient-primary">Chá Exclusivo</span>.</h2>
+                    <div class="tea-desc">
+                        <p>Melhore a sua aparência física e eleve a sua autoestima com o chá natural que promove a perda de peso sem exigir sacrifícios extremos.</p>
+                        <p>Alcance a perda de peso permanente impulsionando o seu metabolismo e pulverizando a gordura localizada enquanto você dorme.</p>
+                        <div class="tea-highlight">
+                            Proporcionando um emagrecimento 100% natural e seguro. A fórmula recomendada por especialistas para o público brasileiro.
+                        </div>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app" style="max-width: 24rem;">QUERO SABER MAIS SOBRE O CHÁ</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Prova Social e Galeria -->
+        <section class="social-proof-section" aria-label="Depoimentos reais" itemscope itemtype="https://schema.org/ItemList">
+            <div class="max-container-lg text-center reveal">
+                <span class="bento-pre-title" style="color:var(--app-primary-dark);">Casos de Sucesso</span>
+                <h2 class="section-title">Pessoas Reais. <br/><span class="text-gradient-cta">Resultados Chocantes.</span></h2>
+                <p class="subtitle">Veja o que acontece quando você aplica a ciência correta ao seu corpo.</p>
+                
+                <!-- Vídeos Carousel (Capa otimizada para evitar tarjas pretas) -->
+                <div class="carousel-wrapper" id="testimonial-carousel">
+                    <div class="app-card carousel-item">
+                        <div class="testi-header">
+                            <div class="testi-avatar avatar-em">B</div>
+                            <span class="testi-name">Depoimento: Barbara</span>
+                        </div>
+                        <div class="video-wrap" id="testi-vid-1">
+                            <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-1', 'BPOiKdOpmiI')" aria-label="Reproduzir Depoimento da Barbara">
+                                <img src="https://i.ytimg.com/vi/BPOiKdOpmiI/maxresdefault.jpg" alt="Capa Depoimento Barbara" width="1280" height="720" loading="lazy" decoding="async" onerror="thumbFallback(this)">
+                                <div class="video-overlay"></div>
+                                <div class="play-btn">
+                                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="app-card carousel-item">
+                        <div class="testi-header">
+                            <div class="testi-avatar avatar-ro">J</div>
+                            <span class="testi-name">Depoimento: Juliana</span>
+                        </div>
+                        <div class="video-wrap" id="testi-vid-2">
+                            <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-2', '86NY-od9j6I')" aria-label="Reproduzir Depoimento da Juliana">
+                                <img src="https://i.ytimg.com/vi/86NY-od9j6I/maxresdefault.jpg" alt="Capa Depoimento Juliana" width="1280" height="720" loading="lazy" decoding="async" onerror="thumbFallback(this)">
+                                <div class="video-overlay"></div>
+                                <div class="play-btn">
+                                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="app-card carousel-item">
+                        <div class="testi-header">
+                            <div class="testi-avatar avatar-bl">R</div>
+                            <span class="testi-name">Depoimento: Raquel</span>
+                        </div>
+                        <div class="video-wrap" id="testi-vid-3">
+                            <button type="button" class="video-btn" onclick="playTestiVideo('testi-vid-3', 'Agf5lxF5VOI')" aria-label="Reproduzir Depoimento da Raquel">
+                                <img src="https://i.ytimg.com/vi/Agf5lxF5VOI/maxresdefault.jpg" alt="Capa Depoimento Raquel" width="1280" height="720" loading="lazy" decoding="async" onerror="thumbFallback(this)">
+                                <div class="video-overlay"></div>
+                                <div class="play-btn">
+                                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles do Carrossel Mobile -->
+                <div class="carousel-controls">
+                    <button type="button" class="carousel-arrow" onclick="scrollCarousel(-1)" aria-label="Anterior">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <span class="carousel-hint">Deslize para ver</span>
+                    <button type="button" class="carousel-arrow" onclick="scrollCarousel(1)" aria-label="Próximo">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Bloco Autoridade Semântico -->
+                <div class="app-card authority-block">
+                    <h2 class="auth-title">Por que o <span class="text-gradient-primary">Emagrecer Pro</span> funciona quando outros métodos falham?</h2>
+                    <div class="auth-grid">
+                        <div>
+                            <h3 class="auth-item-title"><span class="auth-dot" style="background:var(--app-primary)"></span> Método baseado em ciência</h3>
+                            <p>O programa combina as estratégias mais eficazes para <strong>emagrecer rápido</strong>: dieta low carb, jejum intermitente, termogênicos naturais e exercícios funcionais. Essa combinação aciona a <strong>tecnologia metabólica</strong> do seu corpo para queimar gordura de forma contínua.</p>
+                        </div>
+                        <div>
+                            <h3 class="auth-item-title"><span class="auth-dot" style="background:var(--app-cta)"></span> Sem sofrimento, sem restrição</h3>
+                            <p>Diferente de dietas radicais, o Emagrecer Pro ensina <strong>o que comer para emagrecer</strong> sem abrir mão do sabor. Com mais de 200 receitas low carb, você come bem, emagrece e não tem efeito sanfona.</p>
+                        </div>
+                        <div>
+                            <h3 class="auth-item-title"><span class="auth-dot" style="background:var(--app-gold)"></span> Funciona para qualquer perfil</h3>
+                            <p>O methodo foi testado com mulheres de 18 a 70 anos, com diferentes rotinas. Seja você mãe, profissional com pouco tempo ou iniciante em <strong>reeducação alimentar</strong> — o Emagrecer Pro foi desenhado para encaixar na sua vida real.</p>
+                        </div>
+                        <div>
+                            <h3 class="auth-item-title"><span class="auth-dot" style="background:#1D4ED8"></span> Preço acessível e vitalício</h3>
+                            <p>Por apenas R$28,90 em pagamento único, você recebe o guia completo + 7 bônus avaliados em R$364,70, com <strong>acesso vitalício</strong> em qualquer dispositivo. Um investimento único para uma transformação definitiva.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2.5rem;">
+                    <h3 class="section-title" style="font-size: 1.875rem;">Galeria de <span class="text-gradient-cta">Transformações</span></h3>
+                </div>
+
+                <!-- Grid de Imagens renderizada nativamente (Reduz CLS/TBT absurdamente) -->
+                <div id="transformations-grid" class="masonry-grid">
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/o2V00Ho.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/9eNb3ww.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/Ma5T4Gl.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/M6ynR4p.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/jYIGI2H.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/9hIm3FQ.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/GeKEJ8K.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/b95jDB2.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/DpEpCJG.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/r5XVDCu.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/zLDFaTn.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/VqYMMLm.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/ZIOqojp.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/vMWmzNK.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/vAtADru.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/P1IErGA.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/RocXtr3.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/gpAF6M0.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/322rQVP.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/LqSgndt.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/xZcHFjf.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/n37Gj8i.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/bWFh7cQ.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                    <div class="masonry-item app-card"><img src="https://i.imgur.com/zz7sVU6.png" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img"><div class="gallery-overlay"><span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span></div></div>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app" style="max-width: 32rem; margin: 0 auto;">QUERO SER O PRÓXIMO RESULTADO!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Garantia Blindada -->
+        <section class="guarantee-section" aria-label="Garantia de 7 dias">
+            <div class="guarantee-container reveal">
+                <div class="seal-wrapper animate-float">
+                    <div class="seal">
+                        <div class="seal-inner"></div>
+                        <div class="seal-num text-gradient-gold">7</div>
+                        <div class="seal-text">DIAS</div>
+                        <div class="seal-badge">Risco Zero</div>
+                    </div>
+                </div>
+                <div class="guarantee-content">
+                    <h2 class="guarantee-title">Garantia Blindada. <br><span class="text-gradient-gold">O Risco é todo nosso.</span></h2>
+                    <div class="guarantee-desc">
+                        <p>Entendemos o seu ceticismo. A internet está cheia de promessas falsas. É por isso que criamos uma política de risco zero para você.</p>
+                        <p>Acesse o <strong>"Emagrecer PRO" hoje</strong>. Você tem incríveis 7 dias para devorar todo o material, os cardápios e testar as receitas.</p>
+                        <div class="guarantee-highlight">Se você não ver diferença no espelho ou na balança, ou se simplesmente não gostar da cor da fonte do guia, envie um único e-mail e <strong>devolveremos cada centavo</strong>. Sem perguntas. Sem stress.</div>
+                    </div>
+                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button btn-dark animate-pulse-dark" style="max-width: 24rem;">EU TOPO O DESAFIO SEM RISCOS</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oferta e Preço -->
+        <section class="checkout-section" aria-label="Oferta especial" itemscope itemtype="https://schema.org/Offer">
+            <div class="max-container-sm reveal z-10">
+                <div class="text-center mb-10">
+                    <span class="bento-pre-title" style="color:var(--app-primary-dark);">Liberte seu Acesso</span>
+                    <h2 class="section-title">O que você recebe <span class="text-gradient-primary">hoje:</span></h2>
+                </div>
+                
+                <div class="checkout-wrapper app-card">
+                    <div class="checkout-grid">
+                        <div class="check-list">
+                            <div class="check-item">
+                                <div class="check-left">
+                                    <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                                    <span class="check-text">Emagrecer PRO</span>
+                                </div>
+                                <span class="check-price">R$ 97,00</span>
+                            </div>
+                            <div class="check-item">
+                                <div class="check-left">
+                                    <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                                    <span class="check-text">200 receitas Low Carb</span>
+                                </div>
+                                <span class="check-price">R$ 49,90</span>
+                            </div>
+                            <div class="check-item">
+                                <div class="check-left">
+                                    <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                                    <span class="check-text">Cardápio completo</span>
+                                </div>
+                                <span class="check-price">R$ 89,90</span>
+                            </div>
+                            <div class="check-item">
+                                <div class="check-left">
+                                    <div class="check-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                                    <span class="check-text">7 BÔNUS Exclusivos</span>
+                                </div>
+                                <span class="check-price">R$ 127,90</span>
+                            </div>
+                            
+                            <div class="check-total">
+                                <span class="total-label">Valor Normal:</span>
+                                <span class="total-val">R$ 364,70</span>
+                            </div>
+                        </div>
+
+                        <div class="price-box">
+                            <div class="price-badge">Desconto de 92% Aplicado</div>
+                            <p class="price-label">Pagamento Único de:</p>
+                            <div class="price-value-wrap">
+                                <span class="price-currency">R$</span>
+                                <span class="price-amount">28</span>
+                                <span class="price-cents">,90</span>
+                            </div>
+                            <div class="price-guarantee">Acesso Vitalício Garantido</div>
+                            
+                            <meta itemprop="priceCurrency" content="BRL" />
+                            <meta itemprop="price" content="28.90" />
+                            
+                            <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button animate-pulse-app">COMPRAR AGORA</a>
+                            
+                            <div class="secure-env">
+                                <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                                Ambiente Seguro
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mockups -->
+        <section class="mockups-section">
+            <div class="mockups-container reveal">
+                <div class="mockups-images">
+                    <div class="mockup-mobile animate-float">
+                        <img src="https://i.imgur.com/IcipzDy.png" alt="Celular" class="mockup-img drop-shadow-xl" loading="lazy">
+                    </div>
+                    <div class="mockup-desktop animate-float">
+                        <img src="https://i.imgur.com/hcmyAvx.png" alt="Monitor" class="mockup-img drop-shadow-2xl" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="mockups-content">
+                    <h3 class="title-main" style="font-size: 2.25rem;">Tudo na palma <br><span class="text-gradient-primary">da sua mão.</span></h3>
+                    <p class="subtitle" style="margin-left: 0; margin-right: 0;">Acesse seu guia completo e todos os bônus de qualquer dispositivo: celular, tablet ou computador. Baixe agora e comece hoje mesmo.</p>
+                    <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button btn-dark animate-pulse-dark">QUERO ACESSAR O MATERIAL</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" aria-label="Perguntas frequentes">
+            <div class="faq-container reveal">
+                <div class="text-center mb-10">
+                    <span class="bento-pre-title" style="color:var(--app-primary-dark);">Dúvidas Frequentes</span>
+                    <h2 class="section-title">Ainda tem <span class="text-gradient-primary">dúvidas?</span></h2>
+                </div>
+                
+                <div class="faq-list">
+                    <details class="faq-card" open>
+                        <summary class="faq-summary">
+                            <span class="faq-summary-left"><span class="faq-num">01</span> Como emagrecer rápido sem academia?</span>
+                            <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">O Emagrecer Pro ensina um método científico baseado em reeducação alimentar e tecnologia metabólica. Sem precisar ir à academia todo dia, você pode emagrecer rápido seguindo o cardápio completo e as receitas low carb do programa. Centenas de alunas já perderam de 5 a 15kg nas primeiras semanas.</div>
+                    </details>
+                    <details class="faq-card">
+                        <summary class="faq-summary">
+                            <span class="faq-summary-left"><span class="faq-num">02</span> Qual a melhor dieta para emagrecer rápido?</span>
+                            <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">A dieta low carb combinada com jejum intermitente é uma das estratégias mais eficientes para emagrecer rápido. O Emagrecer Pro inclui cardápio semanal completo com mais de 200 receitas low carb deliciosas, marmitas fit e guia de substituições alimentares, tornando a dieta para emagrecer fácil e sustentável.</div>
+                    </details>
+                    <details class="faq-card">
+                        <summary class="faq-summary">
+                            <span class="faq-summary-left"><span class="faq-num">03</span> Como fazer jejum intermitente para perder peso?</span>
+                            <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">O jejum intermitente funciona com o protocolo 16:8 — 16 horas de jejum e 8 horas de janela alimentar. No Emagrecer Pro você aprende como fazer jejum intermitente de forma segura, com cardápios específicos para maximizar a queima de gordura localizada.</div>
+                    </details>
+                    <details class="faq-card">
+                        <summary class="faq-summary">
+                            <span class="faq-summary-left"><span class="faq-num">04</span> O que tomar para emagrecer naturalmente?</span>
+                            <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">Os melhores aliados para emagrecer naturalmente são: chá verde (acelera o metabolismo), chá de hibisco (diurético e antioxidante), chá de gengibre com limão (termogênico), suco verde detox e a fórmula exclusiva de chá do Emagrecer Pro — desenvolvida para potencializar a queima de gordura durante o sono.</div>
+                    </details>
+                    <details class="faq-card">
+                        <summary class="faq-summary">
+                            <span class="faq-summary-left"><span class="faq-num">05</span> O que comer para emagrecer rápido e com saúde?</span>
+                            <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">Os melhores alimentos para emagrecer com saúde são: ovos, frango grelhado, peixe, brócolis, abobrinha, couve, abacate, azeite de oliva, castanhas e frutas com baixo índice glicêmico. O Emagrecer Pro entrega um cardápio semanal completo já montado com opções de café da manhã, almoço, lanches e jantar.</div>
+                    </details>
+                    <details class="faq-card">
+                        <summary class="faq-summary">
+                            <span class="faq-summary-left"><span class="faq-num">06</span> Como perder peso em 3 dias?</span>
+                            <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">Para perder peso em 3 dias de forma saudável: elimine sal, açúcar e farinhas brancas; aumente a ingestão de água para 3 litros/dia; consuma chás diuréticos; faça refeições leves com proteína e fibra; e siga o protocolo de desintoxicação rápida incluído no Emagrecer Pro. É possível perder de 1 a 3kg nas primeiras 72 horas.</div>
+                    </details>
+                    <details class="faq-card">
+                        <summary class="faq-summary">
+                            <span class="faq-summary-left"><span class="faq-num">07</span> Quanto tempo leva para ver resultados no Emagrecer Pro?</span>
+                            <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">A maioria das alunas nota resultados visíveis já na primeira semana: roupas mais folgadas, menos inchaço e mais energia. Em 30 dias é possível perder entre 5 e 10kg. Em 90 dias, a transformação corporal é definitiva, sem efeito sanfona.</div>
+                    </details>
+                    <details class="faq-card">
+                        <summary class="faq-summary">
+                            <span class="faq-summary-left"><span class="faq-num">08</span> O Emagrecer Pro tem garantia?</span>
+                            <span class="faq-icon"><svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16"><path d="M6 9l6 6 6-6"/></svg></span>
+                        </summary>
+                        <div class="faq-answer">Sim! O Emagrecer Pro oferece 7 dias de garantia blindada com risco zero. Se você não ficar satisfeita por qualquer motivo, basta enviar um e-mail para Suporte.desafioemagrecerpro@gmail.com e devolvemos 100% do valor pago, sem perguntas e sem burocracia.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- SEO Links -->
     <nav aria-label="Links relacionados ao emagrecimento" class="seo-nav">
@@ -1201,7 +1334,7 @@
                 <span class="mobile-old-price">R$ 364,70</span>
                 <span class="mobile-new-price">R$ 28,90</span>
             </div>
-            <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button mobile-btn animate-pulse-app" style="box-shadow: var(--shadow-app-cta);">COMPRAR AGORA</a>
+            <a href="https://pay.kiwify.com.br/66crfxn?afid=VZOgNhdF" class="app-button mobile-btn animate-pulse-app">COMPRAR AGORA</a>
         </div>
     </div>
 
@@ -1240,14 +1373,6 @@
 
     <!-- SCRIPTS -->
     <script>
-        const deferHeavyOperations = (callback) => {
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(callback, { timeout: 1000 });
-            } else {
-                setTimeout(callback, 200);
-            }
-        };
-
         function playMainVideo() {
             const container = document.getElementById('main-video-container');
             if(container) {
@@ -1255,7 +1380,13 @@
             }
         }
 
-        // Função Inteligente para carregar o vídeo dos depoimentos apenas no clique
+        // Corrige automaticamente capas de vídeos do youtube que tem tarja preta
+        function thumbFallback(img) {
+            img.onerror = null;
+            img.src = img.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
+            img.classList.add('fallback-thumb');
+        }
+
         function playTestiVideo(containerId, videoId) {
             const container = document.getElementById(containerId);
             if(container) {
@@ -1263,11 +1394,10 @@
             }
         }
         
-        // Função para os botões do carrossel mobile
         function scrollCarousel(direction) {
             const carousel = document.getElementById('testimonial-carousel');
             if(carousel) {
-                const scrollAmount = carousel.offsetWidth * 0.8; // Rola 80% da largura visível
+                const scrollAmount = carousel.offsetWidth * 0.8;
                 carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
             }
         }
@@ -1319,96 +1449,29 @@
                 <div class="timer-box"><span class="timer-num">${pad(m)}</span><span class="timer-label">MIN</span></div>
                 <div class="timer-box"><span class="timer-num">${pad(s)}</span><span class="timer-label">SEG</span></div>
             `;
-            timerElements.forEach(el => el.innerHTML = html);
+            // Verifica se mudou antes de atualizar o DOM (Melhora a performance)
+            timerElements.forEach(el => {
+                if(el.innerHTML !== html) el.innerHTML = html;
+            });
         }
 
         document.addEventListener("DOMContentLoaded", () => {
             startCountdown(3);
-            deferHeavyOperations(() => {
-                initBonus();
-                initTransformations();
-                initScrollReveal();
-            });
+            initScrollReveal();
         });
 
-        // Geração dos Bônus via JS atualizada para CSS Semântico
-        function initBonus() {
-            const bonusData = [
-                {id: 1, title: "BÔNUS 1:", desc: "200 RECEITAS LOWCARB", imgC: "imagem/imagem_1.webp", imgM: "imagem/imagem_2.webp"},
-                {id: 2, title: "BÔNUS 2:", desc: "Receitas saudáveis para suas refeições", imgC: "imagem/imagem_3.webp", imgM: "imagem/imagem_4.webp"},
-                {id: 3, title: "BÔNUS 3:", desc: "Exercícios funcionais práticos", imgC: "imagem/imagem_5.webp", imgM: "imagem/imagem_6.webp"},
-                {id: 4, title: "BÔNUS 4:", desc: "Guia definitivo de saladas", imgC: "imagem/imagem_7.webp", imgM: "imagem/imagem_8.webp"},
-                {id: 5, title: "BÔNUS 5:", desc: "Marmitas FIT para a semana", imgC: "imagem/imagem_9.webp", imgM: "imagem/imagem_10.webp"},
-                {id: 6, title: "BÔNUS 6:", desc: "Vença a ansiedade e compulsão", imgC: "imagem/imagem_11.webp", imgM: "imagem/imagem_12.webp"},
-                {id: 7, title: "BÔNUS 7:", desc: "Fim do efeito sanfona definitivo", imgC: "imagem/imagem_13.webp", imgM: "imagem/imagem_14.webp"}
-            ];
-            
-            const bonusContainer = document.getElementById('bonus-container');
-            if (!bonusContainer) return;
-
-            let htmlString = "";
-            bonusData.forEach(b => {
-                htmlString += `
-                    <div class="bonus-card app-card">
-                        <div class="bonus-img-box">
-                            <img src="${b.imgC}" alt="Capa Bônus ${b.id}" width="300" height="400" loading="lazy" decoding="async" class="bonus-img">
-                        </div>
-                        <div class="bonus-content">
-                            <div class="bonus-badge-imediato">Liberação Imediata</div>
-                            <h3 class="bonus-card-title">${b.title}</h3>
-                            <p class="bonus-desc">${b.desc}</p>
-                        </div>
-                        <div class="bonus-mockup">
-                            <img src="${b.imgM}" alt="Mockup Bônus ${b.id}" width="400" height="300" loading="lazy" decoding="async" class="bonus-mockup-img">
-                        </div>
-                    </div>
-                `;
-            });
-            bonusContainer.innerHTML = htmlString;
-        }
-
-        // Geração da Galeria via JS atualizada para CSS Semântico
-        function initTransformations() {
-            const transformImages = [
-                "https://i.imgur.com/o2V00Ho.png", "https://i.imgur.com/9eNb3ww.png", "https://i.imgur.com/Ma5T4Gl.png", "https://i.imgur.com/M6ynR4p.png", 
-                "https://i.imgur.com/jYIGI2H.png", "https://i.imgur.com/9hIm3FQ.png", "https://i.imgur.com/GeKEJ8K.png", "https://i.imgur.com/b95jDB2.png", 
-                "https://i.imgur.com/DpEpCJG.png", "https://i.imgur.com/r5XVDCu.png", "https://i.imgur.com/zLDFaTn.png", "https://i.imgur.com/VqYMMLm.png",
-                "https://i.imgur.com/ZIOqojp.png", "https://i.imgur.com/vMWmzNK.png", "https://i.imgur.com/vAtADru.png", "https://i.imgur.com/P1IErGA.png", 
-                "https://i.imgur.com/RocXtr3.png", "https://i.imgur.com/gpAF6M0.png", "https://i.imgur.com/322rQVP.png", "https://i.imgur.com/LqSgndt.png", 
-                "https://i.imgur.com/xZcHFjf.png", "https://i.imgur.com/n37Gj8i.png", "https://i.imgur.com/bWFh7cQ.png", "https://i.imgur.com/zz7sVU6.png"
-            ];
-            
-            const gridContainer = document.getElementById('transformations-grid');
-            if (!gridContainer) return;
-
-            let htmlString = "";
-            transformImages.forEach((src) => {
-                htmlString += `
-                    <div class="masonry-item app-card">
-                        <img src="${src}" alt="Resultado real de emagrecimento" width="300" height="375" loading="lazy" decoding="async" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <span class="gallery-badge"><div class="gallery-dot"></div> Meta Alcançada</span>
-                        </div>
-                    </div>
-                `;
-            });
-            gridContainer.innerHTML = htmlString;
-        }
-
-        // Animação Scroll
+        // Trocado EventListener de Scroll pesado pela API Moderna IntersectionObserver (Elimina TBT)
         function initScrollReveal() {
             const reveals = document.querySelectorAll(".reveal");
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                reveals.forEach(reveal => {
-                    const revealTop = reveal.getBoundingClientRect().top;
-                    if (revealTop < windowHeight - 40) {
-                        reveal.classList.add("active");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
                     }
                 });
-            };
-            window.addEventListener("scroll", revealOnScroll, { passive: true });
-            revealOnScroll(); 
+            }, { rootMargin: "0px 0px -50px 0px" });
+            
+            reveals.forEach(reveal => observer.observe(reveal));
         }
     </script>
 </body>
