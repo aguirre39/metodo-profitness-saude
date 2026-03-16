@@ -29,6 +29,50 @@
   status = 200
   force = true
 
+# ===========================================================
+# 2. PROJETO:Blog como-emagrecer-rapido
+# ===========================================================
+
+[[redirects]]
+  from = "/como-emagrecer-rapido"
+  to = "https://emagrecer-rapido.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/como-emagrecer-rapido/"
+  to = "https://emagrecer-rapido.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/como-emagrecer-rapido/*"
+  to = "https://emagrecer-rapido.netlify.app/:splat"
+  status = 200
+  force = true
+
+# ===========================================================
+# 3. PROJETO:Blog dieta-low-carb
+# ===========================================================
+
+[[redirects]]
+  from = "/dieta-low-carb"
+  to = "https://emagrecer-rapido.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/dieta-low-carb/"
+  to = "https://emagrecer-rapido.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/dieta-low-carb/*"
+  to = "https://emagrecer-rapido.netlify.app/:splat"
+  status = 200
+  force = true
+
 
 # ===========================================================
 # 2. ROTA PADRÃO (FALLBACK)
