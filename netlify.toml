@@ -57,25 +57,25 @@
 
 [[redirects]]
   from = "/dieta-low-carb"
-  to = "https://emagrecer-rapido.netlify.app/"
+  to = "https://blog-dieta-low-carb.netlify.app/"
   status = 200
   force = true
 
 [[redirects]]
   from = "/dieta-low-carb/"
-  to = "https://emagrecer-rapido.netlify.app/"
+  to = "https://blog-dieta-low-carb.netlify.app/"
   status = 200
   force = true
 
 [[redirects]]
   from = "/dieta-low-carb/*"
-  to = "https://emagrecer-rapido.netlify.app/:splat"
+  to = "https://blog-dieta-low-carb.netlify.app/:splat"
   status = 200
   force = true
 
 
 # ===========================================================
-# 2. ROTA PADRÃO (FALLBACK)
+# 4. ROTA PADRÃO (FALLBACK)
 # ===========================================================
 
 # Qualquer rota não listada acima cairá na index do site principal
