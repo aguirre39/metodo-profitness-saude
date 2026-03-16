@@ -38,4 +38,16 @@
       href="https://alimentacaosaudavel360.com.br/dieta-low-carb"/>
   </url>
 
+  <!-- Blog 3: Resenha Emagrecer Pro Funciona -->
+  <url>
+    <loc>https://alimentacaosaudavel360.com.br/emagrecer-pro-funciona</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://alimentacaosaudavel360.com.br/emagrecer-pro-funciona"/>
+  </url>
+
 </urlset>
