@@ -73,9 +73,31 @@
   status = 200
   force = true
 
+# ===========================================================
+# 4. PROJETO:Blog emagrecer-pro-funciona
+# ===========================================================
+
+[[redirects]]
+  from = "/emagrecer-pro-funciona"
+  to = "https://emagrecer-pro-funciona.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/emagrecer-pro-funciona/"
+  to = "https://emagrecer-pro-funciona.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/emagrecer-pro-funciona/*"
+  to = "https://emagrecer-pro-funciona.netlify.app/:splat"
+  status = 200
+  force = true
+
 
 # ===========================================================
-# 4. ROTA PADRÃO (FALLBACK)
+# 5. ROTA PADRÃO (FALLBACK)
 # ===========================================================
 
 # Qualquer rota não listada acima cairá na index do site principal
