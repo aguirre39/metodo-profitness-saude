@@ -50,4 +50,16 @@
       href="https://alimentacaosaudavel360.com.br/emagrecer-pro-funciona"/>
   </url>
 
+  <!-- Isca Digital: 10 Receitas Detox Grátis -->
+  <url>
+    <loc>https://alimentacaosaudavel360.com.br/10receitas-emagrecer-pro-gratis</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://alimentacaosaudavel360.com.br/10receitas-emagrecer-pro-gratis"/>
+  </url>
+
 </urlset>
