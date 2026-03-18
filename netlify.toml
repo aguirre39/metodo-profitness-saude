@@ -1,6 +1,14 @@
 # ARQUIVO: netlify.toml
 # Localização: Raiz do seu projeto principal
 
+# ===========================================================
+# CORREÇÃO DE CABEÇALHO PARA SEO (SITEMAP)
+# ===========================================================
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+
 # -----------------------------------------------------------
 # ARQUIVO DE CONFIGURAÇÃO NETLIFY - ROTEAMENTO AVANÇADO
 # Objetivo: Servir múltiplos sites externos dentro do domínio principal
