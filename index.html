@@ -372,13 +372,14 @@
 
         /* 8. Oferta e Checkout */
         .checkout-section { padding: 6rem 1rem; background: var(--app-surface); border-top: 1px solid var(--app-border); position: relative; }
-        .checkout-wrapper { padding: 2rem; border-radius: 2rem; border: 1px solid var(--app-border); }
-        @media (min-width: 768px) { .checkout-wrapper { padding: 3rem; } }
+        .checkout-wrapper { padding: 1.25rem; border-radius: 1.5rem; border: 1px solid var(--app-border); width: 100%; box-sizing: border-box; overflow: hidden; }
+        @media (min-width: 768px) { .checkout-wrapper { padding: 3rem; border-radius: 2rem; } }
         .checkout-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
         @media (min-width: 768px) { .checkout-grid { grid-template-columns: repeat(2, 1fr); gap: 4rem; } }
         
         .check-list { display: flex; flex-direction: column; gap: 1rem; }
-        .check-item { display: flex; justify-content: space-between; align-items: center; background: #F8FAFC; padding: 1rem; border-radius: 0.75rem; border: 1px solid #F1F5F9; }
+        .check-item { display: flex; justify-content: space-between; align-items: center; background: #F8FAFC; padding: 0.75rem; border-radius: 0.75rem; border: 1px solid #F1F5F9; }
+        @media (min-width: 768px) { .check-item { padding: 1rem; } }
         .check-left { display: flex; align-items: center; gap: 0.85rem; }
         .check-icon { background: #D1FAE5; color: #047857; padding: 0.35rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .check-icon svg { width: 1.1rem; height: 1.1rem; }
@@ -389,8 +390,8 @@
         .total-label { font-weight: 900; color: var(--app-text); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .total-val { color: #334155; font-weight: 800; font-size: 0.95rem; text-decoration: line-through; text-decoration-thickness: 2px; }
 
-        .price-box { background: var(--app-surface); border-radius: 1.5rem; padding: 2rem; text-align: center; border: 2px solid var(--app-cta); box-shadow: var(--shadow-app); position: relative; }
-        @media (min-width: 768px) { .price-box { padding: 2.5rem; } }
+        .price-box { background: var(--app-surface); border-radius: 1.25rem; padding: 1.5rem; text-align: center; border: 2px solid var(--app-cta); box-shadow: var(--shadow-app); position: relative; width: 100%; box-sizing: border-box; }
+        @media (min-width: 768px) { .price-box { padding: 2.5rem; border-radius: 1.5rem; } }
         .price-badge { position: absolute; top: -0.85rem; left: 50%; transform: translateX(-50%); background: var(--app-cta); color: #fff; padding: 0.35rem 1rem; border-radius: 9999px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: var(--shadow-sm); white-space: nowrap; }
         .price-label { color: var(--app-muted); font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
         .price-value-wrap { display: flex; align-items: flex-start; justify-content: center; margin-bottom: 0.5rem; color: var(--app-text); }
@@ -432,7 +433,8 @@
         .seo-guide-list li::before { content: "✓"; position: absolute; left: 0; color: var(--app-primary); font-weight: 900; }
         
         /* Table Optimizada para extração LLM */
-        .aio-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: #fff; border-radius: 0.75rem; overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--app-border); }
+        .aio-table-wrapper { width: 100%; overflow-x: auto; margin: 2rem 0; border-radius: 0.75rem; box-shadow: var(--shadow-sm); border: 1px solid var(--app-border); -webkit-overflow-scrolling: touch; }
+        .aio-table { width: 100%; border-collapse: collapse; background: #fff; min-width: 600px; }
         .aio-table th { background: #F1F5F9; color: var(--app-text); font-weight: 800; text-align: left; padding: 1rem; border-bottom: 2px solid var(--app-border); }
         .aio-table td { padding: 1rem; color: var(--app-muted); border-bottom: 1px solid #F1F5F9; font-size: 0.95rem; }
         .aio-table tr:last-child td { border-bottom: none; }
@@ -1185,16 +1187,17 @@
                     <!-- TABELA AIO (IAs como Gemini/ChatGPT extraem Tabelas com facilidade) -->
                     <section>
                         <h3>Comparativo do Emagrecimento Estratégico</h3>
-                        <table class="aio-table">
-                            <thead>
-                                <tr>
-                                    <th>Característica</th>
-                                    <th>Dietas Restritivas Comuns</th>
-                                    <th>Método Emagrecer Pro</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
+                        <div class="aio-table-wrapper">
+                            <table class="aio-table">
+                                <thead>
+                                    <tr>
+                                        <th>Característica</th>
+                                        <th>Dietas Restritivas Comuns</th>
+                                        <th>Método Emagrecer Pro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
                                     <td><strong>Abordagem</strong></td>
                                     <td>Corte severo de calorias (sofrimento)</td>
                                     <td>Otimização hormonal (Low Carb + Jejum)</td>
@@ -1211,6 +1214,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </section>
 
                     <section>
