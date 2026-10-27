@@ -1,6 +1,14 @@
-# Hybrid GEO/AEO Strategy: Allow citation bots, block training bots
+# =========================================================
+# Estratégia Híbrida GEO/AEO 2026: Citação SIM | Treino NÃO
+# =========================================================
 
-# 1. PERMITIR IA DE BUSCA (Trazem Cliques e Citações)
+# 1. PERMITIR MOTORES DE BUSCA E CITAÇÃO DE IA (Geram Tráfego e Vendas)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -19,11 +27,17 @@ Allow: /
 User-agent: Claude-User
 Allow: /
 
-# Google (Permite citação no Gemini/SGE, mas o treinamento é bloqueado abaixo)
-User-agent: Googlebot
+User-agent: Applebot
 Allow: /
 
-# 2. BLOQUEAR APENAS TREINAMENTO MACRO
+# Meta AI (Permite busca no WhatsApp, Instagram e prévias de link)
+User-agent: meta-webindexer
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# 2. BLOQUEAR APENAS TREINAMENTO MACRO (Sem geração de cliques)
 User-agent: GPTBot
 Disallow: /
 
@@ -45,15 +59,15 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-# Outros bots de scraping em larga escala
-User-agent: anthropic-ai
-Disallow: /
 User-agent: Bytespider
 Disallow: /
 
-# 3. Regra Geral para outros bots
+User-agent: anthropic-ai
+Disallow: /
+
+# 3. REGRA GERAL
 User-agent: *
 Allow: /
 
-# 4. SITEMAP
+# 4. SITEMAP OFICIAL
 Sitemap: https://alimentacaosaudavel360.com.br/sitemap.xml
