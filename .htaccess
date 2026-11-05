@@ -1,0 +1,17 @@
+# =========================================================
+# Redirecionamento 301 Canônico (HTTP -> HTTPS & www -> non-www)
+# Evita duplicidade de Title e Meta Description no Bing e Google
+# =========================================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Forçar HTTPS e remover www em um único salto 301
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} ^www\. [NC]
+    RewriteRule ^ https://alimentacaosaudavel360.com.br%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
